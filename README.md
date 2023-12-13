@@ -1,3 +1,6 @@
+# 미리보기
+(https://wnyg-port.vercel.app/)
+
 # 시작하기
 1. npm create vite@latest
 
