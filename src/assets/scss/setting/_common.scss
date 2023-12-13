@@ -3,12 +3,8 @@ body {
     color: var(--white);
 }
 
-.section-padding-top {
-    padding-bottom: 100px;
-}
-
-.section-padding {
-    padding: 100px 0;
+* {
+    font-kerning: none !important;
 }
 
 .page-tit {
@@ -36,4 +32,27 @@ body {
 .blackBg {
     background-color: #000;
     color: #fff;
+}
+
+.item>a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.text-reg {
+    font-size: 1rem;
+
+}
+
+.split_text_clip {
+    z-index: 300001;
+    height: 1.25rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.05rem;
 }

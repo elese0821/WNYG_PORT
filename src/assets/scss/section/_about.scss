@@ -1,0 +1,182 @@
+#aboutSection {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    z-index: 100;
+    padding: 1.5rem;
+
+
+    .item {
+        align-self: end;
+        justify-self: auto;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        transform-origin: 50% 100%;
+        border-radius: 0.5rem;
+        justify-content: flex-start;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        .text-reg {
+            font-family: var(--mainfontEng);
+        }
+
+
+        .item__bg {
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0%;
+            bottom: 0%;
+            left: 0%;
+            right: 0%;
+            transform-origin: 50% 100%;
+            padding: 1.5rem;
+            display: flex;
+            position: absolute;
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+            transition: all 1s;
+            background-color: rgba(255, 255, 255, .08);
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1) background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    }
+
+
+    .aboutWrap {
+        position: absolute;
+
+        .about {
+            h1 {}
+        }
+    }
+
+    .about_grid {
+        display: grid;
+        grid-template-areas:
+            "grid1 grid2 grid2 grid2 . ."
+            "grid3 grid3 grid3 grid3 grid4 grid4"
+            "grid3 grid3 grid3 grid3 grid4 grid4"
+            "grid3 grid3 grid3 grid3 grid5 grid5"
+            "grid3 grid3 grid3 grid3 grid5 grid5"
+            "grid3 grid3 grid3 grid3 . ."
+            "grid3 grid3 grid3 grid3 . ."
+        ;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-gap: 1.5rem;
+
+        >div {
+            &:nth-child(1) {
+                grid-area: grid1;
+                padding: 1rem;
+                align-items: flex-end;
+            }
+
+            &:nth-child(2) {
+                grid-area: grid2;
+                display: flex;
+                align-items: flex-end;
+
+
+                .item__bg {
+                    background-color: transparent;
+                }
+            }
+
+            &:nth-child(3) {
+                grid-area: grid3;
+
+                .item__bg {
+                    background-color: transparent;
+                }
+            }
+
+            &:nth-child(4) {
+                grid-area: grid4;
+                padding: 1rem;
+
+            }
+
+            &:nth-child(5) {
+                grid-area: grid5;
+                padding: 1rem;
+
+            }
+        }
+
+        @media (max-width:1000px) {}
+
+
+        .about_tit {}
+
+        .exp {}
+
+        .photo {
+            overflow: hidden;
+            padding: 0;
+            filter: saturate(2);
+            opacity: 0.95;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.5rem;
+                position: absolute;
+            }
+        }
+
+        .desc_01 {}
+
+        .desc_02 {}
+    }
+
+    .aboutWrap {
+        z-index: 300002;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        z-index: -1;
+        font-family: var(--subfontEng);
+
+        .about {
+            white-space: nowrap;
+            flex: none;
+            overflow: hidden;
+            font-size: 8vw;
+            line-height: 1.5;
+        }
+    }
+
+    .loadingText {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: relative;
+        line-height: 1;
+        margin-bottom: -10vw;
+        text-align: center;
+    }
+
+
+    .split_text_clip {
+        &.Bigger {
+            .text-reg {
+                font-size: 2rem;
+                font-family: 'LINESeedKR-Th';
+            }
+
+            height: 2.8rem;
+        }
+    }
+}

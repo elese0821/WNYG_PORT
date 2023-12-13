@@ -1,9 +1,9 @@
 #mainbg {
     /* background: linear-gradient(to right, #fcb045, #fd1d73, #833ab4); */
     /* background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); */
-    background: linear-gradient(to right, #001b3a, #6100fd, #ff821c);
+    background: linear-gradient(to right, #00aeff, #020083, #5d00f1);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     overflow: hidden;
 
@@ -18,20 +18,19 @@
 
     #mainSection {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         font-size: 7vw;
         text-transform: uppercase;
         font-weight: bold;
         font-family: 'Bebas Neue';
         color: #fff;
         display: none;
-
     }
 
     .main__gird {
         display: grid;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         padding: 1rem;
         z-index: 1500;
 
@@ -47,11 +46,7 @@
         position: relative;
 
         @media (max-width:1000px) {
-            display: grid;
-            width: 100%;
-            height: 100vh;
             padding: 0.5rem;
-            z-index: 1500;
             grid-template-areas:
                 "grid1 grid1 grid2"
                 "grid1 grid1 grid5"
@@ -66,15 +61,9 @@
             grid-template-rows: repeat(10, 1fr);
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 0.5rem;
-            position: relative;
         }
 
         @media (max-width:500px) {
-            display: grid;
-            width: 100%;
-            height: 100vh;
-            padding: 0.5rem;
-            z-index: 1500;
             grid-template-areas:
                 "grid1 grid2"
                 "grid1 grid2"
@@ -88,10 +77,6 @@
                 "grid9 grid8";
             grid-template-rows: repeat(10, 1fr);
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 0.5rem;
-            position: relative;
-
-
         }
 
         .item__bg {
@@ -113,12 +98,12 @@
             overflow: hidden;
             backdrop-filter: blur(16px);
             transition: all 1s;
-            border-radius: 0.5rem;
             background-color: rgba(255, 255, 255, .08);
             transition: cubic-bezier(0.075, 0.82, 0.165, 1) background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
         .item {
+            padding: 1rem;
             align-self: end;
             justify-self: auto;
 
@@ -203,31 +188,8 @@
         bottom: 1.5rem;
     }
 
-    .item {
-        padding: 1rem;
-    }
+    .item {}
 
-    .item>a {
-        display: block;
-        height: 100%;
-        width: 100%;
-    }
-
-    .text-reg {
-        font-size: 1rem;
-
-    }
-
-    .split_text_clip {
-        z-index: 300001;
-        height: 1.25rem;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        display: flex;
-        position: relative;
-        overflow: hidden;
-    }
 
     /*  */
     .title_wrap {
@@ -269,7 +231,6 @@
         }
     }
 
-    /*  */
     .wonyoungWrap {
         z-index: 300002;
         justify-content: center;
@@ -280,14 +241,14 @@
         top: 50%;
         transform: translate(-50%, -50%);
         overflow: hidden;
-    }
 
-    .wonyoung {
-        white-space: nowrap;
-        flex: none;
-        overflow: hidden;
-        font-size: 8vw;
-        line-height: 1.5;
+        .wonyoung {
+            white-space: nowrap;
+            flex: none;
+            overflow: hidden;
+            font-size: 8vw;
+            line-height: 1.5;
+        }
     }
 
     .loadingText {
@@ -303,7 +264,4 @@
         margin-bottom: -10vw;
         text-align: center;
     }
-
-    .lt_btm {}
-
 }

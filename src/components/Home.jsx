@@ -2,6 +2,7 @@ import $ from 'jquery';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import SplitType from 'split-type';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     useEffect(() => {
@@ -236,85 +237,85 @@ const Home = () => {
 
             <div className="main__gird">
                 <div className="item i1">
-                    <a href="/page/about.html">
+                    <Link to="/about">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">ABOUT ME</div>
                             <div text-split="" className="text-reg">ABOUT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="item i2">
-                    <a href="/page/about.html">
+                    <Link to="/about">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">ABOUT ME</div>
                             <div text-split="" className="text-reg">ABOUT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="item i3">
-                    <a href="/page/about.html">
+                    <Link to="/about">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">ABOUT ME</div>
                             <div text-split="" className="text-reg">ABOUT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="item i4">
-                    <a href="/page/about.html">
+                    <Link to="/about">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">ABOUT ME</div>
                             <div text-split="" className="text-reg">ABOUT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="item i5 text-btm">
-                    <a href="/page/about.html">
+                    <Link to="/about">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">ABOUT ME</div>
                             <div text-split="" className="text-reg">ABOUT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="item i6 text-btm">
-                    <a href="/page/about.html">
+                    <Link to="/about">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">ABOUT ME</div>
                             <div text-split="" className="text-reg">ABOUT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="item i7 text-btm">
-                    <a href="/page/about.html">
+                    <Link to="/about">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">ABOUT ME</div>
                             <div text-split="" className="text-reg">ABOUT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="item i8 text-btm">
-                    <a href="/page/about.html">
+                    <Link to="/about">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">ABOUT ME</div>
                             <div text-split="" className="text-reg">ABOUT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="item i9 text-btm">
-                    <a href="/page/contact.html">
+                    <Link to="/page/contact.html">
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">CONTACT ME</div>
                             <div text-split="" className="text-reg">CONTACT ME</div>
                         </div>
                         <div className="item__bg"></div>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </main>
