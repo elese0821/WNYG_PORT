@@ -1,6 +1,8 @@
 # 시작하기
 1. npm create vite@latest
 
+git config --global core.autocrlf true
+
 
 
 
