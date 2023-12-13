@@ -1,17 +1,11 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-// setting
-@import "./setting/fonts";
-@import "./setting/reset";
-@import "./setting/var";
-@import "./setting/mixin";
-@import "./setting/common";
+/* setting */
+@import "./setting/reset.scss";
+@import "./setting/common.scss";
+@import "./setting/fonts.scss";
 
-// section
-@import "./section/layout";
-@import "./section/header";
-@import "./section/search";
-@import "./section/today";
-@import "./section/musician";
-@import "./section/swiper";
-@import "./section/video";
+/* section */
+@import "./section/contact.scss";
+@import "./section/about.scss";
+@import "./section/main.scss";

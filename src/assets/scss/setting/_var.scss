@@ -1,6 +1,6 @@
 :root {
-    --mainfont-nanum: "theJamsil";
-    --mainfont-nexon: "theJamsil";
+    --mainfontEng: "Abel";
+    --subfontEng: "Bebas Neue";
 
     --black: #000;
     --black100: #161616;
@@ -22,7 +22,7 @@
 
     --red: #e73a3a;
     // 폰트 셋팅
-    font-family: var(--mainfont), var(--mainfont2);
+    font-family: var(--mainfontEng), var(--subfontEng);
     font-size: 16px;
     line-height: 1.5;
     font-weight: 300;

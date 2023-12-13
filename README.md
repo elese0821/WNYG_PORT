@@ -10,8 +10,10 @@ git config --global core.autocrlf true
 ```
 npm install gsap 
 npm install split-type
-npm install jquery 
 npm install @studio-freight/lenis
 npm install three
+npm install sass
+npm install react-router-dom
+npm install jquery
 
 ```

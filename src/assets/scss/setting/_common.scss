@@ -3,73 +3,37 @@ body {
     color: var(--white);
 }
 
-// 각 섹션 공통 요소
-section {
-    padding: 40px;
-
-    @media (max-width: 800px) {
-        padding: 20px;
-    }
-
-    h2 {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-    }
+.section-padding-top {
+    padding-bottom: 100px;
 }
 
-// 비디오 마우스 아이콘 효과
-.play__icon {
-    a {
-        position: relative;
-        display: block;
-        cursor: pointer;
-        width: 100%;
-
-        &::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            background-color: #00000025;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transition: background-color 0.3s;
-        }
-
-        &:hover::before {
-            background-color: #00000000;
-        }
-
-        &::after {
-            content: '';
-            width: 80px;
-            height: 80px;
-            background: #00000095 url(../../img/icon/play.svg) no-repeat center;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        &:hover::after {
-            opacity: 1;
-        }
-    }
+.section-padding {
+    padding: 100px 0;
 }
 
-
-// input
-input {
-    font-weight: 300;
+.page-tit {
+    font-family: "Abel";
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: capitalize;
 }
 
-input:focus {
-    outline: none;
+.home {
+    position: fixed;
+    padding: 0.5rem;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: #272727;
+    border: 1px solid #666666;
+    border-radius: 100%;
+    transition: background-color 0.5s;
 }
 
-input:active {}
+.home:hover {
+    background-color: #4d4d4d;
+}
 
-input:hover {}
+.blackBg {
+    background-color: #000;
+    color: #fff;
+}
