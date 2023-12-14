@@ -108,6 +108,7 @@ select {
     color: var(--white);
     background: var(--black);
 }
+
 #skip a:focus,
 #skip a:active {
     top: 10px;
@@ -129,10 +130,14 @@ select {
 // IR(Image Replacement)
 // 의미가 포함되어 있는 image를 배경으로 표현하고, 텍스트는 보이지 않게 설정하는 방법입니다.
 .ir {
-    display: block; 
-    overflow: hidden; 
-    font-size: 0; 
-    line-height: 0; 
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
     text-indent: -9999px;
     white-space: nowrap;
+}
+
+* {
+    user-select: none;
 }

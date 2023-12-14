@@ -1,12 +1,12 @@
 # 미리보기
-(https://wnyg-port.vercel.app/)
+(https://wnyg-port-elese0s-projects.vercel.app/)
 
 # 시작하기
 1. npm create vite@latest
 
 git config --global core.autocrlf true
 
-
+user-select: none;
 
 # 설치
 ```
