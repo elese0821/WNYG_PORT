@@ -181,13 +181,14 @@ const Three = () => {
         render();
 
         // 컴포넌트가 언마운트될 때 정리 작업을 수행합니다.
-        return () => {
-            containerRef.current.removeChild(renderer.domElement);
-            scene.remove(plane);
-            geometry.dispose();
-            shaderMaterial.dispose();
-            renderer.dispose(); // 렌더러 정리
-        };
+        // return () => {
+        //     containerRef.current.removeChild(renderer.domElement);
+        //     scene.remove(plane);
+        //     geometry.dispose();
+        //     shaderMaterial.dispose();
+        //     renderer.dispose(); 
+        // };
+        // 렌더러 정리
     }, []);
 
     return <div ref={containerRef} id="mainbg" className="three-container"></div>;
