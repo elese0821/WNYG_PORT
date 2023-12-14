@@ -1,5 +1,10 @@
 # 미리보기
-(https://wnyg-port-elese0s-projects.vercel.app/)
+(https://wnyg-port.vercel.app/)
+(https://elese0821.github.io/WNYG_PORT/)
+
+
+(https://movie-project-ecru.vercel.app/)
+(https://youtube-project-nine.vercel.app/)
 
 # 시작하기
 1. npm create vite@latest
@@ -28,3 +33,28 @@ stagger는 여러 요소에 걸쳐 애니메이션을 순차적으로 적용하�
 amount: 0.4 - 이는 전체 '지연' 시간을 의미합니다. 즉, 첫 번째 요소와 마지막 요소 사이에 애니메이션 시작 시간이 0.4초 차이가 난다는 것을 나타냅니다. 이것은 애니메이션 시퀀스를 통해 요소들 사이의 시간 간격을 균등하게 분배합니다.
 
 from: "start" - 이 옵션은 애니메이션 시퀀스가 어디서 시작할지를 정합니다. "start"는 시퀀스가 첫 번째 요소에서 시작되어 순차적으로 다음 요소로 진행됨을 의미합니다. 다른 옵션으로는 "end" (마지막 요소에서 시작), "center" (중간 요소에서 시작하여 양쪽으로 퍼져 나감), 또는 특정 인덱스 (특정 요소에서 시작) 등이 있습니다.
+
+
+## 페이지
+1. about
+2. stack (사용한 기술들 프레임웍)
+
+3. petpar react, nodejs
+4.  team-project php 
+
+5. react youtube
+6. vue movie
+7. simple blog react, nodejs
+
+8. site vue vite react 로 웹사이트 만든거 피그마
+9. contact
+
+about
+stacks
+teamreact
+teamphp
+youtube
+movie
+blog
+site
+contact

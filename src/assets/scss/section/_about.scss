@@ -6,6 +6,24 @@
     z-index: 100;
     padding: 1.5rem;
 
+    .goback {
+        grid-area: 6;
+
+        >div {
+            display: flex;
+            cursor: pointer;
+
+            >svg {
+                width: 40px;
+                height: 60px;
+            }
+
+
+            span {
+                font-size: 2.7rem;
+            }
+        }
+    }
 
     .item {
         align-self: end;
@@ -24,7 +42,6 @@
         .text-reg {
             font-family: var(--mainfontEng);
         }
-
 
         .item__bg {
             width: 100%;
@@ -46,7 +63,6 @@
         }
     }
 
-
     .aboutWrap {
         position: absolute;
 
@@ -63,12 +79,24 @@
             "grid3 grid3 grid3 grid3 grid4 grid4"
             "grid3 grid3 grid3 grid3 grid5 grid5"
             "grid3 grid3 grid3 grid3 grid5 grid5"
-            "grid3 grid3 grid3 grid3 . ."
+            "grid3 grid3 grid3 grid3 grid6 grid6"
             "grid3 grid3 grid3 grid3 . ."
         ;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(7, 1fr);
         grid-gap: 1.5rem;
+
+        @media(max-with: 1100px) {
+            grid-template-areas:
+                "grid1 grid2 grid2 grid2 . ."
+                "grid3 grid3 grid3 grid3 grid4 grid4"
+                "grid3 grid3 grid3 grid3 grid4 grid4"
+                "grid3 grid3 grid3 grid3 grid5 grid5"
+                "grid3 grid3 grid3 grid3 grid5 grid5"
+            ;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+        }
 
         >div {
             &:nth-child(1) {

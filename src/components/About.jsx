@@ -2,6 +2,8 @@ import $ from 'jquery';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import SplitType from 'split-type';
+import { IoIosArrowBack } from "react-icons/io";
+
 // import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -124,6 +126,10 @@ const About = () => {
                         <p text-split="" className="text-reg">ABOUT</p>
                     </div>
                     <div className="item__bg"></div>
+                </div>
+
+                <div className='goback'>
+                    <div><IoIosArrowBack size={50} /><span>BACK</span></div>
                 </div>
             </div>
         </div>
