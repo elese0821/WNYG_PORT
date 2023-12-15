@@ -7,21 +7,33 @@
     padding: 1.5rem;
 
     .goback {
-        grid-area: 6;
+        grid-area: 7;
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
 
-        >div {
-            display: flex;
-            cursor: pointer;
+        .split_text_clip {
+            height: 2rem;
 
-            >svg {
-                width: 40px;
-                height: 60px;
+
+            .text-reg {
+                display: flex;
+
+
+                >svg {
+                    width: 30px;
+                    height: 40px;
+                    position: absolute;
+                    top: -5px;
+                }
+
+                span {
+                    font-size: 2rem;
+                    line-height: 1;
+                }
             }
 
 
-            span {
-                font-size: 2.7rem;
-            }
         }
     }
 
@@ -80,7 +92,7 @@
             "grid3 grid3 grid3 grid3 grid5 grid5"
             "grid3 grid3 grid3 grid3 grid5 grid5"
             "grid3 grid3 grid3 grid3 grid6 grid6"
-            "grid3 grid3 grid3 grid3 . ."
+            "grid3 grid3 grid3 grid3 grid7 grid7"
         ;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(7, 1fr);
@@ -93,9 +105,10 @@
                 "grid3 grid3 grid3 grid3 grid4 grid4"
                 "grid3 grid3 grid3 grid3 grid5 grid5"
                 "grid3 grid3 grid3 grid3 grid5 grid5"
+                "grid3 grid3 grid3 grid3 grid7 grid7"
             ;
             grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
         }
 
         >div {
@@ -142,7 +155,17 @@
 
         .about_tit {}
 
-        .exp {}
+        .exp {
+            >div {
+                p {
+                    span {
+
+                        font-family: "Chosunilbo_myungjo" !important;
+                    }
+                }
+
+            }
+        }
 
         .photo {
             overflow: hidden;
@@ -200,11 +223,10 @@
     .split_text_clip {
         &.Bigger {
             .text-reg {
-                font-size: 2rem;
-                font-family: 'LINESeedKR-Th';
+                font-size: 1.3rem;
             }
 
-            height: 2.8rem;
+            height: 2rem;
         }
     }
 }

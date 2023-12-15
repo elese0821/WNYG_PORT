@@ -45,6 +45,13 @@ const About = () => {
             yPercent: 150,
         });
 
+        gsap.set($(".goback").find(".char"), {
+            yPercent: 100,
+        });
+        gsap.set($(".goback").find(".icon"), {
+            yPercent: 200,
+        });
+
         // 로드 시 
         gsap.to($(".about").find(".char"), {
             yPercent: 1,
@@ -73,6 +80,16 @@ const About = () => {
                                     opacity: 1,
                                     scaleX: 1,
                                 });
+                                gsap.to($(".goback").find(".char"), {
+                                    yPercent: 1,
+                                    delay: 1,
+                                    stagger: { amount: 0.4, from: "start" },
+                                });
+                                gsap.to($(".goback").find(".icon"), {
+                                    yPercent: 1,
+                                    delay: 1,
+                                    stagger: { amount: 0.4, from: "start" },
+                                });
                             })
                         }
                     });
@@ -80,7 +97,43 @@ const About = () => {
                 });
             },
         });
+        const goback = document.querySelector(".goback");
+
+        for (let i = 0; i < goback.length; i++) () => {
+            goback.addEventListener('mouseover', () => handleMouseOver(i));
+            // goback.addEventListener('mouseout', () => handleMouseOut(i));
+            // goback.addEventListener('click', () => handleClick(i));
+        };
+
+        const handleMouseOver = (i) => {
+            const linkTextTop = $(".goback")
+                .eq(i)
+                .find(".text-reg")
+                .find(".char");
+            const linkTextBtm = $(".goback")
+                .eq(i)
+                .find(".text-reg")
+                .find(".char");
+            gsap.fromTo(linkTextTop, {
+                yPercent: 0,
+            }, {
+                yPercent: -100,
+                stagger: { amount: 0.4 },
+                delay: 0,
+                overwrite: true
+            });
+            gsap.fromTo(linkTextBtm, {
+                yPercent: 1,
+            }, {
+                yPercent: -200,
+                stagger: { amount: 0.4 },
+                delay: 0.1,
+                overwrite: true
+            });
+        };
     }, []);
+
+
 
     return (
         <div id='aboutSection'>
@@ -129,7 +182,16 @@ const About = () => {
                 </div>
 
                 <div className='goback'>
-                    <div><IoIosArrowBack size={50} /><span>BACK</span></div>
+                    <div className="split_text_clip">
+                        <span text-split="" className="text-reg">
+                            <IoIosArrowBack className='icon' size={50} />
+                            BACK
+                        </span>
+                        <span text-split="" className="text-reg">
+                            <IoIosArrowBack className='icon' size={50} />
+                            BACK
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
