@@ -35,6 +35,8 @@
         }
     }
 
+
+
     .item {
         align-self: end;
         justify-self: auto;
@@ -49,9 +51,26 @@
         overflow: hidden;
         transition: cubic-bezier(0.075, 0.82, 0.165, 1) background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-        .text-reg {
-            font-family: var(--mainfontEng);
+        &.desc_01,
+        &.desc_02 {
+            flex-direction: column;
         }
+
+        .line_text_clip {
+            padding: 0.5rem 0;
+            overflow: hidden;
+
+            .line-reg {
+                font-family: var(--fontKor);
+            }
+        }
+
+        .split_text_clip {
+            .text-reg {
+                font-family: var(--mainfontEng);
+            }
+        }
+
 
         .item__bg {
             width: 100%;

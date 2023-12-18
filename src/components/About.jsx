@@ -16,6 +16,11 @@ const About = () => {
             types: 'words, chars',
             tagName: 'span',
         });
+        new SplitType('[line-split]', {
+            types: 'lines',
+            tagName: 'span',
+        });
+
 
         // setting 
         gsap.set(".photo_img", {
@@ -33,6 +38,10 @@ const About = () => {
         });
         gsap.set($(".item").find(".char"), {
             yPercent: 100,
+        });
+        // line
+        gsap.set($(".line_text_clip").find(".line"), {
+            opacity: 0,
         });
         gsap.set("#aboutSection", {
             display: "grid",
@@ -72,7 +81,11 @@ const About = () => {
                         yPercent: 0,
                         delay: 0.3,
                         stagger: { amount: 0.8, from: "start" },
-
+                    });
+                    gsap.to($(".item").find(".line"), {
+                        opacity: 1,
+                        delay: 0.3,
+                        stagger: { amount: 0.8, from: "start" },
                     });
                     gsap.to($(".goback").find(".char"), {
                         yPercent: 1,
@@ -140,6 +153,21 @@ const About = () => {
                         {
                             opacity: 0,
                             yPercent: 50,
+                            duration: 0.6,
+                            ease: "power4.inOut",
+                            onComplete: () => {
+                                gsap.set(outwardLinks, { padding: 0 });
+                            }
+                        }
+                    );
+                    gsap.fromTo(
+                        ".line-reg",
+                        {
+                            opacity: 1,
+                        },
+                        {
+                            yPercent: 10,
+                            opacity: 0,
                             duration: 0.6,
                             ease: "power4.inOut",
                             onComplete: () => {
@@ -261,12 +289,18 @@ const About = () => {
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">ABOUT ME</p>
                     </div>
+                    <div className="line_text_clip">
+                        <p line-split="" className="line-reg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo sequi, officia commodi sed possimus soluta neque eaque? Nemo consectetur quo soluta facilis sequi cumque quam culpa ratione autem! Id, consequuntur!</p>
+                    </div>
                     <div className="item__bg"></div>
                 </div>
 
                 <div className="item desc_02">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">ABOUT</p>
+                    </div>
+                    <div className="line_text_clip">
+                        <p line-split="" className="line-reg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eligendi quam at ullam ratione fuga sapiente pariatur nulla nostrum, tenetur porro aut enim voluptas! Aliquam doloremque veniam excepturi asperiores officiis.</p>
                     </div>
                     <div className="item__bg"></div>
                 </div>
