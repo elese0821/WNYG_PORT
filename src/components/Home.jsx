@@ -218,7 +218,7 @@ const Home = () => {
                 item.removeEventListener('click', handleClick);
             });
         };
-    }, []); // 의존성 배열이 비어 있으면 컴포넌트가 마운트될 때 한 번만 실행
+    }, []);
 
     return (
         <main id="mainSection">

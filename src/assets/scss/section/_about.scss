@@ -7,10 +7,8 @@
     padding: 1.5rem;
 
     .goback {
-        grid-area: 7;
         display: flex;
         align-items: flex-end;
-        cursor: pointer;
 
         .split_text_clip {
             height: 2rem;
@@ -18,7 +16,7 @@
 
             .text-reg {
                 display: flex;
-
+                cursor: pointer;
 
                 >svg {
                     width: 30px;
@@ -147,6 +145,10 @@
                 grid-area: grid5;
                 padding: 1rem;
 
+            }
+
+            &:nth-child(6) {
+                grid-area: grid7;
             }
         }
 
