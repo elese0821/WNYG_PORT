@@ -33,7 +33,7 @@ const Teamphp = () => {
             yPercent: 100,
         });
         gsap.set($(".item").find(".char"), {
-            yPercent: 100,
+            yPercent: 150,
         });
         // line
         gsap.set($(".line_text_clip").find(".line"), {
@@ -57,8 +57,6 @@ const Teamphp = () => {
         gsap.set($(".goback").find(".char"), {
             yPercent: 100,
         });
-
-
         // 로드 시 
         gsap.to($(".about").find(".char"), {
             yPercent: 1,
@@ -195,7 +193,7 @@ const Teamphp = () => {
                 gsap.fromTo(this, {
                     yPercent: 0,
                 }, {
-                    yPercent: -120,
+                    yPercent: -165,
                     stagger: { amount: 0.4 },
                     delay: i * 0.05,
                     overwrite: true,

@@ -33,7 +33,7 @@ const Teamreact = () => {
             yPercent: 100,
         });
         gsap.set($(".item").find(".char"), {
-            yPercent: 100,
+            yPercent: 150,
         });
         // line
         gsap.set($(".line_text_clip").find(".line"), {
@@ -57,8 +57,6 @@ const Teamreact = () => {
         gsap.set($(".goback").find(".char"), {
             yPercent: 100,
         });
-
-
         // 로드 시 
         gsap.to($(".about").find(".char"), {
             yPercent: 1,

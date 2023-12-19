@@ -34,13 +34,13 @@
             z-index: 1500;
 
             grid-template-areas:
-                "grid1 grid1 grid1 grid1 grid3 grid3 grid3 grid4 grid4 grid4 grid4 grid4"
-                "grid2 grid2 grid2 grid2 grid3 grid3 grid3 grid4 grid4 grid4 grid4 grid4"
-                "grid5 grid5 grid6 grid6 grid7 grid7 grid8 grid8 grid8 grid8 grid8 grid8"
-                "grid5 grid5 grid6 grid6 grid7 grid7 grid9 grid9 grid9 grid9 grid9 grid9"
+                "grid1 grid1 grid1 grid1 grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid2 grid2 grid2 grid2 grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid5 grid5 grid6 grid6 grid7 grid7 grid8 grid8 grid8 grid8"
+                "grid5 grid5 grid6 grid6 grid7 grid7 grid9 grid9 grid9 grid9"
             ;
             grid-template-rows: repeat(4, 1fr);
-            grid-template-columns: repeat(12, 1fr);
+            grid-template-columns: repeat(10, 1fr);
             grid-gap: 1rem;
             position: relative;
 
