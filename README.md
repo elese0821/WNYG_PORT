@@ -1,6 +1,5 @@
 # 미리보기
 (https://wnyg-port.vercel.app/)
-(https://elese0821.github.io/WNYG_PORT/)
 
 
 (https://movie-project-ecru.vercel.app/)
