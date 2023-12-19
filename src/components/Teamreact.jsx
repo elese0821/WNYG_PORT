@@ -195,7 +195,7 @@ const Teamreact = () => {
                 gsap.fromTo(this, {
                     yPercent: 0,
                 }, {
-                    yPercent: -120,
+                    yPercent: -165,
                     stagger: { amount: 0.4 },
                     delay: i * 0.05,
                     overwrite: true,
