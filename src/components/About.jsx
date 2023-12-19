@@ -17,7 +17,6 @@ const About = () => {
             tagName: 'span',
         });
 
-
         // setting 
         gsap.set(".photo_img", {
             scaleX: 0,
@@ -57,7 +56,6 @@ const About = () => {
         gsap.set($(".goback").find(".char"), {
             yPercent: 100,
         });
-
 
         // 로드 시 
         gsap.to($(".about").find(".char"), {

@@ -14,8 +14,6 @@ import Site from './components/Site'
 import Contact from './components/Contact'
 
 
-
-
 const App = () => {
   return (
     <Main>

@@ -213,13 +213,11 @@ const Teamreact = () => {
             const a = $(".link div").eq(index);
 
             a.find(".char").each(function (index) {
-                gsap.fromTo(this, {
+                gsap.set(this, {
                     yPercent: 0,
-                }, {
-                    yPercent: -100,
-                    stagger: { amount: 0.4 },
-                    delay: i * 0.05,
-                    overwrite: true,
+                    duration: 0.6,
+                    ease: "power4.inOut",
+                    overwrite: true
                 });
             });
         }
@@ -237,8 +235,8 @@ const Teamreact = () => {
                     yPercent: 0,
                 }, {
                     yPercent: -100,
-                    stagger: { amount: 0.3 },
-                    delay: i * 0.03,
+                    stagger: { amount: 0.4 },
+                    delay: i * 0.05,
                     overwrite: true,
                 });
             })
@@ -253,7 +251,7 @@ const Teamreact = () => {
 
             // 선택한 .item 내의 모든 .char 요소를 찾아서 각각에 대해 원래 위치로 돌아가는 애니메이션 적용
             item.find(".text-reg .char").each(function () {
-                gsap.to(this, {
+                gsap.set(this, {
                     yPercent: 0,
                     duration: 0.6,
                     ease: "power4.inOut",
