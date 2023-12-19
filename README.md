@@ -6,12 +6,16 @@
 (https://movie-project-ecru.vercel.app/)
 (https://youtube-project-nine.vercel.app/)
 
+
 # 시작하기
 1. npm create vite@latest
 
 git config --global core.autocrlf true
 
 user-select: none;
+
+깃배포
+npm install gh-pages --save-dev
 
 # 설치
 ```
