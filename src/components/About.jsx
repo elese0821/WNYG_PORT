@@ -2,11 +2,7 @@ import $ from 'jquery';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import SplitType from 'split-type';
-import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
-
-
-// import { Link } from 'react-router-dom';
 
 const About = () => {
     const navigate = useNavigate();
@@ -61,9 +57,7 @@ const About = () => {
         gsap.set($(".goback").find(".char"), {
             yPercent: 100,
         });
-        gsap.set($(".goback").find(".icon"), {
-            yPercent: 200,
-        });
+
 
         // 로드 시 
         gsap.to($(".about").find(".char"), {
@@ -80,36 +74,26 @@ const About = () => {
                     gsap.to($(".item").find(".char"), {
                         yPercent: 0,
                         delay: 0.3,
-                        stagger: { amount: 0.8, from: "start" },
+                        stagger: { amount: 0.3, from: "start" },
+                        onComplete: function () {
+                            gsap.to($(".item").find(".line"), {
+                                opacity: 1,
+                                delay: 0.3,
+                                stagger: { amount: 0.5, from: "start" },
+                            });
+                        }
                     });
-                    gsap.to($(".item").find(".line"), {
-                        opacity: 1,
-                        delay: 0.3,
-                        stagger: { amount: 0.8, from: "start" },
-                    });
-                    gsap.to($(".goback").find(".char"), {
-                        yPercent: 1,
-                        delay: 1,
-                        stagger: { amount: 0.4, from: "start" },
-                    });
-                    gsap.to($(".goback").find(".icon"), {
-                        yPercent: 1,
-                        delay: 1,
-                        stagger: { amount: 0.4, from: "start" },
-                    });
+
                     gsap.to($(".exp").find(".char"), {
                         yPercent: 0,
                         delay: 0.3,
                         stagger: { amount: 0.4, from: "start" },
                         onComplete: function () {
-                            gsap.delayedCall(0, function () {
-                                gsap.to(".photo_img", {
-                                    duration: 1,
-                                    opacity: 1,
-                                    scaleX: 1,
-                                });
-
-                            })
+                            gsap.to(".photo_img", {
+                                duration: 1,
+                                opacity: 1,
+                                scaleX: 1,
+                            });
                         }
                     });
 
@@ -117,7 +101,7 @@ const About = () => {
             },
         });
 
-        const goback = document.querySelector(".backBtn");
+        const goback = document.querySelector(".goback");
 
         goback.addEventListener('mouseover', () => handleMouseOver());
         goback.addEventListener('mouseout', () => handleMouseOut());
@@ -125,9 +109,12 @@ const About = () => {
 
         const handleClick = () => {
             let gridItems = Array.from(document.querySelectorAll(".item"));
+            let isAnimating = false;
 
             gridItems.forEach((gridItem, index) => {
                 gridItem.addEventListener("click", function () {
+                    if (isAnimating) return; // 애니메이션 중이라면 클릭 이벤트 무시
+                    isAnimating = true; // 애니메이션 시작
                     let before = gridItems.slice(0, index).reverse();
                     let after = gridItems.slice(index + 1); ``
                     let outwardLinks = [];
@@ -186,6 +173,7 @@ const About = () => {
                             ease: "power4.inOut",
                             onComplete: () => {
                                 navigate('/');
+                                isAnimating = false;
                             }
                         }
                     );
@@ -201,24 +189,14 @@ const About = () => {
             // 해당 인덱스의 .item을 선택
             const item = $(".item").eq(index);
 
-            item.find(".text-reg .icon").each(function (i) {
-                gsap.fromTo(this, {
-                    yPercent: 0,
-                }, {
-                    yPercent: -100,
-                    delay: i * 0.05,
-                    overwrite: true,
-                });
-            });
             item.find(".text-reg .char").each(function (i) {
                 gsap.fromTo(this, {
                     yPercent: 0,
                 }, {
-                    yPercent: -125,
+                    yPercent: -100,
                     stagger: { amount: 0.4 },
                     delay: i * 0.05,
                     overwrite: true,
-
                 });
             })
         };
@@ -232,14 +210,6 @@ const About = () => {
 
             // 선택한 .item 내의 모든 .char 요소를 찾아서 각각에 대해 원래 위치로 돌아가는 애니메이션 적용
             item.find(".text-reg .char").each(function () {
-                gsap.to(this, {
-                    yPercent: 0,
-                    duration: 0.6,
-                    ease: "power4.inOut",
-                    overwrite: true
-                });
-            });
-            item.find(".text-reg .icon").each(function () {
                 gsap.to(this, {
                     yPercent: 0,
                     duration: 0.6,
@@ -266,7 +236,7 @@ const About = () => {
 
             <div className="about_grid">
 
-                <div className="item about_tit">
+                <div className="item">
                     <div className="split_text_clip">
                         <div text-split="" className="text-reg">ABOUT ME</div>
                         <div text-split="" className="text-reg">ABOUT ME</div>
@@ -287,35 +257,52 @@ const About = () => {
 
                 <div className="item desc_01">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">ABOUT ME</p>
+                        <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
                     <div className="line_text_clip">
-                        <p line-split="" className="line-reg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo sequi, officia commodi sed possimus soluta neque eaque? Nemo consectetur quo soluta facilis sequi cumque quam culpa ratione autem! Id, consequuntur!</p>
+                        <p line-split="" className="line-reg">
+                            즐기면 더 잘한다는 마음으로
+                            작업하고 있어요!
+                            디자인을 하고싶었으나 어디서부터 어떻게 풀어갈지 고민에 빠져있다
+                            유튜브에서 김종민이라는 유튜버가 웹페이지로 상상하던것을 그려가는것을 본 뒤
+                            제가 원하는 디자인의 웹페이지를 만들고 싶다는 집념으로
+                            우연히 접하게 된 개발공부에 시간 가는줄 모르는 매력을 느껴 개발자의 길을 걷게되었습니다.
+
+                            지금에 안주하지않고 끝없이 발전하려고 합니다.
+                            시작해 풀스택까지 달려나가고싶습니다.
+
+
+                            저는 항상 새로운 도전에 대한 열정과 긍정적인 자세를 가지고 있습니다.
+                            어려움을 마주할 때도 포기하지 않고 문제에 집중하여
+                            해결책을 찾아내는 능력을 갖추려고 노력하고 있습니다.
+                        </p>
                     </div>
                     <div className="item__bg"></div>
                 </div>
 
                 <div className="item desc_02">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">ABOUT</p>
+                        <p text-split="" className="text-reg">ABOUT ME</p>
                     </div>
                     <div className="line_text_clip">
-                        <p line-split="" className="line-reg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eligendi quam at ullam ratione fuga sapiente pariatur nulla nostrum, tenetur porro aut enim voluptas! Aliquam doloremque veniam excepturi asperiores officiis.</p>
+                        <p line-split="" className="line-reg">
+                            문제에서 기회를 포착하고, 해결을 통한 성취감을 좋아합니다.
+                            React 등 프레임워크 환경에서 컴포넌트 단위의 마크업 작업을 능숙하게 할 수 있어요.
+                        </p>
                     </div>
                     <div className="item__bg"></div>
                 </div>
 
                 <div className='goback item'>
-                    <div className="split_text_clip backBtn">
+                    <div className="split_text_clip">
                         <span text-split="" className="text-reg">
-                            <IoIosArrowBack className='icon' size={50} />
-                            BACK
+                            CLOSE
                         </span>
                         <span text-split="" className="text-reg">
-                            <IoIosArrowBack className='icon' size={50} />
-                            BACK
+                            CLOSE
                         </span>
                     </div>
+                    <div className="item__bg"></div>
                 </div>
             </div>
         </div>

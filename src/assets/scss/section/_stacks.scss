@@ -1,4 +1,4 @@
-#aboutSection {
+#stackSection {
     height: 100%;
     width: 100%;
     color: #fff;
@@ -6,10 +6,10 @@
     z-index: 100;
     padding: 1.5rem;
 
-    .goback {
+    .close {
         display: flex;
         align-items: flex-end;
-        padding: 1.5rem;
+        padding: 1rem;
 
         .item__bg {
             &:hover {
@@ -35,18 +35,20 @@
                 }
             }
         }
-
     }
 
     .item {
 
         &.desc_01,
-        &.desc_02 {
+        &.desc_02,
+        &.desc_03,
+        &.desc_04 {
             flex-direction: column;
         }
 
-        &.goback {
+        &.close {
             cursor: pointer;
+            padding: 1.5rem;
         }
 
 
@@ -81,34 +83,34 @@
         }
     }
 
-    .aboutWrap {
+    .stackWrap {
         position: absolute;
     }
 
-    .about_grid {
+    .stack_grid {
         display: grid;
         grid-template-areas:
-            "grid1 grid2 grid2 grid2 . grid7"
-            "grid3 grid3 grid3 grid3 grid4 grid4"
-            "grid3 grid3 grid3 grid3 grid4 grid4"
-            "grid3 grid3 grid3 grid3 grid4 grid4"
-            "grid3 grid3 grid3 grid3 grid5 grid5"
-            "grid3 grid3 grid3 grid3 . ."
-            "grid3 grid3 grid3 grid3 . ."
+            "grid1 . . . . grid2"
+            "grid3 grid3 grid3 grid4 grid4  grid4"
+            "grid3 grid3 grid3 grid4 grid4  grid4"
+            "grid3 grid3 grid3 grid4 grid4  grid4"
+            "grid5 grid5 grid5 grid6 grid6  grid6"
+            "grid5 grid5 grid5 grid6 grid6  grid6"
+            "grid5 grid5 grid5 grid6 grid6  grid6"
         ;
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(7, auto);
+        grid-template-rows: repeat(7, 1fr);
         grid-gap: 1.5rem;
 
         @media(max-with: 1100px) {
             grid-template-areas:
-                "grid1 grid2 grid2 grid2 . grid7"
-                "grid3 grid3 grid3 grid3 grid4 grid4"
-                "grid3 grid3 grid3 grid3 grid4 grid4"
-                "grid3 grid3 grid3 grid3 grid4 grid4"
-                "grid3 grid3 grid3 grid3 grid5 grid5"
-                "grid3 grid3 grid3 grid3 grid5 grid5"
-                "grid3 grid3 grid3 grid3 . ."
+                "grid1 . . . . grid2"
+                "grid3 grid3 grid3 grid4 grid4  grid4"
+                "grid3 grid3 grid3 grid4 grid4  grid4"
+                "grid3 grid3 grid3 grid4 grid4  grid4"
+                "grid5 grid5 grid5 grid6 grid6  grid6"
+                "grid5 grid5 grid5 grid6 grid6  grid6"
+                "grid5 grid5 grid5 grid6 grid6  grid6"
             ;
         }
 
@@ -119,47 +121,32 @@
             }
 
             &:nth-child(2) {
-                grid-area: grid2;
-                display: flex;
-                align-items: flex-end;
-
-
-                .item__bg {
-                    background-color: transparent;
-                }
+                grid-area: grid3;
             }
 
             &:nth-child(3) {
-                grid-area: grid3;
-
-                .item__bg {
-                    background-color: transparent;
-                }
+                grid-area: grid4;
             }
 
             &:nth-child(4) {
-                grid-area: grid4;
-
+                grid-area: grid5;
             }
 
             &:nth-child(5) {
-                grid-area: grid5;
-
+                grid-area: grid6;
             }
 
             &:nth-child(6) {
-                grid-area: grid7;
+                grid-area: grid2;
             }
         }
 
         @media (max-width:1000px) {}
 
 
-        .about_tit {}
+        .stack_tit {}
 
         .exp {
-            min-height: 5rem;
-
             >div {
                 p {
                     span {
@@ -182,12 +169,11 @@
                 border-radius: 0.5rem;
                 position: absolute;
             }
-
         }
 
     }
 
-    .aboutWrap {
+    .stackWrap {
         z-index: 300002;
         justify-content: center;
         align-items: center;
@@ -200,7 +186,7 @@
         z-index: -1;
         font-family: var(--subfontEng);
 
-        .about {
+        .stack {
             white-space: nowrap;
             flex: none;
             overflow: hidden;

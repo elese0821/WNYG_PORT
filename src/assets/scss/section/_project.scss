@@ -154,9 +154,6 @@
 
         @media (max-width:1000px) {}
 
-
-        .about_tit {}
-
         .exp {
             min-height: 5rem;
 
@@ -175,6 +172,7 @@
             padding: 0;
             filter: saturate(2);
             opacity: 0.95;
+            align-items: flex-end;
 
             img {
                 height: 100%;
@@ -183,6 +181,35 @@
                 position: absolute;
             }
 
+            .link {
+                z-index: 2;
+                display: flex;
+                width: 100%;
+                padding: 1rem;
+                overflow: hidden;
+
+                justify-content: space-between;
+
+                .split_text_clip {
+                    height: 2.6rem;
+                    background-color: rgba(0, 0, 0, 0.3);
+                    border-radius: 8px;
+                    backdrop-filter: blur(8px);
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.5);
+
+                    }
+                }
+
+                a {
+                    padding: 0.2rem 1rem;
+                    font-size: 1.5rem;
+                    font-family: var(--subfontEng);
+                    letter-spacing: 0.1rem;
+                }
+            }
         }
 
     }

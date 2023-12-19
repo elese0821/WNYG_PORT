@@ -60,9 +60,12 @@ const Home = () => {
     // 클릭 핸들러
     const handleClick = (index) => {
         let gridItems = Array.from(document.querySelectorAll(".item"));
+        let isAnimating = false;
 
         gridItems.forEach((gridItem, index) => {
             gridItem.addEventListener("click", function () {
+                if (isAnimating) return; // 애니메이션 중이라면 클릭 이벤트 무시
+                isAnimating = true; // 애니메이션 시작
                 let before = gridItems.slice(0, index).reverse();
                 let after = gridItems.slice(index + 1); ``
                 let outwardLinks = [];
@@ -106,12 +109,16 @@ const Home = () => {
                         ease: "power4.inOut",
                         onComplete: () => {
                             navigate(paths[index]); // 애니메이션이 끝나면 해당 path로 이동
+                            isAnimating = false;
                         }
                     }
                 );
             });
         });
     };
+
+
+
 
     useEffect(() => {
         // SplitType 초기화
@@ -175,7 +182,7 @@ const Home = () => {
                     gsap.to($(".item").find(".char"), {
                         yPercent: 0,
                         delay: 0.3,
-                        stagger: { amount: 0.4, from: "start" },
+                        stagger: { amount: 0.2, from: "start" },
                     });
                     gsap.delayedCall(0, function () {
                         gsap.set(".item", { pointerEvents: "auto" });
