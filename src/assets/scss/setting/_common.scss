@@ -96,6 +96,8 @@
         height: 1.28rem;
 
         .text-reg {
+            user-select: none;
+
             span {
                 font-family: var(--fontKor);
             }
