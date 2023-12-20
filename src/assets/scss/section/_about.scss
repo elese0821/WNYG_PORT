@@ -1,64 +1,6 @@
-#aboutSection {
-    height: 100%;
-    width: 100%;
-    color: #fff;
-    position: relative;
-    z-index: 100;
-    padding: 1.5rem;
+.about {
 
-
-    .close {
-        display: flex;
-        align-items: flex-end;
-        padding: 1.5rem;
-
-        .item__bg {
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.418);
-            }
-        }
-
-        .split_text_clip {
-            height: 1rem;
-
-            .text-reg {
-                display: flex;
-
-                >svg {
-                    width: 30px;
-                    height: 40px;
-                    position: absolute;
-                    top: -5px;
-                }
-
-                span {
-                    line-height: 1;
-                }
-            }
-        }
-
-    }
-
-    .item {
-
-        &.desc_01,
-        &.desc_02 {
-            flex-direction: column;
-        }
-
-        &.close {
-            cursor: pointer;
-        }
-
-
-
-    }
-
-    .textWrap-tit {
-        position: absolute;
-    }
-
-    .about_grid {
+    .main_grid {
         display: grid;
         grid-template-areas:
             "grid1 grid2 grid2 grid2 . grid7"
@@ -125,60 +67,6 @@
             }
         }
 
-        @media (max-width:1000px) {}
-
-
-
-        .photo {
-            overflow: hidden;
-            padding: 0;
-            opacity: 0.95;
-
-            img {
-                height: 100%;
-                object-fit: cover;
-                border-radius: 0.5rem;
-                position: absolute;
-            }
-
-        }
-
-    }
-
-    .textWrap-tit {
-        z-index: 300002;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        overflow: hidden;
-        z-index: -1;
-
-        .title-text {
-            white-space: nowrap;
-            flex: none;
-            overflow: hidden;
-            font-size: 8vw;
-            line-height: 1.5;
-
-            h1 {
-                font-family: var(--subfontEng);
-            }
-        }
-    }
-
-    .loadingText {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        position: relative;
-        line-height: 1;
-        margin-bottom: -10vw;
-        text-align: center;
     }
 
 

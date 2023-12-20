@@ -15,7 +15,7 @@ const About = () => {
             scaleX: 0,
             opacity: 0,
         });
-        gsap.set("#aboutSection", {
+        gsap.set("#section", {
             display: "none",
         });
         gsap.set(".item", {
@@ -31,7 +31,7 @@ const About = () => {
         gsap.set($(".line_text_clip").find(".line"), {
             opacity: 0,
         });
-        gsap.set("#aboutSection", {
+        gsap.set("#section", {
             display: "grid",
         });
         gsap.defaults({
@@ -56,7 +56,7 @@ const About = () => {
     useClose();
 
     return (
-        <div id='aboutSection'>
+        <div id='section' className='about'>
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
@@ -65,7 +65,7 @@ const About = () => {
                 </div>
             </div>
 
-            <div className="about_grid">
+            <div className="main_grid">
 
                 <div className="item">
                     <div className="split_text_clip">

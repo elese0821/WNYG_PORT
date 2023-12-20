@@ -1,37 +1,29 @@
 import $ from 'jquery';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
-import SplitType from 'split-type';
-import { useNavigate } from 'react-router-dom';
 import img from '../assets/img/youtube.jpg'
+import useLoad from '../hook/useLoad'
+import useClose from '../hook/useClose'
+import useSplitType from '../hook/useSplitType'
 
 const Teamreact = () => {
-    const navigate = useNavigate();
+    useSplitType();
 
     useEffect(() => {
-        new SplitType('[text-split]', {
-            types: 'words, chars',
-            tagName: 'span',
-        });
-        new SplitType('[line-split]', {
-            types: 'lines',
-            tagName: 'span',
-        });
-
 
         // setting 
         gsap.set(".photo_img", {
             scaleX: 0,
             opacity: 0,
         });
-        gsap.set("#projectSection", {
+        gsap.set("#section", {
             display: "none",
         });
         gsap.set(".item", {
             scaleY: 0,
         });
         gsap.set($(".exp").find(".char"), {
-            yPercent: 100,
+            yPercent: 120,
         });
         gsap.set($(".item").find(".char"), {
             yPercent: 150,
@@ -40,241 +32,41 @@ const Teamreact = () => {
         gsap.set($(".line_text_clip").find(".line"), {
             opacity: 0,
         });
-        gsap.set("#projectSection", {
+        gsap.set("#section", {
             display: "grid",
         });
         gsap.defaults({
             ease: "power3.inOut",
             duration: 0.8,
         });
-        gsap.set(".project", {
+        gsap.set(".textWrap-tit", {
             display: "grid",
         });
 
-        gsap.set($(".project").find(".char"), {
+        gsap.set($(".textWrap-tit").find(".char"), {
             yPercent: 150,
         });
 
         gsap.set($(".close").find(".char"), {
             yPercent: 100,
         });
-        // 로드 시 
-        gsap.to($(".project").find(".char"), {
-            yPercent: 1,
-            duration: 1,
-            stagger: { amount: 0.3 },
-            onComplete: function () {
-                gsap.delayedCall(0, function () {
-                    gsap.to(".item", {
-                        scaleY: 1,
-                        duration: 1,
-                        stagger: { amount: 0.2 },
-                    });
-                    gsap.to($(".item").find(".char"), {
-                        yPercent: 0,
-                        delay: 0.3,
-                        stagger: { amount: 0.3, from: "start" },
-                        onComplete: function () {
-                            gsap.to($(".item").find(".line"), {
-                                opacity: 1,
-                                delay: 0.3,
-                                stagger: { amount: 0.5, from: "start" },
-                            });
-                        }
-                    });
-
-                    gsap.to($(".exp").find(".char"), {
-                        yPercent: 0,
-                        delay: 0.3,
-                        stagger: { amount: 0.4, from: "start" },
-                        onComplete: function () {
-                            gsap.to(".photo_img", {
-                                duration: 1,
-                                opacity: 1,
-                                scaleX: 1,
-                            });
-                        }
-                    });
-
-                });
-            },
-        });
-
-        const close = document.querySelector(".close");
-
-        close.addEventListener('mouseover', () => handleMouseOver());
-        close.addEventListener('mouseout', () => handleMouseOut());
-        close.addEventListener('click', () => handleClick());
-
-        const handleClick = () => {
-            let gridItems = Array.from(document.querySelectorAll(".item"));
-            let isAnimating = false;
-
-            gridItems.forEach((gridItem, index) => {
-                gridItem.addEventListener("click", function () {
-                    if (isAnimating) return; // 애니메이션 중이라면 클릭 이벤트 무시
-                    isAnimating = true; // 애니메이션 시작
-                    let before = gridItems.slice(0, index).reverse();
-                    let after = gridItems.slice(index + 1); ``
-                    let outwardLinks = [];
-
-                    for (let i = 0; i < Math.max(before.length, after.length); i++) {
-                        if (before[i]) outwardLinks.push(before[i]);
-                        if (after[i]) outwardLinks.push(after[i]);
-                    }
-
-                    outwardLinks.unshift(gridItem);
-
-                    gsap.to($(".projectWrap").find(".char"), {
-                        yPercent: 300,
-                        duration: 1.2,
-                        stagger: { amount: 0.3 },
-                    })
-                    gsap.fromTo(
-                        ".text-reg",
-                        {
-                            opacity: 1,
-                            yPercent: 0
-                        },
-                        {
-                            opacity: 0,
-                            yPercent: 50,
-                            duration: 0.6,
-                            ease: "power4.inOut",
-                            onComplete: () => {
-                                gsap.set(outwardLinks, { padding: 0 });
-                            }
-                        }
-                    );
-                    gsap.fromTo(
-                        ".line-reg",
-                        {
-                            opacity: 1,
-                        },
-                        {
-                            yPercent: 10,
-                            opacity: 0,
-                            duration: 0.6,
-                            ease: "power4.inOut",
-                            onComplete: () => {
-                                gsap.set(outwardLinks, { padding: 0 });
-                            }
-                        }
-                    );
-                    gsap.fromTo(
-                        outwardLinks,
-                        {
-                            height: "100%"
-                        },
-                        {
-                            height: "0%",
-                            stagger: { amount: 0.2 },
-                            ease: "power4.inOut",
-                            onComplete: () => {
-                                navigate('/');
-                                isAnimating = false;
-                            }
-                        }
-                    );
-                });
-            });
-        };
-
-
-        // link hover
-        $(".link div").on("mouseover", function () {
-            const index = $(this).index(); // 현재 요소의 인덱스를 계산
-            linkMouseOver(index); // 인덱스를 함수에 전달
-        });
-
-        function linkMouseOver(index) {
-            const a = $(".link div").eq(index);
-
-            a.find(".char").each(function (i) {
-                gsap.fromTo(this, {
-                    yPercent: 0,
-                }, {
-                    yPercent: -165,
-                    stagger: { amount: 0.4 },
-                    delay: i * 0.05,
-                    overwrite: true,
-                });
-            });
-        }
-
-
-        $(".link div").on("mouseout", function () {
-            const index = $(this).index(); // 현재 요소의 인덱스를 계산
-            linkMouseOut(index); // 인덱스를 함수에 전달
-        });
-
-        function linkMouseOut(index) {
-            const a = $(".link div").eq(index);
-
-            a.find(".char").each(function (index) {
-                gsap.set(this, {
-                    yPercent: 0,
-                    duration: 0.6,
-                    ease: "power4.inOut",
-                    overwrite: true
-                });
-            });
-        }
-
-
-        const handleMouseOver = () => {
-            // 이벤트가 발생한 요소의 인덱스를 찾음
-            const index = $(this).index();
-
-            // 해당 인덱스의 .item을 선택
-            const item = $(".item").eq(index);
-
-            item.find(".text-reg .char").each(function (i) {
-                gsap.fromTo(this, {
-                    yPercent: 0,
-                }, {
-                    yPercent: -100,
-                    stagger: { amount: 0.4 },
-                    delay: i * 0.05,
-                    overwrite: true,
-                });
-            })
-        };
-
-        const handleMouseOut = () => {
-            // 이벤트가 발생한 요소의 인덱스를 찾음
-            const index = $(this).index();
-
-            // 해당 인덱스의 .item을 선택
-            const item = $(".item").eq(index);
-
-            // 선택한 .item 내의 모든 .char 요소를 찾아서 각각에 대해 원래 위치로 돌아가는 애니메이션 적용
-            item.find(".text-reg .char").each(function () {
-                gsap.set(this, {
-                    yPercent: 0,
-                    duration: 0.6,
-                    ease: "power4.inOut",
-                    overwrite: true
-                });
-            });
-        };
 
     }, []);
 
-
+    useLoad();
+    useClose();
 
     return (
-        <div id='projectSection'>
-
-            <div className="projectWrap">
-                <div className="project">
+        <div id='section' className='project'>
+            <div className="textWrap-tit">
+                <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        TEAM PROJECT
+                        PROJECT
                     </h1>
                 </div>
             </div>
 
-            <div className="project_grid">
+            <div className="main_grid">
 
                 <div className="item">
                     <div className="split_text_clip">
@@ -338,7 +130,7 @@ const Teamreact = () => {
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <div className="item__bg"></div>
+                    <a href='' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -346,7 +138,7 @@ const Teamreact = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <div className="item__bg"></div>
+                    <a href='' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className='close item'>
@@ -360,6 +152,7 @@ const Teamreact = () => {
                     </div>
                     <div className="item__bg"></div>
                 </div>
+
             </div>
         </div>
     )
