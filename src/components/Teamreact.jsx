@@ -24,7 +24,7 @@ const Teamreact = () => {
             scaleX: 0,
             opacity: 0,
         });
-        gsap.set("#aboutSection", {
+        gsap.set("#projectSection", {
             display: "none",
         });
         gsap.set(".item", {
@@ -40,26 +40,26 @@ const Teamreact = () => {
         gsap.set($(".line_text_clip").find(".line"), {
             opacity: 0,
         });
-        gsap.set("#aboutSection", {
+        gsap.set("#projectSection", {
             display: "grid",
         });
         gsap.defaults({
             ease: "power3.inOut",
             duration: 0.8,
         });
-        gsap.set(".about", {
+        gsap.set(".project", {
             display: "grid",
         });
 
-        gsap.set($(".about").find(".char"), {
+        gsap.set($(".project").find(".char"), {
             yPercent: 150,
         });
 
-        gsap.set($(".goback").find(".char"), {
+        gsap.set($(".close").find(".char"), {
             yPercent: 100,
         });
         // 로드 시 
-        gsap.to($(".about").find(".char"), {
+        gsap.to($(".project").find(".char"), {
             yPercent: 1,
             duration: 1,
             stagger: { amount: 0.3 },
@@ -100,11 +100,11 @@ const Teamreact = () => {
             },
         });
 
-        const goback = document.querySelector(".goback");
+        const close = document.querySelector(".close");
 
-        goback.addEventListener('mouseover', () => handleMouseOver());
-        goback.addEventListener('mouseout', () => handleMouseOut());
-        goback.addEventListener('click', () => handleClick());
+        close.addEventListener('mouseover', () => handleMouseOver());
+        close.addEventListener('mouseout', () => handleMouseOut());
+        close.addEventListener('click', () => handleClick());
 
         const handleClick = () => {
             let gridItems = Array.from(document.querySelectorAll(".item"));
@@ -125,7 +125,7 @@ const Teamreact = () => {
 
                     outwardLinks.unshift(gridItem);
 
-                    gsap.to($(".aboutWrap").find(".char"), {
+                    gsap.to($(".projectWrap").find(".char"), {
                         yPercent: 300,
                         duration: 1.2,
                         stagger: { amount: 0.3 },
@@ -264,17 +264,17 @@ const Teamreact = () => {
 
 
     return (
-        <div id='aboutSection'>
+        <div id='projectSection'>
 
-            <div className="aboutWrap">
-                <div className="about">
+            <div className="projectWrap">
+                <div className="project">
                     <h1 text-split="" className="LoadingText">
                         TEAM PROJECT
                     </h1>
                 </div>
             </div>
 
-            <div className="about_grid">
+            <div className="project_grid">
 
                 <div className="item">
                     <div className="split_text_clip">
@@ -285,23 +285,13 @@ const Teamreact = () => {
                 </div>
 
                 <div className="exp">
-                    <div className="split_text_clip Bigger">
+                    <div className="split_text_clip">
                         <p text-split="" className="text-reg">저의 포트폴리오에 오신 것을 환영합니다.</p>
                     </div>
                 </div>
 
                 <div className="item photo">
                     <img className='photo_img' src={img} alt="wy" />
-                    <div className='link'>
-                        <div className="split_text_clip">
-                            <a href='https://github.com/elese0821/elese0821' target='blank' text-split="">GITHUB</a>
-                            <a href='https://github.com/elese0821/elese0821' target='blank' text-split="">GITHUB</a>
-                        </div>
-                        <div className="split_text_clip">
-                            <a href='https://github.com/elese0821/elese0821' target='blank' text-split="">CODE</a>
-                            <a href='https://github.com/elese0821/elese0821' target='blank' text-split="">CODE</a>
-                        </div>
-                    </div>
                     <div className="item__bg"></div>
                 </div>
 
@@ -332,7 +322,7 @@ const Teamreact = () => {
 
                 <div className="item desc_02">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">ABOUT ME</p>
+                        <p text-split="" className="text-reg">project ME</p>
                     </div>
                     <div className="line_text_clip">
                         <p line-split="" className="line-reg">
@@ -343,7 +333,23 @@ const Teamreact = () => {
                     <div className="item__bg"></div>
                 </div>
 
-                <div className='goback item'>
+                <div className="item">
+                    <div className="split_text_clip">
+                        <p text-split="" className="text-reg">CODE</p>
+                        <p text-split="" className="text-reg">CODE</p>
+                    </div>
+                    <div className="item__bg"></div>
+                </div>
+
+                <div className="item">
+                    <div className="split_text_clip">
+                        <p text-split="" className="text-reg">VIEW</p>
+                        <p text-split="" className="text-reg">VIEW</p>
+                    </div>
+                    <div className="item__bg"></div>
+                </div>
+
+                <div className='close item'>
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
                             CLOSE

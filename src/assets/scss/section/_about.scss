@@ -6,7 +6,8 @@
     z-index: 100;
     padding: 1.5rem;
 
-    .goback {
+
+    .close {
         display: flex;
         align-items: flex-end;
         padding: 1.5rem;
@@ -45,43 +46,15 @@
             flex-direction: column;
         }
 
-        &.goback {
+        &.close {
             cursor: pointer;
         }
 
 
-        .line_text_clip {
-            padding: 0.5rem 0;
-            letter-spacing: 0.03rem;
 
-            .line-reg {
-                font-family: var(--fontKor1);
-                font-size: 0.97rem;
-                line-height: 1.6;
-            }
-        }
-
-        .item__bg {
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            top: 0%;
-            bottom: 0%;
-            left: 0%;
-            right: 0%;
-            transform-origin: 50% 100%;
-            padding: 1.5rem;
-            display: flex;
-            position: absolute;
-            overflow: hidden;
-            backdrop-filter: blur(16px);
-            transition: all 1s;
-            background-color: rgba(255, 255, 255, .08);
-            transition: cubic-bezier(0.075, 0.82, 0.165, 1) background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
     }
 
-    .aboutWrap {
+    .textWrap-tit {
         position: absolute;
     }
 
@@ -155,25 +128,10 @@
         @media (max-width:1000px) {}
 
 
-        .about_tit {}
-
-        .exp {
-            min-height: 5rem;
-
-            >div {
-                p {
-                    span {
-                        font-family: var(--fontKor);
-                    }
-                }
-
-            }
-        }
 
         .photo {
             overflow: hidden;
             padding: 0;
-            filter: saturate(2);
             opacity: 0.95;
 
             img {
@@ -187,7 +145,7 @@
 
     }
 
-    .aboutWrap {
+    .textWrap-tit {
         z-index: 300002;
         justify-content: center;
         align-items: center;
@@ -198,14 +156,17 @@
         transform: translate(-50%, -50%);
         overflow: hidden;
         z-index: -1;
-        font-family: var(--subfontEng);
 
-        .about {
+        .title-text {
             white-space: nowrap;
             flex: none;
             overflow: hidden;
             font-size: 8vw;
             line-height: 1.5;
+
+            h1 {
+                font-family: var(--subfontEng);
+            }
         }
     }
 
@@ -221,13 +182,5 @@
     }
 
 
-    .split_text_clip {
-        &.Bigger {
-            .text-reg {
-                font-size: 1.1rem;
-            }
 
-            height: 1.4rem;
-        }
-    }
 }

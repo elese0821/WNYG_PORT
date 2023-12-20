@@ -336,7 +336,7 @@ const Contact = () => {
                 </div>
 
                 <div className="exp">
-                    <div className="split_text_clip Bigger">
+                    <div className="split_text_clip">
                         <p text-split="" className="text-reg">저의 포트폴리오에 오신 것을 환영합니다.</p>
                     </div>
                 </div>
@@ -352,6 +352,7 @@ const Contact = () => {
                     </div>
                     <div className="item__bg"></div>
                 </div>
+
 
                 <div className='item contLinkWrap'>
                     <div className="contact_links">

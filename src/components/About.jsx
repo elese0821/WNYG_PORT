@@ -3,8 +3,11 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import SplitType from 'split-type';
 import { useNavigate } from 'react-router-dom';
+import useLoad from '../hook/useLoad'
 
 const About = () => {
+    useLoad();
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -16,6 +19,7 @@ const About = () => {
             types: 'lines',
             tagName: 'span',
         });
+
 
         // setting 
         gsap.set(".photo_img", {
@@ -29,7 +33,7 @@ const About = () => {
             scaleY: 0,
         });
         gsap.set($(".exp").find(".char"), {
-            yPercent: 100,
+            yPercent: 120,
         });
         gsap.set($(".item").find(".char"), {
             yPercent: 100,
@@ -45,65 +49,24 @@ const About = () => {
             ease: "power3.inOut",
             duration: 0.8,
         });
-        gsap.set(".about", {
+        gsap.set(".title-text", {
             display: "grid",
         });
 
-        gsap.set($(".about").find(".char"), {
+        gsap.set($(".title-text").find(".char"), {
             yPercent: 150,
         });
 
-        gsap.set($(".goback").find(".char"), {
+        gsap.set($(".close").find(".char"), {
             yPercent: 100,
         });
 
-        // 로드 시 
-        gsap.to($(".about").find(".char"), {
-            yPercent: 1,
-            duration: 1,
-            stagger: { amount: 0.3 },
-            onComplete: function () {
-                gsap.delayedCall(0, function () {
-                    gsap.to(".item", {
-                        scaleY: 1,
-                        duration: 1,
-                        stagger: { amount: 0.2 },
-                    });
-                    gsap.to($(".item").find(".char"), {
-                        yPercent: 0,
-                        delay: 0.3,
-                        stagger: { amount: 0.3, from: "start" },
-                        onComplete: function () {
-                            gsap.to($(".item").find(".line"), {
-                                opacity: 1,
-                                delay: 0.3,
-                                stagger: { amount: 0.5, from: "start" },
-                            });
-                        }
-                    });
 
-                    gsap.to($(".exp").find(".char"), {
-                        yPercent: 0,
-                        delay: 0.3,
-                        stagger: { amount: 0.4, from: "start" },
-                        onComplete: function () {
-                            gsap.to(".photo_img", {
-                                duration: 1,
-                                opacity: 1,
-                                scaleX: 1,
-                            });
-                        }
-                    });
+        const close = document.querySelector(".close");
 
-                });
-            },
-        });
-
-        const goback = document.querySelector(".goback");
-
-        goback.addEventListener('mouseover', () => handleMouseOver());
-        goback.addEventListener('mouseout', () => handleMouseOut());
-        goback.addEventListener('click', () => handleClick());
+        close.addEventListener('mouseover', () => handleMouseOver());
+        close.addEventListener('mouseout', () => handleMouseOut());
+        close.addEventListener('click', () => handleClick());
 
         const handleClick = () => {
             let gridItems = Array.from(document.querySelectorAll(".item"));
@@ -124,7 +87,7 @@ const About = () => {
 
                     outwardLinks.unshift(gridItem);
 
-                    gsap.to($(".aboutWrap").find(".char"), {
+                    gsap.to($(".textWrap-tit").find(".char"), {
                         yPercent: 300,
                         duration: 1.2,
                         stagger: { amount: 0.3 },
@@ -223,9 +186,8 @@ const About = () => {
 
     return (
         <div id='aboutSection'>
-
-            <div className="aboutWrap">
-                <div className="about">
+            <div className="textWrap-tit">
+                <div className="title-text">
                     <h1 text-split="" className="LoadingText">
                         ABOUT
                     </h1>
@@ -243,7 +205,7 @@ const About = () => {
                 </div>
 
                 <div className="exp">
-                    <div className="split_text_clip Bigger">
+                    <div className="split_text_clip">
                         <p text-split="" className="text-reg">저의 포트폴리오에 오신 것을 환영합니다.</p>
                     </div>
                 </div>
@@ -291,7 +253,7 @@ const About = () => {
                     <div className="item__bg"></div>
                 </div>
 
-                <div className='goback item'>
+                <div className='close item'>
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
                             CLOSE

@@ -61,3 +61,11 @@ movie
 blog
 site
 contact
+
+
+
+<Route path='/teamphp' element={<Teamphp />} />
+<Route path='/youtube' element={<Youtube />} />
+<Route path='/movie' element={<Movie />} />
+<Route path='/blog' element={<Blog />} />
+<Route path='/site' element={<Site />} /> 

@@ -21,10 +21,9 @@
         height: 100%;
         font-size: 7vw;
         text-transform: uppercase;
-        font-weight: bold;
-        font-family: 'Bebas Neue';
         color: #fff;
         display: none;
+
 
         .main__gird {
             display: grid;
@@ -83,7 +82,9 @@
             }
 
             .item {
+
                 cursor: pointer;
+                font-family: var(--subfontEng);
 
                 .item__bg {
                     &:hover {
@@ -150,6 +151,7 @@
                 overflow: hidden;
                 font-size: 8vw;
                 line-height: 1.5;
+                font-family: var(--subfontEng);
             }
         }
 
@@ -178,6 +180,7 @@
                     letter-spacing: -0.2vw;
                     line-height: 1;
                     font-size: 18vw;
+                    font-family: var(--subfontEng);
 
                     @media (max-width:1000px) {
                         font-size: 24vw;

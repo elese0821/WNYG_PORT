@@ -39,11 +39,11 @@ const Stacks = () => {
             ease: "power3.inOut",
             duration: 0.8,
         });
-        gsap.set(".stack", {
+        gsap.set(".title-text", {
             display: "grid",
         });
 
-        gsap.set($(".stack").find(".char"), {
+        gsap.set($(".title-text").find(".char"), {
             yPercent: 150,
         });
 
@@ -53,7 +53,7 @@ const Stacks = () => {
 
 
         // 로드 시 
-        gsap.to($(".stack").find(".char"), {
+        gsap.to($(".title-text").find(".char"), {
             yPercent: 1,
             duration: 1,
             stagger: { amount: 0.3 },
@@ -105,7 +105,7 @@ const Stacks = () => {
 
                     outwardLinks.unshift(gridItem);
 
-                    gsap.to($(".stackWrap").find(".char"), {
+                    gsap.to($(".textWrap-tit").find(".char"), {
                         yPercent: 300,
                         duration: 1.2,
                         stagger: { amount: 0.3 },
@@ -204,8 +204,8 @@ const Stacks = () => {
 
     return (
         <div id='stackSection'>
-            <div className="stackWrap">
-                <div className="stack">
+            <div className="aboutWrap">
+                <div className="textWrap-tit">
                     <h1 text-split="" className="LoadingText">
                         USED STACK
                     </h1>
