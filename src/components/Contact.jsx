@@ -7,6 +7,25 @@ import { useNavigate } from 'react-router-dom';
 const Contact = () => {
     const navigate = useNavigate();
 
+    // ————— Type split
+    let splitText = new SplitType("[text-split]", {
+        types: "words, chars",
+        tagName: "span"
+    });
+
+    let typeSplit;
+    let lineSplit;
+    function runSplit() {
+        typeSplit = new SplitType(".higlighted-text", {
+            types: "lines, words, chars"
+        });
+        lineSplit = new SplitType("[split-lines]", {
+            types: "lines"
+        });
+    }
+    runSplit();
+
+
     useEffect(() => {
         new SplitType('[text-split]', {
             types: 'words, chars',
@@ -19,11 +38,7 @@ const Contact = () => {
 
 
         // setting 
-        gsap.set(".photo_img", {
-            scaleX: 0,
-            opacity: 0,
-        });
-        gsap.set("#aboutSection", {
+        gsap.set("#contactSection", {
             display: "none",
         });
         gsap.set(".item", {
@@ -33,34 +48,28 @@ const Contact = () => {
             yPercent: 100,
         });
         gsap.set($(".item").find(".char"), {
-            yPercent: 100,
+            yPercent: 150,
         });
-        // line
-        gsap.set($(".line_text_clip").find(".line"), {
-            opacity: 0,
-        });
-        gsap.set("#aboutSection", {
+        gsap.set("#contactSection", {
             display: "grid",
         });
         gsap.defaults({
             ease: "power3.inOut",
             duration: 0.8,
         });
-        gsap.set(".about", {
+        gsap.set(".contact", {
             display: "grid",
         });
 
-        gsap.set($(".about").find(".char"), {
+        gsap.set($(".contact").find(".char"), {
             yPercent: 150,
         });
 
-        gsap.set($(".goback").find(".char"), {
+        gsap.set($(".close").find(".char"), {
             yPercent: 100,
         });
-
-
         // 로드 시 
-        gsap.to($(".about").find(".char"), {
+        gsap.to($(".contact").find(".char"), {
             yPercent: 1,
             duration: 1,
             stagger: { amount: 0.3 },
@@ -75,43 +84,32 @@ const Contact = () => {
                         yPercent: 0,
                         delay: 0.3,
                         stagger: { amount: 0.3, from: "start" },
-                        onComplete: function () {
-                            gsap.to($(".item").find(".line"), {
-                                opacity: 1,
-                                delay: 0.3,
-                                stagger: { amount: 0.5, from: "start" },
-                            });
-                        }
                     });
 
                     gsap.to($(".exp").find(".char"), {
                         yPercent: 0,
                         delay: 0.3,
                         stagger: { amount: 0.4, from: "start" },
-                        onComplete: function () {
-                            gsap.to(".photo_img", {
-                                duration: 1,
-                                opacity: 1,
-                                scaleX: 1,
-                            });
-                        }
                     });
 
                 });
             },
         });
 
-        const goback = document.querySelector(".goback");
+        const close = document.querySelector(".close");
 
-        goback.addEventListener('mouseover', () => handleMouseOver());
-        goback.addEventListener('mouseout', () => handleMouseOut());
-        goback.addEventListener('click', () => handleClick());
+        close.addEventListener('mouseover', () => handleMouseOver());
+        close.addEventListener('mouseout', () => handleMouseOut());
+        close.addEventListener('click', () => handleClick());
 
         const handleClick = () => {
             let gridItems = Array.from(document.querySelectorAll(".item"));
+            let isAnimating = false;
 
             gridItems.forEach((gridItem, index) => {
                 gridItem.addEventListener("click", function () {
+                    if (isAnimating) return; // 애니메이션 중이라면 클릭 이벤트 무시
+                    isAnimating = true; // 애니메이션 시작
                     let before = gridItems.slice(0, index).reverse();
                     let after = gridItems.slice(index + 1); ``
                     let outwardLinks = [];
@@ -123,7 +121,7 @@ const Contact = () => {
 
                     outwardLinks.unshift(gridItem);
 
-                    gsap.to($(".aboutWrap").find(".char"), {
+                    gsap.to($(".contactWrap").find(".char"), {
                         yPercent: 300,
                         duration: 1.2,
                         stagger: { amount: 0.3 },
@@ -170,12 +168,54 @@ const Contact = () => {
                             ease: "power4.inOut",
                             onComplete: () => {
                                 navigate('/');
+                                isAnimating = false;
                             }
                         }
                     );
                 });
             });
         };
+
+
+        // link hover
+        $(".link div").on("mouseover", function () {
+            const index = $(this).index(); // 현재 요소의 인덱스를 계산
+            linkMouseOver(index); // 인덱스를 함수에 전달
+        });
+
+        function linkMouseOver(index) {
+            const a = $(".link div").eq(index);
+
+            a.find(".char").each(function (i) {
+                gsap.fromTo(this, {
+                    yPercent: 0,
+                }, {
+                    yPercent: -165,
+                    stagger: { amount: 0.4 },
+                    delay: i * 0.05,
+                    overwrite: true,
+                });
+            });
+        }
+
+
+        $(".link div").on("mouseout", function () {
+            const index = $(this).index(); // 현재 요소의 인덱스를 계산
+            linkMouseOut(index); // 인덱스를 함수에 전달
+        });
+
+        function linkMouseOut(index) {
+            const a = $(".link div").eq(index);
+
+            a.find(".char").each(function (index) {
+                gsap.set(this, {
+                    yPercent: 0,
+                    duration: 0.6,
+                    ease: "power4.inOut",
+                    overwrite: true
+                });
+            });
+        }
 
 
         const handleMouseOver = () => {
@@ -206,7 +246,7 @@ const Contact = () => {
 
             // 선택한 .item 내의 모든 .char 요소를 찾아서 각각에 대해 원래 위치로 돌아가는 애니메이션 적용
             item.find(".text-reg .char").each(function () {
-                gsap.to(this, {
+                gsap.set(this, {
                     yPercent: 0,
                     duration: 0.6,
                     ease: "power4.inOut",
@@ -215,27 +255,82 @@ const Contact = () => {
             });
         };
 
+
+        // ———— Staggered text links  
+        const staggerLinks = document.querySelectorAll("[stagger-link]");
+        staggerLinks.forEach((link) => {
+            link.addEventListener("mouseenter", function () {
+                const staggerText = this.querySelectorAll("[text-split] .char");
+                gsap.to(staggerText, {
+                    yPercent: -100,
+                    duration: 0.6,
+                    ease: "power4.inOut",
+                    stagger: { amount: 0.2 },
+                    delay: 0,
+                    overwrite: true
+                });
+                if (this.querySelector(".stagger-link__descender")) {
+                    gsap.fromTo(
+                        this.querySelector(".stagger-link__descender"), // target 추가
+                        { scaleY: 0 }, // 시작 상태
+                        {
+                            scaleY: 1,
+                            duration: 0.2,
+                            ease: "power4.inOut",
+                            delay: 0.2,
+                            overwrite: true
+                        }
+                    );
+                }
+
+                $(this).siblings().css("opacity", "0.5");
+            });
+            link.addEventListener("mouseleave", function () {
+                const staggerText = this.querySelectorAll("[text-split] .char");
+                gsap.set(staggerText, {
+                    yPercent: 0,
+                    overwrite: true
+                });
+                if (this.querySelector(".stagger-link__descender")) {
+                    gsap.fromTo(
+                        this.querySelector(".stagger-link__descender"), // target 추가
+                        { scaleY: 1 }, // 시작 상태
+                        {
+                            scaleY: 0, // 변경된 종료 상태
+                            duration: 0.4,
+                            ease: "power4.inOut",
+                            overwrite: true
+                        }
+                    );
+                }
+
+                $(this).siblings().css("opacity", "1");
+            });
+        });
+
+
+
     }, []);
 
 
 
     return (
-        <div id='aboutSection'>
+        <div id='contactSection'>
 
-            <div className="aboutWrap">
-                <div className="about">
+            <div className="contactWrap">
+                <div className="contact">
                     <h1 text-split="" className="LoadingText">
-                        Contact
+                        CONTACT
                     </h1>
                 </div>
             </div>
 
-            <div className="about_grid">
+            <div className="contact_grid">
 
-                <div className="item about_tit">
+                <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">ABOUT ME</div>
-                        <div text-split="" className="text-reg">ABOUT ME</div>
+                        <div text-split="" className="text-reg">CONTACT ME</div>
+                        <div text-split="" className="text-reg">CONTACT ME</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -246,33 +341,8 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="item photo">
-                    <img className='photo_img' src="https://images.unsplash.com/photo-1702221422565-60f734cd90b1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="wy" />
-                    <div className="item__bg"></div>
-                </div>
-
-                <div className="item desc_01">
+                <div className='close item'>
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">ABOUT ME</p>
-                    </div>
-                    <div className="line_text_clip">
-                        <p line-split="" className="line-reg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo sequi, officia commodi sed possimus soluta neque eaque? Nemo consectetur quo soluta facilis sequi cumque quam culpa ratione autem! Id, consequuntur!</p>
-                    </div>
-                    <div className="item__bg"></div>
-                </div>
-
-                <div className="item desc_02">
-                    <div className="split_text_clip">
-                        <p text-split="" className="text-reg">ABOUT</p>
-                    </div>
-                    <div className="line_text_clip">
-                        <p line-split="" className="line-reg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eligendi quam at ullam ratione fuga sapiente pariatur nulla nostrum, tenetur porro aut enim voluptas! Aliquam doloremque veniam excepturi asperiores officiis.</p>
-                    </div>
-                    <div className="item__bg"></div>
-                </div>
-
-                <div className='goback item'>
-                    <div className="split_text_clip backBtn">
                         <span text-split="" className="text-reg">
                             CLOSE
                         </span>
@@ -281,6 +351,24 @@ const Contact = () => {
                         </span>
                     </div>
                     <div className="item__bg"></div>
+                </div>
+
+                <div className='item contLinkWrap'>
+                    <div className="contact_links">
+                        <a stagger-link="" href="#" target='black' className='contactLink'>
+                            <div stagger="top" text-split="" className='stagger-contactLink'>github</div>
+                        </a>
+                        <a stagger-link="" href="#" target='black' className='contactLink'>
+                            <div className="stagger-link__descender"></div>
+                            <div stagger="top" text-split="" className='stagger-contactLink'>GITHUB</div>
+                        </a>
+                        <a stagger-link="" href="#" target='black' className='contactLink'>
+                            <div stagger="top" text-split="" className='stagger-contactLink'>GITHUB</div>
+                        </a>
+                        <a stagger-link="" href="#" target='black' className='contactLink'>
+                            <div stagger="top" text-split="" className='stagger-contactLink'>GITHUB</div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

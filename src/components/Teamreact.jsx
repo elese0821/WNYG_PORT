@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import SplitType from 'split-type';
 import { useNavigate } from 'react-router-dom';
+import img from '../assets/img/youtube.jpg'
 
 const Teamreact = () => {
     const navigate = useNavigate();
@@ -290,7 +291,7 @@ const Teamreact = () => {
                 </div>
 
                 <div className="item photo">
-                    <img className='photo_img' src="https://jammyup.bytechtree.com/stationery/2022/12/09/1670572580-14913719000" alt="wy" />
+                    <img className='photo_img' src={img} alt="wy" />
                     <div className='link'>
                         <div className="split_text_clip">
                             <a href='https://github.com/elese0821/elese0821' target='blank' text-split="">GITHUB</a>

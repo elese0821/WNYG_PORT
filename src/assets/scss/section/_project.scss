@@ -88,15 +88,15 @@
     .about_grid {
         display: grid;
         grid-template-areas:
-            "grid1 grid2 grid2 grid2 . grid7"
-            "grid3 grid3 grid3 grid3 grid4 grid4"
-            "grid3 grid3 grid3 grid3 grid4 grid4"
-            "grid3 grid3 grid3 grid3 grid4 grid4"
-            "grid3 grid3 grid3 grid3 grid5 grid5"
-            "grid3 grid3 grid3 grid3 . ."
-            "grid3 grid3 grid3 grid3 . ."
+            "grid1 grid2 grid2 . grid7"
+            "grid3 grid3 grid3 grid4 grid4"
+            "grid3 grid3 grid3 grid4 grid4"
+            "grid3 grid3 grid3 grid4 grid4"
+            "grid3 grid3 grid3 grid5 grid5"
+            "grid3 grid3 grid3 . ."
+            "grid3 grid3 grid3 . ."
         ;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(7, auto);
         grid-gap: 1.5rem;
 
@@ -168,14 +168,15 @@
         }
 
         .photo {
+
             overflow: hidden;
             padding: 0;
-            filter: saturate(2);
-            opacity: 0.95;
+            opacity: 0.98;
             align-items: flex-end;
 
             img {
-                height: 100%;
+                width: 100%;
+                position: relative;
                 object-fit: cover;
                 border-radius: 0.5rem;
                 position: absolute;
