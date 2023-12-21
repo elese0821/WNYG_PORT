@@ -2,46 +2,18 @@ import $ from 'jquery';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import useLoad from '../hook/useLoad'
+import useSet from '../hook/useSet'
 import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
 
+
 const Contact = () => {
     useSplitType();
+    useSet()
+    useLoad();
+    useClose();
 
     useEffect(() => {
-
-        // setting 
-        gsap.set("#contactSection", {
-            display: "none",
-        });
-        gsap.set(".item", {
-            scaleY: 0,
-        });
-        gsap.set($(".exp").find(".char"), {
-            yPercent: 100,
-        });
-        gsap.set($(".item").find(".char"), {
-            yPercent: 150,
-        });
-        gsap.set("#contactSection", {
-            display: "grid",
-        });
-        gsap.defaults({
-            ease: "power3.inOut",
-            duration: 0.8,
-        });
-        gsap.set(".contact", {
-            display: "grid",
-        });
-
-        gsap.set($(".contact").find(".char"), {
-            yPercent: 150,
-        });
-
-        gsap.set($(".close").find(".char"), {
-            yPercent: 100,
-        });
-
         // link hover
         $(".link div").on("mouseover", function () {
             const index = $(this).index(); // 현재 요소의 인덱스를 계산
@@ -63,7 +35,6 @@ const Contact = () => {
             });
         }
 
-
         $(".link div").on("mouseout", function () {
             const index = $(this).index(); // 현재 요소의 인덱스를 계산
             linkMouseOut(index); // 인덱스를 함수에 전달
@@ -72,7 +43,7 @@ const Contact = () => {
         function linkMouseOut(index) {
             const a = $(".link div").eq(index);
 
-            a.find(".char").each(function (index) {
+            a.find(".char").each(function () {
                 gsap.set(this, {
                     yPercent: 0,
                     duration: 0.6,
@@ -81,7 +52,6 @@ const Contact = () => {
                 });
             });
         }
-
 
         // ———— Staggered text links  
         const staggerLinks = document.querySelectorAll("[stagger-link]");
@@ -134,11 +104,7 @@ const Contact = () => {
                 $(this).siblings().css("opacity", "1");
             });
         });
-
     }, []);
-
-    useLoad();
-    useClose();
 
     return (
         <div id='section' className='contact'>
@@ -146,10 +112,11 @@ const Contact = () => {
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        CONTACT ME
+                        Contact me
                     </h1>
                 </div>
             </div>
+
 
             <div className="main_grid">
 
@@ -167,6 +134,27 @@ const Contact = () => {
                     </div>
                 </div>
 
+
+                <div className='item contLinkWrap'>
+                    <a href="mailto:elese0821@naver.com">elese0821@naver.com</a>
+
+
+                    <div className="contact_links">
+                        <a stagger-link="" href="#" target='black' className='contactLink'>
+                            <div stagger="top" text-split="" className='stagger-contactLink'>
+                                E-mail
+                            </div>
+                        </a>
+                        <a stagger-link="" href="#" target='black' className='contactLink'>
+                            <div className="stagger-link__descender"></div>
+                            <div stagger="top" text-split="" className='stagger-contactLink'>Kakao</div>
+                        </a>
+                        <a stagger-link="" href="#" target='black' className='contactLink'>
+                            <div stagger="top" text-split="" className='stagger-contactLink'>Github</div>
+                        </a>
+                    </div>
+                </div>
+
                 <div className='close item'>
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
@@ -179,26 +167,8 @@ const Contact = () => {
                     <div className="item__bg"></div>
                 </div>
 
-
-                <div className='item contLinkWrap'>
-                    <div className="contact_links">
-                        <a stagger-link="" href="#" target='black' className='contactLink'>
-                            <div stagger="top" text-split="" className='stagger-contactLink'>github</div>
-                        </a>
-                        <a stagger-link="" href="#" target='black' className='contactLink'>
-                            <div className="stagger-link__descender"></div>
-                            <div stagger="top" text-split="" className='stagger-contactLink'>GITHUB</div>
-                        </a>
-                        <a stagger-link="" href="#" target='black' className='contactLink'>
-                            <div stagger="top" text-split="" className='stagger-contactLink'>GITHUB</div>
-                        </a>
-                        <a stagger-link="" href="#" target='black' className='contactLink'>
-                            <div stagger="top" text-split="" className='stagger-contactLink'>GITHUB</div>
-                        </a>
-                    </div>
-                </div>
             </div>
-        </div>
+        </div >
     )
 }
 

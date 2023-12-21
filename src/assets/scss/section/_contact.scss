@@ -2,6 +2,13 @@
     .contLinkWrap {
         justify-content: flex-end;
         padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        a {
+            font-size: 5rem;
+        }
 
         .contact_links {
             display: flex;
@@ -14,13 +21,10 @@
                 position: relative;
                 opacity: 1;
                 overflow: hidden;
-                height: 3.5rem;
-                font-size: 3.5rem;
-                text-transform: capitalize;
+                height: 5rem;
+                font-size: 5rem;
                 font-weight: 300;
                 text-shadow: 0em 1em 0px #fff;
-
-                .stagger-contactLink {}
             }
         }
     }
@@ -41,12 +45,12 @@
 
         @media(max-with: 1100px) {
             grid-template-areas:
-                "grid1 grid2 grid2 . grid3"
+                "grid1 grid2 grid2 . grid4"
                 ". . . . ."
                 ". . . . ."
                 ". . . . ."
                 ". . . . ."
-                "grid4 grid4 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid3 grid3"
             ;
         }
 
@@ -60,18 +64,14 @@
                 grid-area: grid2;
                 display: flex;
                 align-items: flex-end;
-
-                .item__bg {
-                    background-color: transparent;
-                }
             }
 
             &:nth-child(3) {
-                grid-area: grid3;
+                grid-area: grid4;
             }
 
             &:nth-child(4) {
-                grid-area: grid4;
+                grid-area: grid3;
             }
         }
 

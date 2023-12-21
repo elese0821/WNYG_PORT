@@ -2,9 +2,9 @@ import React from 'react';
 import useLoad from '../hook/useLoad'
 import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
-import useSet from '../hook/useSet';
+import useSet from '../hook/useSet'
 
-const Teamreact = () => {
+const Youtube = () => {
     useSplitType();
     useSet();
     useLoad();
@@ -24,8 +24,8 @@ const Teamreact = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">TEAM PROJECT</div>
-                        <div text-split="" className="text-reg">TEAM PROJECT</div>
+                        <div text-split="" className="text-reg">YOUTUBE PROJECT</div>
+                        <div text-split="" className="text-reg">YOUTUBE PROJECT</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -78,7 +78,6 @@ const Teamreact = () => {
                     <div className="item__bg"></div>
                 </div>
 
-
                 <div className="item">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">CODE</p>
@@ -112,4 +111,4 @@ const Teamreact = () => {
     )
 }
 
-export default Teamreact
+export default Youtube

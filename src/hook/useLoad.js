@@ -26,38 +26,36 @@ const Load = () => {
                     gsap.to($(".exp").find(".char"), {
                         yPercent: 0,
                         stagger: { amount: 0.4, from: "start" },
-                        onComplete: animatePhotoImg // 다음 애니메이션 함수 호출
+                        onComplete: animatePhotoImg
                     });
                 } else {
-                    animatePhotoImg(); // .exp가 없으면 바로 다음 함수 호출
+                    animatePhotoImg();
                 }
             },
         });
 
-        // .photo_img 애니메이션을 별도의 함수로 정의
         function animatePhotoImg() {
-            if ($(".photo_img").length) {
-                gsap.to(".photo_img", {
-                    duration: 0.7,
+            if ($(".photo").length) {
+                gsap.to(".photo", {
+                    duration: 1,
                     opacity: 1,
-                    scaleX: 1,
-                    onComplete: animateLine // 다음 애니메이션 함수 호출
+                    scale: 1,
+                    onComplete: animateLine,
                 });
             } else {
-                animateLine(); // .photo_img가 없으면 바로 다음 함수 호출
+                animateLine();
             }
         }
 
-        // .line 애니메이션을 별도의 함수로 정의
         function animateLine() {
             if ($(".item").find(".line").length) {
                 gsap.to($(".item").find(".line"), {
-                    opacity: 1,
-                    delay: 0.3,
-                    stagger: { amount: 0.5, from: "start" },
+                    opacity: 0.85,
+                    stagger: { amount: 0.2, from: "start" },
                 });
             }
         }
+
     }, []);
 }
 

@@ -2,9 +2,9 @@ import React from 'react';
 import useLoad from '../hook/useLoad'
 import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
-import useSet from '../hook/useSet';
+import useSet from '../hook/useSet'
 
-const Teamreact = () => {
+const Movie = () => {
     useSplitType();
     useSet();
     useLoad();
@@ -24,8 +24,8 @@ const Teamreact = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">TEAM PROJECT</div>
-                        <div text-split="" className="text-reg">TEAM PROJECT</div>
+                        <div text-split="" className="text-reg">MOVIE PROJECT</div>
+                        <div text-split="" className="text-reg">MOVIE PROJECT</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -37,7 +37,7 @@ const Teamreact = () => {
                 </div>
 
                 <div className="item photo">
-                    <div className="item__bg pj01_img"></div>
+                    <div className="item__bg pj04_img"></div>
                 </div>
 
                 <div className="item desc_01">
@@ -112,4 +112,4 @@ const Teamreact = () => {
     )
 }
 
-export default Teamreact
+export default Movie

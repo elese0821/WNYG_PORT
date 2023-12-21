@@ -1,27 +1,31 @@
 .project {
 
     .main_grid {
+
         display: grid;
         grid-template-areas:
-            "grid1 grid2 grid2 grid2 . grid8"
+            "grid1 grid2 grid2 grid2 . grid9"
             "grid3 grid3 grid3 grid3 grid4 grid4"
             "grid3 grid3 grid3 grid3 grid5 grid5"
-            "grid3 grid3 grid3 grid3 grid6 grid7"
+            "grid3 grid3 grid3 grid3 grid6 grid6"
+            "grid3 grid3 grid3 grid3 grid7 grid8"
         ;
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 1fr 4fr 2fr 2fr;
+        grid-template-rows: repeat(5, auto);
         grid-gap: 1.5rem;
 
         @media(max-with: 1100px) {
             grid-template-areas:
-                "grid1 grid2 grid2 grid2 . grid8"
+                "grid1 grid2 grid2 grid2 . grid9"
                 "grid3 grid3 grid3 grid3 grid4 grid4"
                 "grid3 grid3 grid3 grid3 grid5 grid5"
-                "grid3 grid3 grid3 grid3 grid6 grid7"
+                "grid3 grid3 grid3 grid3 grid6 grid6"
+                "grid3 grid3 grid3 grid3 grid7 grid8"
             ;
         }
 
         >div {
+
             &:nth-child(1) {
                 grid-area: grid1;
                 align-items: flex-end;
@@ -32,7 +36,6 @@
                 display: flex;
                 align-items: flex-end;
 
-
                 .item__bg {
                     background-color: transparent;
                 }
@@ -42,7 +45,19 @@
                 grid-area: grid3;
 
                 .item__bg {
-                    background-color: transparent;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    opacity: 0.95;
+
+                    &.pj01_img {
+                        background-image: url(../img/youtube.jpg);
+                    }
+
+                    &.pj04_img {
+                        background-image: url(../img/movie.jpg);
+                    }
+
                 }
             }
 
@@ -68,7 +83,9 @@
                 grid-area: grid8;
             }
 
-
+            &:nth-child(9) {
+                grid-area: grid9;
+            }
 
         }
 

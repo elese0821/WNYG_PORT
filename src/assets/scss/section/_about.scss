@@ -37,18 +37,21 @@
                 grid-area: grid2;
                 display: flex;
                 align-items: flex-end;
-
-
-                .item__bg {
-                    background-color: transparent;
-                }
             }
 
             &:nth-child(3) {
                 grid-area: grid3;
 
                 .item__bg {
-                    background-color: transparent;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    opacity: 0.95;
+
+                    &.about_img {
+                        background-image: url(../img/youtube.jpg);
+                    }
+
                 }
             }
 

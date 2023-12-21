@@ -38,20 +38,25 @@
     .item {
 
         &.desc_01,
-        &.desc_02 {
+        &.desc_02,
+        &.desc_03,
+        &.desc_04 {
             flex-direction: column;
         }
 
         &.close {
             cursor: pointer;
+            align-items: flex-end;
+
         }
 
         .line_text_clip {
             padding: 0.5rem 0;
             letter-spacing: 0.03rem;
+            font-family: sans-serif;
 
             .line-reg {
-                font-family: var(--fontKor1);
+                font-family: var(--fontKor1) !important;
                 font-size: 0.97rem;
                 line-height: 1.6;
             }
@@ -87,20 +92,6 @@
                 font-family: var(--subfontEng);
             }
         }
-    }
-
-    .photo {
-        overflow: hidden;
-        padding: 0;
-        opacity: 0.95;
-
-        img {
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0.5rem;
-            position: absolute;
-        }
-
     }
 
     .textWrap-tit {
@@ -166,7 +157,7 @@
         font-family: var(--subfontEng);
         font-size: 1.1rem;
         line-height: 1;
-        letter-spacing: .05rem;
+        letter-spacing: .08rem;
     }
 }
 
@@ -204,7 +195,7 @@
         backdrop-filter: blur(16px);
         transition: all 1s;
         background-color: rgba(255, 255, 255, .08);
-        transition: cubic-bezier(0.075, 0.82, 0.165, 1) background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 
         &.hover_effect {
             &:hover {
