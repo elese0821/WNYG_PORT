@@ -1,26 +1,27 @@
 .project {
 
     .main_grid {
-
         display: grid;
         grid-template-areas:
-            "grid1 grid2 grid2 grid2 . grid9"
-            "grid3 grid3 grid3 grid3 grid4 grid4"
-            "grid3 grid3 grid3 grid3 grid5 grid5"
-            "grid3 grid3 grid3 grid3 grid6 grid6"
-            "grid3 grid3 grid3 grid3 grid7 grid8"
+            "grid1 grid2 grid2 grid2 . . .grid8"
+            "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
+            "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
+            "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
+            "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
+            "grid3 grid3 grid3 grid3 grid3 grid3 grid6 grid7"
         ;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(5, auto);
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(6, 1fr);
         grid-gap: 1.5rem;
 
         @media(max-with: 1100px) {
             grid-template-areas:
-                "grid1 grid2 grid2 grid2 . grid9"
-                "grid3 grid3 grid3 grid3 grid4 grid4"
-                "grid3 grid3 grid3 grid3 grid5 grid5"
-                "grid3 grid3 grid3 grid3 grid6 grid6"
-                "grid3 grid3 grid3 grid3 grid7 grid8"
+                "grid1 grid2 grid2 grid2 . . .grid8"
+                "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
+                "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
+                "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
+                "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
+                "grid3 grid3 grid3 grid3 grid3 grid3 grid6 grid7"
             ;
         }
 
@@ -68,7 +69,6 @@
 
             &:nth-child(5) {
                 grid-area: grid5;
-
             }
 
             &:nth-child(6) {
@@ -81,10 +81,6 @@
 
             &:nth-child(8) {
                 grid-area: grid8;
-            }
-
-            &:nth-child(9) {
-                grid-area: grid9;
             }
 
         }
