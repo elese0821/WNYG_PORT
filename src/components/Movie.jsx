@@ -24,8 +24,8 @@ const Movie = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">MOVIE PROJECT</div>
-                        <div text-split="" className="text-reg">MOVIE PROJECT</div>
+                        <div text-split="" className="text-reg">TEAM PROJECT</div>
+                        <div text-split="" className="text-reg">TEAM PROJECT</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -59,20 +59,7 @@ const Movie = () => {
                     <div className="line_text_clip">
                         <p line-split="" className="line-reg">
                             Postman: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 YouTube API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
-                            GitHub: 코드 버전 관리와 협업을 위한 중심 허브로 활용되었습니다. 프로젝트의 소스 코드는 GitHub에 저장되어 지속적인 개발과 유지보수가 이루어졌습니다.
-                        </p>
-                    </div>
-                    <div className="item__bg"></div>
-                </div>
 
-                <div className="item desc_03">
-                    <div className="split_text_clip">
-                        <p text-split="" className="text-reg">FRAMEWORK</p>
-                    </div>
-                    <div className="line_text_clip">
-                        <p line-split="" className="line-reg">
-                            Postman: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 YouTube API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
-                            GitHub: 코드 버전 관리와 협업을 위한 중심 허브로 활용되었습니다. 프로젝트의 소스 코드는 GitHub에 저장되어 지속적인 개발과 유지보수가 이루어졌습니다.
                         </p>
                     </div>
                     <div className="item__bg"></div>
