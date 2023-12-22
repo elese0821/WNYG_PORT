@@ -8,8 +8,8 @@
             "grid3 grid3 grid3 grid3 grid4 grid4"
             "grid3 grid3 grid3 grid3 grid4 grid4"
             "grid3 grid3 grid3 grid3 grid5 grid5"
-            "grid3 grid3 grid3 grid3 . ."
-            "grid3 grid3 grid3 grid3 . ."
+            "grid3 grid3 grid3 grid3 grid5 grid5"
+            "grid3 grid3 grid3 grid3 grid5 grid5"
         ;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(7, auto);
@@ -23,7 +23,7 @@
                 "grid3 grid3 grid3 grid3 grid4 grid4"
                 "grid3 grid3 grid3 grid3 grid5 grid5"
                 "grid3 grid3 grid3 grid3 grid5 grid5"
-                "grid3 grid3 grid3 grid3 . ."
+                "grid3 grid3 grid3 grid3 grid5 grid5"
             ;
         }
 

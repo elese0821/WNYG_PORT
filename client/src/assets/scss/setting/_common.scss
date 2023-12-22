@@ -178,7 +178,6 @@
     justify-content: flex-start;
     display: flex;
     position: relative;
-    overflow: hidden;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     .item__bg {
@@ -248,10 +247,10 @@
     margin-top: 0.35rem;
     font-family: var(--fontKor);
     overflow: auto;
+    height: calc(100% - 20px);
 
     &::-webkit-scrollbar {
         display: none;
-        /* 스크롤바 숨기기 */
     }
 
     li {
