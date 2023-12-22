@@ -5,14 +5,10 @@
 (https://movie-project-ecru.vercel.app/)
 (https://youtube-project-nine.vercel.app/)
 
+git config --global core.autocrlf true
 
 # 시작하기
 1. npm create vite@latest
-
-git config --global core.autocrlf true
-
-user-select: none;
-
 
 # 설치
 - client
@@ -238,10 +234,3 @@ npm install react-avatar 명령은 React 애플리케이션에서 사용할 수 
 "react-avatar" 라이브러리를 사용하면 개발자들은 사용자 프로필 이미지, 그룹 아바타, 댓글 작성자의 이미지 등과 같은 아바타 이미지를 생성하고 표시하는 데 도움을 받을 수 있습니다. 이 라이브러리를 사용하면 이미지 크기, 모양, 색상 등을 설정할 수 있는 많은 옵션이 제공됩니다.
 
 예를 들어, 다음과 같이 "react-avatar"를 사용하여 프로필 이미지를 생성할 수 있습니다:
-=======
-<Route path='/teamphp' element={<Teamphp />} />
-<Route path='/youtube' element={<Youtube />} />
-<Route path='/movie' element={<Movie />} />
-<Route path='/blog' element={<Blog />} />
-<Route path='/site' element={<Site />} /> 
->>>>>>> 405b78047b99249b8da3e8c2fb59e83e22986dee
