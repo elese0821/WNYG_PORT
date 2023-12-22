@@ -68,11 +68,101 @@ npm install multer-s3@2.10.0 --save;
 `rm -rf .git`   
 `git rm --cached . -rf`# simple300   
 
+## 미리보기
+[https://portfolio-won.vercel.app/]
+git config --global core.autocrlf true
+## GSAP
+```
+const appHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+};
+window.addEventListener("resize", appHeight);
+appHeight();
+window.addEventListener("DOMContentLoaded", (event) => {
+    appHeight();
+});
+```
+- gsap.registerPlugin(ScrollTrigger);: 플러그인 등록
+- const appHeight = () => { ... }: 화면의 높이를 측정하여 CSS 변수 --app-height에 반영하는 함수 브라우저 창 크기 조절 시 이 함수를 통해 뷰포트의 높이를 업데이트
+- window.addEventListener("resize", appHeight);: 브라우저 창 크기가 조절될 때마다 appHeight 함수를 호출하여 뷰포트 높이를 업데이트합니다.
+- window.addEventListener("DOMContentLoaded", (event) => { ... });: 문서가 로드될 때 appHeight 함수를 호출하여 초기 뷰포트 높이를 설정합니다.
+```
+("use strict"); // 엄격모드
+```
+## Lenis (라이브러리)
+
+Lenis는 스크롤 동작을 조정하기 위한 라이브러리입니다.
+페이지 내 스크롤 동작을 Lenis 객체를 통해 다룹니다. 예를 들어, 사용자가 [data-lenis-toggle] 속성을 가진 요소를 클릭하면 스크롤을 멈추거나 시작하는 기능을 제어합니다.
+```
+let lenis;
+
+lenis = new Lenis({
+    duration: 1.2,
+    infinite: false,
+    easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    gestureOrientation: "vertical",
+    normalizeWheel: false,
+    smoothTouch: false,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+$("[data-lenis-toggle]").on("click", function () {
+    $(this).toggleClass("stop-scroll");
+    if ($(this).hasClass("stop-scroll")) {
+        lenis.stop();
+    } else {
+        lenis.start();
+    }
+});
+```
+- Lenis 라이브러리를 초기화하고 설정합니다. Lenis는 스크롤 이벤트를 다루는 라이브러리로, 스크롤을 제어하거나 효과를 주는 데 사용됩니다.
+- $("[data-lenis-toggle]").on("click", function () { ... });: Lenis의 스크롤을 토글하는 기능을 가진 요소가 클릭될 때 Lenis의 동작을 멈추거나 다시 시작하는 이벤트 핸들러를 정의합니다.
+- gsap.defaults({ ... }): GSAP (GreenSock Animation Platform)에서 기본적으로 사용되는 애니메이션 속성을 설정하는 부분입니다. 여기서는 기본적인 애니메이션 이징(ease)을 "power3.inOut"으로, 기본적인 애니메이션 지속 시간(duration)을 0.8초로 설정하고 있습니다.
+
+
+## SplitType (라이브러리)
+
+SplitType은 텍스트를 단어 또는 글자로 분할하여 표시하는 기능을 제공합니다.
+
+```
+let splitText = new SplitType("[text-split]", {
+    types: "words, chars",
+    tagName: "span",
+});
+
+let typeSplit;
+let lineSplit;
+function runSplit() {
+    typeSplit = new SplitType(".higlighted-text", {
+        types: "lines, words, chars",
+    });
+    lineSplit = new SplitType("[split-lines]", {
+        types: "lines",
+    });
+}
+runSplit();
+```
+1. splitText라는 변수는 SplitType이라는 클래스의 인스턴스를 생성합니다. 이 클래스는 "[text-split]"이라는 태그를 기준으로 텍스트를 분할하는 기능을 제공합니다. 분할된 텍스트는 "span" 태그로 감싸집니다.
+2. typeSplit과 lineSplit이라는 변수를 선언합니다.
+3. runSplit() 함수를 정의합니다. 이 함수 내에서 typeSplit 변수는 .highlighted-text 클래스를 기준으로 텍스트를 줄, 단어, 문자로 분할합니다. lineSplit 변수는 "[split-lines]" 태그를 기준으로 텍스트를 줄 단위로 분할합니다.
+
+- 따라서, 이 코드는 주어진 HTML 문서에서 특정 태그나 클래스를 기준으로 텍스트를 분할하는 기능을 구현하는 것을 목적으로 합니다.
+
+
+
+git push --force origin main
 
 ## 라이브러리
 1. moment
 moment 명령은 Node.js 프로젝트에서 JavaScript 라이브러리인 "moment.js"를 설치하는 명령입니다. "moment.js"는 날짜와 시간을 처리하는 JavaScript 라이브러리로, 날짜와 시간을 쉽게 다루고 포맷팅하는데 도움을 줍니다.
 
+<<<<<<< HEAD
 위 명령을 실행하면 현재 프로젝트 디렉토리에 "moment" 라이브러리가 설치됩니다. 이후에 프로젝트의 JavaScript 파일에서 "moment" 라이브러리를 사용할 수 있게 됩니다.
 
 일반적으로 프로젝트에서 필요한 라이브러리를 설치하기 위해 npm install 명령을 사용합니다. 이 명령은 프로젝트의 종속성(dependencies)을 관리하고 필요한 라이브러리를 프로젝트에 추가하는 데 사용됩니다.
@@ -83,3 +173,10 @@ npm install react-avatar 명령은 React 애플리케이션에서 사용할 수 
 "react-avatar" 라이브러리를 사용하면 개발자들은 사용자 프로필 이미지, 그룹 아바타, 댓글 작성자의 이미지 등과 같은 아바타 이미지를 생성하고 표시하는 데 도움을 받을 수 있습니다. 이 라이브러리를 사용하면 이미지 크기, 모양, 색상 등을 설정할 수 있는 많은 옵션이 제공됩니다.
 
 예를 들어, 다음과 같이 "react-avatar"를 사용하여 프로필 이미지를 생성할 수 있습니다:
+=======
+<Route path='/teamphp' element={<Teamphp />} />
+<Route path='/youtube' element={<Youtube />} />
+<Route path='/movie' element={<Movie />} />
+<Route path='/blog' element={<Blog />} />
+<Route path='/site' element={<Site />} /> 
+>>>>>>> 405b78047b99249b8da3e8c2fb59e83e22986dee
