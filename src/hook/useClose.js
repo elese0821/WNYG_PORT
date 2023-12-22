@@ -54,21 +54,6 @@ const useClose = () => {
                         }
                     );
                     gsap.fromTo(
-                        ".line-reg",
-                        {
-                            opacity: 1,
-                        },
-                        {
-                            yPercent: 10,
-                            opacity: 0,
-                            duration: 0.6,
-                            ease: "power4.inOut",
-                            onComplete: () => {
-                                gsap.set(outwardLinks, { padding: 0 });
-                            }
-                        }
-                    );
-                    gsap.fromTo(
                         outwardLinks,
                         {
                             height: "100%"

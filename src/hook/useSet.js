@@ -50,7 +50,7 @@ export const useSet = () => {
         if (desc.length) {
             gsap.set(desc, {
                 opacity: 0,
-                scaleY: 0,
+                yPercent: 10
             });
         }
     }, []);

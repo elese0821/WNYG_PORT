@@ -180,6 +180,7 @@
                     line-height: 1;
                     font-size: 18vw;
                     font-family: var(--subfontEng);
+                    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 
                     @media (max-width:1000px) {
                         font-size: 24vw;

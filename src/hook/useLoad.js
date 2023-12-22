@@ -51,7 +51,7 @@ const Load = () => {
             if ($(".item").find(".desc").length) {
                 gsap.to($(".item").find(".desc"), {
                     opacity: 0.85,
-                    scaleY: 1,
+                    yPercent: 0
                 });
             }
         }

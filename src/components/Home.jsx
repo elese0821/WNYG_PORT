@@ -7,7 +7,17 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
     const navigate = useNavigate();
     // 각 아이템 클릭 시 이동할 경로를 배열로 정의
-    const paths = ['/about', '/stacks', '/teamreact', '/teamphp', '/youtube', '/movie', '/blog', '/js', '/contact'];
+    const paths = [
+        '/about',
+        '/blog',
+        '/youtube',
+        '/movie',
+        '/teamreact',
+        '/teamphp',
+        '/teamquiz',
+        '/js',
+        '/contact'
+    ];
 
     const handleMouseOver = (index) => {
         const linkTextTop = $(".item")
@@ -259,8 +269,8 @@ const Home = () => {
                 <div className="item i2">
                     <div>
                         <div className="split_text_clip">
-                            <div text-split="" className="text-reg">STACKS</div>
-                            <div text-split="" className="text-reg">STACKS</div>
+                            <div text-split="" className="text-reg">SIMPLE BLOG</div>
+                            <div text-split="" className="text-reg">SIMPLE BLOG</div>
                         </div>
                         <div className="item__bg"></div>
                     </div>
@@ -268,8 +278,8 @@ const Home = () => {
                 <div className="item i3">
                     <div>
                         <div className="split_text_clip">
-                            <div text-split="" className="text-reg">TEAM-PROJECT 01</div>
-                            <div text-split="" className="text-reg">TEAM-PROJECT 01</div>
+                            <div text-split="" className="text-reg">YOUTUBE PROJECT</div>
+                            <div text-split="" className="text-reg">YOUTUBE PROJECT</div>
                         </div>
                         <div className="item__bg"></div>
                     </div>
@@ -277,24 +287,6 @@ const Home = () => {
                 <div className="item i4">
                     <div>
                         <div className="split_text_clip">
-                            <div text-split="" className="text-reg">TEAM-PROJECT 02</div>
-                            <div text-split="" className="text-reg">TEAM-PROJECT 02</div>
-                        </div>
-                        <div className="item__bg"></div>
-                    </div>
-                </div>
-                <div className="item i5 text-btm">
-                    <div>
-                        <div className="split_text_clip">
-                            <div text-split="" className="text-reg">YOUTUBE PROJECT</div>
-                            <div text-split="" className="text-reg">YOUTUBE PROJECT</div>
-                        </div>
-                        <div className="item__bg"></div>
-                    </div>
-                </div>
-                <div className="item i5 text-btm">
-                    <div>
-                        <div className="split_text_clip">
                             <div text-split="" className="text-reg">MOVIE PROJECT</div>
                             <div text-split="" className="text-reg">MOVIE PROJECT</div>
                         </div>
@@ -304,8 +296,8 @@ const Home = () => {
                 <div className="item i5 text-btm">
                     <div>
                         <div className="split_text_clip">
-                            <div text-split="" className="text-reg">SIMPLE BLOG</div>
-                            <div text-split="" className="text-reg">SIMPLE BLOG</div>
+                            <div text-split="" className="text-reg">PERRAR</div>
+                            <div text-split="" className="text-reg">PERRAR</div>
                         </div>
                         <div className="item__bg"></div>
                     </div>
@@ -313,13 +305,31 @@ const Home = () => {
                 <div className="item i6 text-btm">
                     <div>
                         <div className="split_text_clip">
+                            <div text-split="" className="text-reg">SEXYBRAIN</div>
+                            <div text-split="" className="text-reg">SEXYBRAIN</div>
+                        </div>
+                        <div className="item__bg"></div>
+                    </div>
+                </div>
+                <div className="item i7 text-btm">
+                    <div>
+                        <div className="split_text_clip">
+                            <div text-split="" className="text-reg">QUIZ PROJECT</div>
+                            <div text-split="" className="text-reg">QUIZ PROJECT</div>
+                        </div>
+                        <div className="item__bg"></div>
+                    </div>
+                </div>
+                <div className="item i8 text-btm">
+                    <div>
+                        <div className="split_text_clip">
                             <div text-split="" className="text-reg">Javascript</div>
                             <div text-split="" className="text-reg">Javascript</div>
                         </div>
                         <div className="item__bg"></div>
                     </div>
                 </div>
-                <div className="item i7 text-btm">
+                <div className="item i9 text-btm">
                     <div>
                         <div className="split_text_clip">
                             <div text-split="" className="text-reg">CONTACT ME</div>

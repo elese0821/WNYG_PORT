@@ -15,7 +15,7 @@ const Teamphp = () => {
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        PHP
+                        SEXYBRAIN
                     </h1>
                 </div>
             </div>
@@ -24,8 +24,8 @@ const Teamphp = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">PHP PROJECT</div>
-                        <div text-split="" className="text-reg">PHP PROJECT</div>
+                        <div text-split="" className="text-reg">SEXYBRAIN</div>
+                        <div text-split="" className="text-reg">SEXYBRAIN</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>

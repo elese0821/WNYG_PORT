@@ -32,25 +32,25 @@
     .main_grid {
         display: grid;
         grid-template-areas:
-            "grid1 grid2 grid2 . grid3"
-            ". . . . ."
-            ". . . . ."
-            ". . . . ."
-            ". . . . ."
-            "grid4 grid4 grid4 grid4 grid4"
+            "grid1 grid2 grid2 . . .grid3"
+            ". . . . . . ."
+            ". . . . . . ."
+            ". . . . . . ."
+            ". . . . . . ."
+            "grid4 grid4 grid4 grid4 grid4 grid4 grid4"
         ;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(7, 1fr);
         grid-template-rows: 1fr 4fr 1fr;
         grid-gap: 1.5rem;
 
         @media(max-with: 1100px) {
             grid-template-areas:
-                "grid1 grid2 grid2 . grid4"
-                ". . . . ."
-                ". . . . ."
-                ". . . . ."
-                ". . . . ."
-                "grid3 grid3 grid3 grid3 grid3"
+                "grid1 grid2 grid2 . . .grid3"
+                ". . . . . . ."
+                ". . . . . . ."
+                ". . . . . . ."
+                ". . . . . . ."
+                "grid4 grid4 grid4 grid4 grid4 grid4 grid4"
             ;
         }
 
