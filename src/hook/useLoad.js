@@ -40,18 +40,18 @@ const Load = () => {
                     duration: 1,
                     opacity: 1,
                     scale: 1,
-                    onComplete: animateLine,
+                    onComplete: animatedesc,
                 });
             } else {
-                animateLine();
+                animatedesc();
             }
         }
 
-        function animateLine() {
-            if ($(".item").find(".line").length) {
-                gsap.to($(".item").find(".line"), {
+        function animatedesc() {
+            if ($(".item").find(".desc").length) {
+                gsap.to($(".item").find(".desc"), {
                     opacity: 0.85,
-                    stagger: { amount: 0.2, from: "start" },
+                    scaleY: 1,
                 });
             }
         }

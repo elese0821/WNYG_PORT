@@ -14,15 +14,15 @@ const Stacks = () => {
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        STACKS
+                        USED STACKS
                     </h1>
                 </div>
             </div>
             <div className="main_grid">
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">STACKS</div>
-                        <div text-split="" className="text-reg">STACKS</div>
+                        <div text-split="" className="text-reg">USED STACKS</div>
+                        <div text-split="" className="text-reg">USED STACKS</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>

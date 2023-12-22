@@ -4,7 +4,7 @@ import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
 import useSet from '../hook/useSet';
 
-const Teamreact = () => {
+const Teamphp = () => {
     useSplitType();
     useSet();
     useLoad();
@@ -15,7 +15,7 @@ const Teamreact = () => {
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        PERPAR
+                        PHP
                     </h1>
                 </div>
             </div>
@@ -24,8 +24,8 @@ const Teamreact = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">PERPAR</div>
-                        <div text-split="" className="text-reg">PERPAR</div>
+                        <div text-split="" className="text-reg">PHP PROJECT</div>
+                        <div text-split="" className="text-reg">PHP PROJECT</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -37,7 +37,7 @@ const Teamreact = () => {
                 </div>
 
                 <div className="item photo">
-                    <div className="item__bg pj01_img"></div>
+                    <div className="item__bg pj03_img"></div>
                 </div>
 
                 <div className="item desc_01">
@@ -69,7 +69,7 @@ const Teamreact = () => {
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <a href='' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/php-project' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -77,7 +77,7 @@ const Teamreact = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='' className="item__bg hover_effect"></a>
+                    <a href='http://hoho.dothome.co.kr/project/php/php-project-main/home/main.php' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className='close item'>
@@ -97,4 +97,4 @@ const Teamreact = () => {
     )
 }
 
-export default Teamreact
+export default Teamphp

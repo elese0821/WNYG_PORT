@@ -4,7 +4,7 @@ import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
 import useSet from '../hook/useSet';
 
-const Teamreact = () => {
+const Js = () => {
     useSplitType();
     useSet();
     useLoad();
@@ -15,7 +15,7 @@ const Teamreact = () => {
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        PERPAR
+                        PROJECT
                     </h1>
                 </div>
             </div>
@@ -24,8 +24,8 @@ const Teamreact = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">PERPAR</div>
-                        <div text-split="" className="text-reg">PERPAR</div>
+                        <div text-split="" className="text-reg">TEAM PROJECT</div>
+                        <div text-split="" className="text-reg">TEAM PROJECT</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -97,4 +97,4 @@ const Teamreact = () => {
     )
 }
 
-export default Teamreact
+export default Js

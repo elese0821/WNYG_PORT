@@ -145,8 +145,8 @@ const Three = () => {
         }
 
         // 컨테이너의 크기를 가져옵니다.
-        const width = containerRef.current.offsetWidth;
-        const height = containerRef.current.offsetHeight;
+        const width = 1920;
+        const height = 1080;
 
         // Three.js 씬 설정
         const scene = new THREE.Scene();

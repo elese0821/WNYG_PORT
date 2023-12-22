@@ -15,7 +15,7 @@ const Youtube = () => {
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        PROJECT
+                        YOUTUBE
                     </h1>
                 </div>
             </div>
@@ -24,8 +24,8 @@ const Youtube = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">TEAM PROJECT</div>
-                        <div text-split="" className="text-reg">TEAM PROJECT</div>
+                        <div text-split="" className="text-reg">YOUTUBE PROJECT</div>
+                        <div text-split="" className="text-reg">YOUTUBE PROJECT</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -44,11 +44,12 @@ const Youtube = () => {
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
-                    <div className="line_text_clip">
-                        <p line-split="" className="line-reg">
-                            YouTube API v3를 활용하여 음악 유튜브 사이트를 만들어보았습니다.
-                        </p>
-                    </div>
+                    <p className="desc">
+                        YouTube API v3를 활용하여 음악 유튜브 사이트를 만들어보았습니다.
+                        <li>
+                            <span>Postman</span>: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 YouTube API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
+                        </li>
+                    </p>
                     <div className="item__bg"></div>
                 </div>
 
@@ -56,15 +57,11 @@ const Youtube = () => {
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">TOOLS</p>
                     </div>
-                    <div className="line_text_clip">
-                        <p line-split="" className="line-reg">
-                            Postman: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 YouTube API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
+                    <ul className="desc">
 
-                        </p>
-                    </div>
+                    </ul>
                     <div className="item__bg"></div>
                 </div>
-
 
                 <div className="item">
                     <div className="split_text_clip">

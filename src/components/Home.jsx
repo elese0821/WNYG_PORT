@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
     const navigate = useNavigate();
     // 각 아이템 클릭 시 이동할 경로를 배열로 정의
-    const paths = ['/about', '/stacks', '/teamreact', '/teamphp', '/youtube', '/movie', '/blog', '/site', '/contact'];
+    const paths = ['/about', '/stacks', '/teamreact', '/teamphp', '/youtube', '/movie', '/blog', '/js', '/contact'];
 
     const handleMouseOver = (index) => {
         const linkTextTop = $(".item")
@@ -313,8 +313,8 @@ const Home = () => {
                 <div className="item i6 text-btm">
                     <div>
                         <div className="split_text_clip">
-                            <div text-split="" className="text-reg">SITE</div>
-                            <div text-split="" className="text-reg">SITE</div>
+                            <div text-split="" className="text-reg">Javascript</div>
+                            <div text-split="" className="text-reg">Javascript</div>
                         </div>
                         <div className="item__bg"></div>
                     </div>

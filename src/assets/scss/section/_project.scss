@@ -6,7 +6,7 @@
             "grid1 grid2 grid2 grid2 . . .grid8"
             "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
             "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
-            "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
+            "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
             "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
             "grid3 grid3 grid3 grid3 grid3 grid3 grid6 grid7"
         ;
@@ -18,7 +18,7 @@
             grid-template-areas:
                 "grid1 grid2 grid2 grid2 . . .grid8"
                 "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
-                "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
+                "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
                 "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
                 "grid3 grid3 grid3 grid3 grid3 grid3 grid5 grid5"
                 "grid3 grid3 grid3 grid3 grid3 grid3 grid6 grid7"
@@ -49,10 +49,13 @@
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
-                    opacity: 0.95;
 
                     &.pj01_img {
                         background-image: url(../img/youtube.jpg);
+                    }
+
+                    &.pj03_img {
+                        background-image: url(../img/php.jpg);
                     }
 
                     &.pj04_img {

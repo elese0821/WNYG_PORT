@@ -241,13 +241,19 @@
     }
 }
 
-.line_text_clip {
-    padding: 0.5rem 0;
-    letter-spacing: 0.03rem;
 
-    .line-reg {
-        font-family: var(--fontKor1);
-        font-size: 0.95rem;
-        line-height: 1.6;
+.desc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-top: 0.35rem;
+    font-family: var(--fontKor);
+
+    li {
+
+        span {
+            letter-spacing: 0.05rem;
+            // font-family: var(--subfontEng);
+            font-family: 'Trocchi';
+        }
     }
 }

@@ -8,9 +8,9 @@ import Stacks from './components/Stacks'
 import Teamreact from './components/Teamreact'
 import Youtube from './components/Youtube'
 import Movie from './components/Movie'
-// import Teamphp from './components/Teamphp'
-// import Blog from './components/Blog'
-// import Site from './components/Site'
+import Teamphp from './components/Teamphp'
+import Blog from './components/Blog'
+import Js from './components/Js'
 import Contact from './components/Contact'
 
 
@@ -24,9 +24,12 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/stacks' element={<Stacks />} />
           <Route path='/teamreact' element={<Teamreact />} />
+          <Route path='/teamphp' element={<Teamphp />} />
           <Route path='/youtube' element={<Youtube />} />
           <Route path='/movie' element={<Movie />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/js' element={<Js />} />
+          <Route path='/blog' element={<Blog />} />
         </Routes>
       </BrowserRouter>
     </Main >

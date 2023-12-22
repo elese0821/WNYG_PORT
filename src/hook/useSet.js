@@ -46,10 +46,11 @@ export const useSet = () => {
             });
         }
 
-        const lineTextClipLines = $(".line_text_clip").find(".line");
-        if (lineTextClipLines.length) {
-            gsap.set(lineTextClipLines, {
+        const desc = $(".desc");
+        if (desc.length) {
+            gsap.set(desc, {
                 opacity: 0,
+                scaleY: 0,
             });
         }
     }, []);
