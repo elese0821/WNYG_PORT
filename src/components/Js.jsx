@@ -37,7 +37,7 @@ const Js = () => {
                 </div>
 
                 <div className="item photo">
-                    <div className="item__bg pj01_img"></div>
+                    <div className="item__bg pj06_img"></div>
                 </div>
 
                 <div className="item desc_01">
@@ -69,7 +69,7 @@ const Js = () => {
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <a href='' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/javascript_css' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -77,7 +77,7 @@ const Js = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='' className="item__bg hover_effect"></a>
+                    <a href='https://javascript-css.vercel.app/' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className='close item'>

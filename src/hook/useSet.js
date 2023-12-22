@@ -33,12 +33,6 @@ export const useSet = () => {
             yPercent: 100,
         });
 
-        if ($(".photo").length) {
-            gsap.set(".photo", {
-                scale: 0,
-            });
-        }
-
         const expChars = $(".exp").find(".char");
         if (expChars.length) {
             gsap.set(expChars, {

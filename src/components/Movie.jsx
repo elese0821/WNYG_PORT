@@ -68,7 +68,7 @@ const Movie = () => {
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <a href='' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/movie-project' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -76,7 +76,7 @@ const Movie = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='' className="item__bg hover_effect"></a>
+                    <a href='https://movie-project-ecru.vercel.app/' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className='close item'>

@@ -247,6 +247,12 @@
     line-height: 1.4;
     margin-top: 0.35rem;
     font-family: var(--fontKor);
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+        /* 스크롤바 숨기기 */
+    }
 
     li {
 

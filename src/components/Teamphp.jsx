@@ -69,7 +69,7 @@ const Teamphp = () => {
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <a href='https://github.com/elese0821/php-project' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/php-project' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -77,7 +77,7 @@ const Teamphp = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='http://hoho.dothome.co.kr/project/php/php-project-main/home/main.php' className="item__bg hover_effect"></a>
+                    <a href='http://hoho.dothome.co.kr/project/php/home/main.php' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className='close item'>

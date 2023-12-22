@@ -32,7 +32,7 @@ const Youtube = () => {
 
                 <div className="exp">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">저의 포트폴리오에 오신 것을 환영합니다.</p>
+                        <p text-split="" target='_blank' className="text-reg">저의 포트폴리오에 오신 것을 환영합니다.</p>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@ const Youtube = () => {
 
                 <div className="item desc_01">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">INTRODUCE</p>
+                        <p text-split="" target='_blank' className="text-reg">INTRODUCE</p>
                     </div>
                     <p className="desc">
                         YouTube API v3를 활용하여 음악 유튜브 사이트를 만들어보았습니다.

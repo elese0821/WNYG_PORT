@@ -72,7 +72,6 @@ const useClose = () => {
             });
         };
 
-
         const handleMouseOver = () => {
             // 이벤트가 발생한 요소의 인덱스를 찾음
             const index = $(this).index();

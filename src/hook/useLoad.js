@@ -9,43 +9,39 @@ const Load = () => {
             duration: 1,
             stagger: { amount: 0.3 },
             onComplete: function () {
-                gsap.to(".item", {
-                    scaleY: 1,
-                    duration: 1,
-                    stagger: { amount: 0.2 },
+                document.querySelectorAll('.item').forEach(function (item) {
+                    if (!item.classList.contains('photo')) {
+                        gsap.to(item, {
+                            scaleY: 1,
+                            duration: 1,
+                            stagger: { amount: 0.2 }
+                        });
+                        gsap.to($(".item").find(".char"), {
+                            yPercent: 0,
+                            delay: 0.3,
+                            stagger: { amount: 0.3, from: "start" },
+                        });
+                    }
                 });
-
-                gsap.to($(".item").find(".char"), {
-                    yPercent: 0,
-                    delay: 0.3,
-                    stagger: { amount: 0.3, from: "start" },
-                });
+                if ($(".photo").length) {
+                    gsap.to(".photo", {
+                        delay: 1,
+                        scaleY: 1,
+                    });
+                }
 
                 // .exp 요소가 있는 경우에만 실행
                 if ($(".exp").length) {
                     gsap.to($(".exp").find(".char"), {
                         yPercent: 0,
                         stagger: { amount: 0.4, from: "start" },
-                        onComplete: animatePhotoImg
+                        onComplete: animatedesc
                     });
                 } else {
-                    animatePhotoImg();
+                    animatedesc();
                 }
             },
         });
-
-        function animatePhotoImg() {
-            if ($(".photo").length) {
-                gsap.to(".photo", {
-                    duration: 1,
-                    opacity: 1,
-                    scale: 1,
-                    onComplete: animatedesc,
-                });
-            } else {
-                animatedesc();
-            }
-        }
 
         function animatedesc() {
             if ($(".item").find(".desc").length) {

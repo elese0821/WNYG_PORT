@@ -37,7 +37,7 @@ const Teamquiz = () => {
                 </div>
 
                 <div className="item photo">
-                    <div className="item__bg pj03_img"></div>
+                    <div className="item__bg pj07_img"></div>
                 </div>
 
                 <div className="item desc_01">
@@ -63,13 +63,12 @@ const Teamquiz = () => {
                     <div className="item__bg"></div>
                 </div>
 
-
                 <div className="item">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <a href='https://github.com/elese0821/php-project' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/javascript_quiz' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -77,7 +76,7 @@ const Teamquiz = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='http://hoho.dothome.co.kr/project/php/php-project-main/home/main.php' className="item__bg hover_effect"></a>
+                    <a href='https://javascript-quiz-eta.vercel.app/' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className='close item'>
