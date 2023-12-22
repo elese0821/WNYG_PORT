@@ -13,10 +13,9 @@ git config --global core.autocrlf true
 
 user-select: none;
 
-깃배포
-npm install gh-pages --save-dev
 
 # 설치
+- client
 ```
 npm install gsap 
 npm install split-type
@@ -27,8 +26,74 @@ npm install react-router-dom
 npm install jquery
 
 ```
+- server 
+```
+npm install express --save;   
+npm install nodemon --save;   
+npm install path --save;   
+npm install mongoose --save;   
+```
 import { useNavigate } from 'react-router-dom';
 const navigate = useNavigate();
+
+
+1. server index.js 생성
+2. package.json start : nodemon index.js 
+3. 클라이언트 src에 프록시파일 생성
+4. cilent npm run build 
+5. 웹 서버 설정
+```
+const express = require("express");
+const path = require("path");
+const mongoose = require("mongoose");
+
+const app = express();
+// const port = process.env.PORT || 5050;
+const port = 5050;
+// const config = require("./server/config/key.js");
+
+app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.listen(port, () => {
+    mongoose
+        .connect(config.mongoURI)
+        .then(() => {
+            console.log("listening  --> " + port);
+            console.log("mongoose --> connecting");
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+})
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+})
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+```
+1. 모듈 임포트:
+- express: Express 웹 프레임워크를 임포트합니다.
+- path: 파일 경로를 다루는 유틸리티 모듈입니다.
+- mongoose: MongoDB를 위한 ODM(Object Data Mapping)라이브러리입니다.
+- Express 애플리케이션 초기화:
+ const app = express();: Express 애플리케이션 인스턴스를 생성합니다.
+- 서버 설정:
+app.use(express.static(path.join(__dirname, "../client/build")));: 클라이언트 측 정적 파일을 서비스합니다.
+- app.use(express.json());: JSON 형태의 요청 본문을 파싱합니다.
+- app.use(express.urlencoded({ extended: true }));: URL 인코딩된 요청 본문을 파싱합니다.
+- MongoDB 연결 설정:
+
+mongoose.connect(config.mongoURI): MongoDB 데이터베이스에 연결합니다. 연결 설정은 config.mongoURI에 저장되어 있습니다.
+- 포트 설정 및 서버 시작:
+서버는 5050 포트에서 시작됩니다.
+MongoDB에 성공적으로 연결되면 콘솔에 메시지를 출력합니다.
+- 라우트 설정:
+app.get("/")과 app.get("*"): 모든 GET 요청을 클라이언트 측의 index.html로 라우팅합니다. 이는 Single Page Application(SPA)을 위한 일반적인 설정입니다.
+
 
 ## gsap
 stagger는 여러 요소에 걸쳐 애니메이션을 순차적으로 적용하는 기능입니다. 이를 통해 같은 애니메이션 효과를 여러 요소에 일정한 시간 간격으로 적용할 수 있습니다. stagger 기능은 복수의 요소에 애니메이션이 순차적으로 발생하도록 해서 보다 동적이고 매력적인 시각 효과를 만들어냅니다.
