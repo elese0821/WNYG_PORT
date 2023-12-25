@@ -13,8 +13,11 @@
   "homepage": "",
   "dependencies": {
     "@studio-freight/lenis": "^1.0.29",
+    "axios": "^1.6.2",
+    "firebase": "^10.7.1",
     "gsap": "^3.12.3",
     "jquery": "^3.7.1",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",

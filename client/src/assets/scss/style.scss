@@ -1,15 +1,15 @@
 @charset "utf-8";
 
 /* setting */
-@import "./setting/reset.scss";
-@import "./setting/common.scss";
-@import "./setting/fonts.scss";
-@import "./setting/var.scss";
+@import "./setting/reset";
+@import "./setting/common";
+@import "./setting/fonts";
+@import "./setting/var";
 @import "./setting/mixin";
 
 /* section */
-@import "./section/main.scss";
-@import "./section/about.scss";
-@import "./section/stacks.scss";
-@import "./section/project.scss";
-@import "./section/contact.scss";
+@import "./section/main";
+@import "./section/about";
+@import "./section/project";
+@import "./section/contact";
+@import "./section/commentmoadl";

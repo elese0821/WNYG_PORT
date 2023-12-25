@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useLoad from '../hook/useLoad'
 import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
 import useSet from '../hook/useSet'
+import Comment from '../components/comment/Comment'
+import CommentList from './comment/CommentList';
 
 const About = () => {
     useSplitType();
@@ -12,6 +14,7 @@ const About = () => {
 
     return (
         <div id='section' className='about'>
+            <Comment />
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
@@ -61,6 +64,38 @@ const About = () => {
                     <p className='desc'>
 
                     </p>
+                    <div className="item__bg"></div>
+                </div>
+
+                <div className="item desc_03">
+                    <div className="split_text_clip">
+                        <p text-split="" className="text-reg">COMMENTS</p>
+                    </div>
+                    <p className='desc'>
+
+                    </p>
+                    <div className="item__bg"></div>
+                </div>
+
+                <div className="item desc_04">
+                    <div className="split_text_clip">
+                        <p text-split="" className="text-reg">COMMENTS</p>
+                    </div>
+                    <div className='desc'>
+                        <CommentList />
+                    </div>
+                    <div className="item__bg"></div>
+                </div>
+
+                <div className="reply item">
+                    <div className="split_text_clip">
+                        <span text-split="" className="text-reg">
+                            REPLY
+                        </span>
+                        <span text-split="" className="text-reg">
+                            REPLY
+                        </span>
+                    </div>
                     <div className="item__bg"></div>
                 </div>
 

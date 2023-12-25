@@ -11,33 +11,18 @@
         overflow: hidden;
     }
 
-    .close {
+    .close,
+    .reply {
+        cursor: pointer;
+        align-items: flex-end;
 
         .item__bg {
+
+
             &:hover {
                 background-color: rgba(255, 255, 255, 0.418);
             }
         }
-
-        .split_text_clip {
-            height: 1rem;
-
-            .text-reg {
-                display: flex;
-
-                >svg {
-                    width: 30px;
-                    height: 40px;
-                    position: absolute;
-                    top: -5px;
-                }
-
-                span {
-                    line-height: 1;
-                }
-            }
-        }
-
     }
 
     .item {
@@ -49,11 +34,6 @@
             flex-direction: column;
         }
 
-        &.close {
-            cursor: pointer;
-            align-items: flex-end;
-
-        }
 
         .line_text_clip {
             padding: 0.5rem 0;
@@ -100,7 +80,7 @@
     }
 
     .textWrap-tit {
-        z-index: 300002;
+        z-index: 10;
         justify-content: center;
         align-items: center;
         display: flex;
@@ -148,7 +128,7 @@
 }
 
 .split_text_clip {
-    z-index: 300001;
+    z-index: 1;
     height: 1rem;
     flex-direction: column;
     justify-content: flex-start;
@@ -192,7 +172,6 @@
         border-radius: 0.5rem;
         justify-content: flex-start;
         align-items: flex-end;
-        padding: 1.5rem;
         display: flex;
         position: absolute;
         overflow: hidden;
@@ -232,12 +211,6 @@
     overflow: hidden;
     padding: 0;
     opacity: 0.98;
-
-    img {
-        position: absolute;
-        object-fit: cover;
-        border-radius: 0.5rem;
-    }
 }
 
 

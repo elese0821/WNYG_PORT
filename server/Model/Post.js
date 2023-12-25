@@ -4,10 +4,10 @@ const postSchema = new mongoose.Schema(
     {
         content: String,
         postNum: Number,
-        author: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User",
-        },
+        // author: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: "User",
+        // },
     },
     { collection: "posts", timestamps: true }
 );

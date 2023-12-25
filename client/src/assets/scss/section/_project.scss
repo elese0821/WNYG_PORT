@@ -3,7 +3,7 @@
     .main_grid {
         display: grid;
         grid-template-areas:
-            "grid1 grid2 grid2 grid2 . . .grid8"
+            "grid1 grid2 grid2 grid2 . . grid8 grid9"
             "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
             "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
             "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
@@ -17,7 +17,7 @@
 
         @media(max-with: 1100px) {
             grid-template-areas:
-                "grid1 grid2 grid2 grid2 . . .grid8"
+                "grid1 grid2 grid2 grid2 . . grid8 grid9"
                 "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
                 "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
                 "grid3 grid3 grid3 grid3 grid3 grid3 grid4 grid4"
@@ -100,6 +100,9 @@
                 grid-area: grid8;
             }
 
+            &:nth-child(9) {
+                grid-area: grid9;
+            }
         }
 
 

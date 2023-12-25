@@ -4,9 +4,8 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 const app = express();
-// const port = process.env.PORT || 5050;
 const port = 5050;
-const config = require("./config/key.js");
+const config = require("./config/key.js")
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());

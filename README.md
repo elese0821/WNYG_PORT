@@ -5,7 +5,7 @@
 (https://movie-project-ecru.vercel.app/)
 (https://youtube-project-nine.vercel.app/)
 
-git config --global core.autocrlf true
+
 
 # 시작하기
 1. npm create vite@latest
@@ -20,18 +20,40 @@ npm install three
 npm install sass
 npm install react-router-dom
 npm install jquery
+npm install firebase
+npm install axios
+npm install moment
+```
+npm install react-redux   
+npm install @reduxjs/toolkit   
+npm install react-avatar
+
+# 문제해결
+- git config --global core.autocrlf true
+
+- http-proxy-middleware  vite 환경에서는 사용하지않음
+vite config파일 변경
 
 ```
-- server 
-```
-npm install express --save;   
-npm install nodemon --save;   
-npm install path --save;   
-npm install mongoose --save;   
-```
-import { useNavigate } from 'react-router-dom';
-const navigate = useNavigate();
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5051',
+        changeOrigin: true,
+        secure: false, // HTTPS 사용 시 true로 설정
+      },
+    },
+  },
+});
+```
+
+npm install aws-sdk@2.348.0 --save;      
 
 1. server index.js 생성
 2. package.json start : nodemon index.js 

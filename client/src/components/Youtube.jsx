@@ -3,6 +3,8 @@ import useLoad from '../hook/useLoad'
 import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
 import useSet from '../hook/useSet'
+import Comment from './comment/Comment';
+import CommentList from './comment/CommentList';
 
 const Youtube = () => {
     useSplitType();
@@ -12,6 +14,7 @@ const Youtube = () => {
 
     return (
         <div id='section' className='project'>
+            <Comment />
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
@@ -63,12 +66,13 @@ const Youtube = () => {
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">COMMENTS</p>
                     </div>
-                    <ul className="desc">
-
-                    </ul>
+                    <div className='desc'>
+                        <CommentList />
+                    </div>
                     <div className="item__bg"></div>
                 </div>
 
+
                 <div className="item">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">CODE</p>
@@ -83,6 +87,18 @@ const Youtube = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
                     <a href='' className="item__bg hover_effect"></a>
+                </div>
+
+                <div className="reply item">
+                    <div className="split_text_clip">
+                        <span text-split="" className="text-reg">
+                            REPLY
+                        </span>
+                        <span text-split="" className="text-reg">
+                            REPLY
+                        </span>
+                    </div>
+                    <div className="item__bg"></div>
                 </div>
 
                 <div className='close item'>

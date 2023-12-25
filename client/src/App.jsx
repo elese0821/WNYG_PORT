@@ -4,7 +4,6 @@ import Home from './components/Home'
 import About from './components/About'
 import Main from './page/Main'
 import Three from './page/Three'
-// import Stacks from './components/Stacks'
 import Teamreact from './components/Teamreact'
 import Youtube from './components/Youtube'
 import Movie from './components/Movie'
@@ -23,7 +22,6 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          {/* <Route path='/stacks' element={<Stacks />} /> */}
           <Route path='/teamreact' element={<Teamreact />} />
           <Route path='/teamquiz' element={<Teamquiz />} />
           <Route path='/teamphp' element={<Teamphp />} />

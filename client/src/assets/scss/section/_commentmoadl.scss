@@ -1,0 +1,92 @@
+#commentModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50% 100%;
+
+    .commentModal {
+        .commentList {
+            height: calc(100% - 120px);
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 1;
+        }
+
+        position: fixed;
+        height: 400px;
+        width: 400px;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        transform-origin: 50% 100%;
+        z-index: 9;
+        background-color: rgba(255, 255, 255, 0.123);
+
+        .btnStyle {
+            cursor: pointer;
+            padding: 0.2rem 0.8rem;
+            color: var(--white);
+            border-bottom: 1px solid var(--white);
+            background-color: transparent;
+            letter-spacing: 0.07rem;
+        }
+
+        form {
+            fieldset {
+                border: none;
+                margin: 0;
+                padding: 0;
+                position: relative;
+
+                textarea {
+                    background-color: transparent;
+                    resize: none;
+                    width: 100%;
+                    color: var(--white);
+                    border: 1px solid rgba(199, 199, 199, 0.534);
+                    outline: none;
+                    transition: all 0.5s;
+                    border-radius: 7px;
+                    padding: 0.5rem;
+
+                    &::-webkit-input-placeholder {
+                        color: #ffffff;
+                    }
+
+                    &:active,
+                    &:focus {
+                        border: 1px solid rgb(255, 255, 255);
+                    }
+                }
+
+                button {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+.list {
+
+    border-radius: 7px;
+    padding: 0.5rem;
+
+    &:nth-child(2n) {
+        text-align: right;
+    }
+}

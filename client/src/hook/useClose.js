@@ -8,12 +8,11 @@ const useClose = () => {
 
     useEffect(() => {
         const close = document.querySelector(".close");
+        const reply = document.querySelector(".reply");
 
-        close.addEventListener('mouseover', () => handleMouseOver());
-        close.addEventListener('mouseout', () => handleMouseOut());
-        close.addEventListener('click', () => handleClick());
+        const popupClose = document.querySelector(".popupClose")
 
-        const handleClick = () => {
+        const handleClick = function () {
             let gridItems = Array.from(document.querySelectorAll(".item"));
             let isAnimating = false;
 
@@ -72,14 +71,8 @@ const useClose = () => {
             });
         };
 
-        const handleMouseOver = () => {
-            // 이벤트가 발생한 요소의 인덱스를 찾음
-            const index = $(this).index();
-
-            // 해당 인덱스의 .item을 선택
-            const item = $(".item").eq(index);
-
-            item.find(".text-reg .char").each(function (i) {
+        const handleMouseOver = function () {
+            $(this).find(".text-reg .char").each(function (i) {
                 gsap.fromTo(this, {
                     yPercent: 0,
                 }, {
@@ -88,27 +81,112 @@ const useClose = () => {
                     delay: i * 0.05,
                     overwrite: true,
                 });
-            })
+            });
         };
 
-        const handleMouseOut = () => {
-            // 이벤트가 발생한 요소의 인덱스를 찾음
-            const index = $(this).index();
-
-            // 해당 인덱스의 .item을 선택
-            const item = $(".item").eq(index);
-
-            // 선택한 .item 내의 모든 .char 요소를 찾아서 각각에 대해 원래 위치로 돌아가는 애니메이션 적용
-            item.find(".text-reg .char").each(function () {
+        const handleMouseOut = function () {
+            $(this).find(".text-reg .char").each(function (i) {
                 gsap.to(this, {
                     yPercent: 0,
-                    duration: 0.6,
-                    ease: "power4.inOut",
+                    duration: 0.1,
                     overwrite: true
                 });
             });
         };
+
+        const popupOpen = function () {
+            gsap.set("#commentModal", {
+                zIndex: 5,
+                onComplete: () => {
+                    gsap.to("#commentModal", {
+                        backgroundColor: 'rgba(0,0,0,.2)',
+                        backdropFilter: "blur(2px)",
+                        ease: "power4.inOut",
+                        duration: 0.6,
+                        onComplete: () => {
+                            gsap.to(".commentModal", {
+                                scaleY: 1,
+                                duration: 0.6,
+                                ease: "power4.inOut",
+                                onComplete: () => {
+                                    gsap.to(".commentModal *", {
+                                        opacity: 1,
+                                        duration: 0.6,
+                                        ease: "power4.inOut",
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+            })
+        }
+
+        const popupCloseClick = function () {
+            gsap.to(".commentModal *", {
+                opacity: 0,
+                duration: 0.6,
+                ease: "power4.inOut",
+                onComplete: () => {
+                    gsap.to(".commentModal", {
+                        scaleY: 0,
+                        duration: 0.6,
+                        ease: "power4.inOut",
+                        onComplete: () => {
+                            gsap.to("#commentModal", {
+                                duration: 0.6,
+                                ease: "power4.inOut",
+                                backgroundColor: 'rgba(0,0,0,0)',
+                                backdropFilter: "blur(0px)",
+                                onComplete: () => {
+                                    gsap.set("#commentModal", {
+                                        zIndex: -3,
+                                    });
+                                }
+                            });
+
+                        }
+                    });
+                }
+            });
+
+        }
+        // close 요소가 존재할 경우에만 이벤트 리스너 추가
+        if (close) {
+            close.addEventListener('mouseover', handleMouseOver);
+            close.addEventListener('mouseout', handleMouseOut);
+            close.addEventListener('click', handleClick);
+        }
+
+        // reply 요소가 존재할 경우에만 이벤트 리스너 추가
+        if (reply) {
+            reply.addEventListener('mouseover', handleMouseOver);
+            reply.addEventListener('mouseout', handleMouseOut);
+            reply.addEventListener('click', popupOpen);
+        }
+
+        if (popupClose) {
+            popupClose.addEventListener('click', popupCloseClick);
+        }
+
+        // 컴포넌트가 언마운트 될 때 이벤트 리스너 제거
+        return () => {
+            if (close) {
+                close.removeEventListener('click', handleClick);
+                close.removeEventListener('mouseover', handleMouseOver);
+                close.removeEventListener('mouseout', handleMouseOut);
+            }
+            if (reply) {
+                reply.removeEventListener('click', popupOpen);
+                reply.removeEventListener('mouseover', handleMouseOver);
+                reply.removeEventListener('mouseout', handleMouseOut);
+            }
+            if (popupClose) {
+                popupClose.removeEventListener('click', popupCloseClick);
+            }
+        }
     }, [])
+
 }
 
 export default useClose
