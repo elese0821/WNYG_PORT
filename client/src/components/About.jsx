@@ -53,13 +53,20 @@ const About = () => {
                         저는 항상 새로운 도전에 대한 열정과 긍정적인 자세를 가지고 있습니다.<br />
                         어려움을 마주할 때도 포기하지 않고 문제에 집중하여
                         해결책을 찾아내는 능력을 갖추려고 노력하고 있습니다.
+                        <br />
+                        <br />
+                        안녕하세요, 창의적이고 혁신적인 웹 경험을 창출하는 데 열정적인 프론트엔드 개발자입니다. 최신 웹 기술과 트렌드에 밝으며, 사용자 중심의 반응형 웹사이트를 구축하는 데 탁월한 능력을 갖추고 있습니다. HTML, CSS, JavaScript를 비롯한 핵심 프론트엔드 기술에 능숙하며, React.js와 같은 현대적인 프레임워크를 사용하여 동적이고 상호작용이 풍부한 웹 애플리케이션을 개발하는 데 경험이 있습니다.
+                        <br /><br />
+                        프로젝트를 진행하면서 사용자 경험(UX) 개선에 중점을 두고, 최적화된 코드와 효율적인 구조 설계를 통해 웹사이트의 성능을 최대화합니다. 또한, 팀워크와 협업을 중요시하며, 다양한 배경을 가진 팀원들과 의사소통하며 프로젝트를 성공적으로 이끌어나가는 능력을 갖추고 있습니다. 새로운 기술을 빠르게 습득하고 적용하는 것을 즐기며, 지속적인 학습을 통해 개발 역량을 키워나가고 있습니다.
+                        <br /><br />
+                        혁신적이고 사용자 친화적인 웹사이트 개발을 통해 기술과 창의성이 조화를 이루는 프론트엔드 개발자로 성장하고자 합니다. 끊임없이 변화하는 웹 개발의 세계에서 새로운 도전을 즐기며, 제 기술과 열정을 바탕으로 팀과 프로젝트에 기여하고자 합니다.
                     </p>
                     <div className="item__bg"></div>
                 </div>
 
                 <div className="item desc_02">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">COMMENTS</p>
+                        <p text-split="" className="text-reg">STACKS</p>
                     </div>
                     <p className='desc'>
 
@@ -68,16 +75,6 @@ const About = () => {
                 </div>
 
                 <div className="item desc_03">
-                    <div className="split_text_clip">
-                        <p text-split="" className="text-reg">COMMENTS</p>
-                    </div>
-                    <p className='desc'>
-
-                    </p>
-                    <div className="item__bg"></div>
-                </div>
-
-                <div className="item desc_04">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">COMMENTS</p>
                     </div>

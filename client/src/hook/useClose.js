@@ -100,7 +100,7 @@ const useClose = () => {
                 onComplete: () => {
                     gsap.to("#commentModal", {
                         backgroundColor: 'rgba(0,0,0,.5)',
-                        backdropFilter: "blur(2px)",
+                        backdropFilter: "blur(5px)",
                         ease: "power4.inOut",
                         duration: 0.6,
                         onComplete: () => {
