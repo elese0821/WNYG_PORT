@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import CommentList from './CommentList';
+import { useLocation } from 'react-router-dom';
 
 const Comment = () => {
     const [content, setContent] = useState("");
+    const location = useLocation();
+
+    const handleContentChange = (event) => {
+        setContent(event.target.value);
+    };
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -14,16 +20,22 @@ const Comment = () => {
 
         let body = {
             content: content,
+            cate: location.pathname.slice(1),
         }
 
         axios.post("/api/post/write", body)
             .then((resopnse) => {
                 if (resopnse.data.success) {
                     alert("글 작성이 완료되었습니다.");
+                    setContent("");
                 } else {
                     alert("글 작성이 실패하였습니다.");
                 }
             })
+            .catch((error) => {
+                console.error("글 작성 에러:", error);
+                alert("글 작성 중 에러가 발생했습니다.");
+            });
     }
 
     return (
@@ -37,12 +49,11 @@ const Comment = () => {
                         <div>
                             <label htmlFor="content" className="required blind">글 내용</label>
                             <textarea
-                                maxlength="50"
                                 type="text"
                                 id="content"
                                 placeholder='댓글을 작성해주세요😊'
                                 value={content}
-                                onChange={(e) => setContent(e.currentTarget.value)}
+                                onChange={handleContentChange}
                             />
                         </div>
                         <button

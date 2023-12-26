@@ -11,9 +11,22 @@
     transform-origin: 50% 100%;
 
     .commentModal {
+        position: fixed;
+        height: 550px;
+        width: 400px;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        transform-origin: 50% 100%;
+        z-index: 9;
+        background-color: rgba(255, 255, 255, 0.15);
+
         .commentList {
             height: calc(100% - 120px);
             overflow: auto;
+
+            .noComment {
+                position: relative;
+            }
 
             &::-webkit-scrollbar {
                 display: none;
@@ -25,15 +38,6 @@
             text-align: center;
             line-height: 1;
         }
-
-        position: fixed;
-        height: 400px;
-        width: 400px;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        transform-origin: 50% 100%;
-        z-index: 9;
-        background-color: rgba(255, 255, 255, 0.123);
 
         .btnStyle {
             cursor: pointer;
@@ -56,14 +60,14 @@
                     resize: none;
                     width: 100%;
                     color: var(--white);
-                    border: 1px solid rgba(199, 199, 199, 0.534);
+                    border: 1px solid rgb(179, 179, 179);
                     outline: none;
                     transition: all 0.5s;
                     border-radius: 7px;
                     padding: 0.5rem;
 
                     &::-webkit-input-placeholder {
-                        color: #ffffff;
+                        color: #dddddd;
                     }
 
                     &:active,
@@ -82,9 +86,7 @@
 }
 
 .list {
-
     border-radius: 7px;
-    padding: 0.5rem;
 
     &:nth-child(2n) {
         text-align: right;

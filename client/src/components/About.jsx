@@ -81,7 +81,7 @@ const About = () => {
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">COMMENTS</p>
                     </div>
-                    <div className='desc'>
+                    <div className='commentdesc'>
                         <CommentList />
                     </div>
                     <div className="item__bg"></div>

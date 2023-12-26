@@ -47,6 +47,13 @@ export const useSet = () => {
                 yPercent: 10
             });
         }
+        const commentList = $(".commentList");
+        if (commentList.length) {
+            gsap.set(commentList, {
+                opacity: 0,
+                yPercent: 10
+            });
+        }
         const comment = $("#commentModal");
         const commentModal = $(".commentModal");
         const commentModalchild = $(".commentModal *");

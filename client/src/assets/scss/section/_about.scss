@@ -39,7 +39,9 @@
                     background-repeat: no-repeat;
 
                     &.about_img {
-                        background-image: url(../img/profile05.jpg);
+                        background-image: url(../img/profile07.jpg);
+                        filter: grayscale(0.8);
+                        opacity: 0.8;
                     }
                 }
             }

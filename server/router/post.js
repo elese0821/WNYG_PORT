@@ -10,6 +10,7 @@ const { Counter } = require("../Model/Counter.js");
 router.post("/write", (req, res) => {
     let temp = {
         content: req.body.content,
+        cate: req.body.cate,
     };
 
     Counter.findOne({ name: "counter" })
@@ -34,16 +35,19 @@ router.post("/write", (req, res) => {
 
 // 글목록
 router.post("/list", (req, res) => {
-    Post.find({})
+    const path = req.body.path;
+
+    Post.find({ cate: path })
+        .sort({ createdAt: -1 })
+        .limit(20)
         .then((result) => {
-            res.status(200).json({ success: true, postList: result })
+            res.status(200).json({ success: true, postList: result });
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err);
             res.status(400).json({ success: false });
-        })
-})
-
+        });
+});
 
 
 module.exports = router;

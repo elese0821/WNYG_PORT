@@ -50,8 +50,21 @@ const Load = () => {
                     yPercent: 0
                 });
             }
+            if ($(".item").find(".commentList").length) {
+                gsap.to($(".item").find(".commentList"), {
+                    opacity: 0.85,
+                    yPercent: 0,
+                    onComplete: () => {
+                        const commentList = $(".commentList");
+                        if (commentList.length) {
+                            gsap.set(commentList, {
+                                yPercent: 0,
+                            });
+                        }
+                    }
+                });
+            }
         }
-
     }, []);
 }
 
