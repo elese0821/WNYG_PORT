@@ -48,6 +48,7 @@
 
         .commentdesc {
 
+
             .commentList {
                 height: calc(100% - 70px);
 
@@ -72,21 +73,5 @@
                 }
             }
         }
-    }
-}
-
-.list {
-    border-radius: 7px;
-
-    &:nth-child(2n) {
-        text-align: right;
-    }
-}
-
-textarea {
-    overflow: auto;
-
-    &::-webkit-scrollbar {
-        display: none;
     }
 }
