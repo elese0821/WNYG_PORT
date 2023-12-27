@@ -10,6 +10,9 @@ export const useSet = () => {
         gsap.set(".item", {
             scaleY: 0,
         });
+        gsap.set(".photo", {
+            opacity: 0,
+        });
         gsap.set($(".item").find(".char"), {
             yPercent: 100,
         });

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import About from './components/About'
 import Main from './page/Main'
@@ -18,20 +18,18 @@ const App = () => {
   return (
     <Main>
       <Three />
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/teamreact' element={<Teamreact />} />
-          <Route path='/teamquiz' element={<Teamquiz />} />
-          <Route path='/teamphp' element={<Teamphp />} />
-          <Route path='/youtube' element={<Youtube />} />
-          <Route path='/movie' element={<Movie />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/js' element={<Js />} />
-          <Route path='/blog' element={<Blog />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/teamreact' element={<Teamreact />} />
+        <Route path='/teamquiz' element={<Teamquiz />} />
+        <Route path='/teamphp' element={<Teamphp />} />
+        <Route path='/youtube' element={<Youtube />} />
+        <Route path='/movie' element={<Movie />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/js' element={<Js />} />
+        <Route path='/blog' element={<Blog />} />
+      </Routes>
     </Main >
 
   )

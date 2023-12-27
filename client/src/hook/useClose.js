@@ -8,7 +8,7 @@ const useClose = () => {
 
     useEffect(() => {
         const close = document.querySelector(".close");
-        const reply = document.querySelector(".reply");
+        const commentOpen = document.querySelector(".popup__open");
 
         const popupClose = document.querySelector(".popupClose")
 
@@ -31,42 +31,48 @@ const useClose = () => {
 
                     outwardLinks.unshift(gridItem);
 
-                    gsap.to($(".textWrap-tit").find(".char"), {
-                        yPercent: 300,
-                        duration: 1.2,
-                        stagger: { amount: 0.3 },
+                    gsap.to(".photo", {
+                        opacity: 0,
+                        onComplete: () => {
+                            gsap.to($(".textWrap-tit").find(".char"), {
+                                yPercent: 300,
+                                duration: 1.2,
+                                stagger: { amount: 0.3 },
+                            })
+                            gsap.fromTo(
+                                ".text-reg",
+                                {
+                                    opacity: 1,
+                                    yPercent: 0
+                                },
+                                {
+                                    opacity: 0,
+                                    yPercent: 50,
+                                    duration: 0.6,
+                                    ease: "power4.inOut",
+                                    onComplete: () => {
+                                        gsap.set(outwardLinks, { padding: 0 });
+                                    }
+                                }
+                            );
+                            gsap.fromTo(
+                                outwardLinks,
+                                {
+                                    height: "100%"
+                                },
+                                {
+                                    height: "0%",
+                                    stagger: { amount: 0.2 },
+                                    ease: "power4.inOut",
+                                    onComplete: () => {
+                                        navigate('/');
+                                        isAnimating = false;
+                                    }
+                                }
+                            );
+                        }
                     })
-                    gsap.fromTo(
-                        ".text-reg",
-                        {
-                            opacity: 1,
-                            yPercent: 0
-                        },
-                        {
-                            opacity: 0,
-                            yPercent: 50,
-                            duration: 0.6,
-                            ease: "power4.inOut",
-                            onComplete: () => {
-                                gsap.set(outwardLinks, { padding: 0 });
-                            }
-                        }
-                    );
-                    gsap.fromTo(
-                        outwardLinks,
-                        {
-                            height: "100%"
-                        },
-                        {
-                            height: "0%",
-                            stagger: { amount: 0.2 },
-                            ease: "power4.inOut",
-                            onComplete: () => {
-                                navigate('/');
-                                isAnimating = false;
-                            }
-                        }
-                    );
+
                 });
             });
         };
@@ -158,11 +164,11 @@ const useClose = () => {
             close.addEventListener('click', handleClick);
         }
 
-        // reply 요소가 존재할 경우에만 이벤트 리스너 추가
-        if (reply) {
-            reply.addEventListener('mouseover', handleMouseOver);
-            reply.addEventListener('mouseout', handleMouseOut);
-            reply.addEventListener('click', popupOpen);
+        // commentOpen 요소가 존재할 경우에만 이벤트 리스너 추가
+        if (commentOpen) {
+            commentOpen.addEventListener('mouseover', handleMouseOver);
+            commentOpen.addEventListener('mouseout', handleMouseOut);
+            commentOpen.addEventListener('click', popupOpen);
         }
 
         if (popupClose) {
@@ -176,10 +182,10 @@ const useClose = () => {
                 close.removeEventListener('mouseover', handleMouseOver);
                 close.removeEventListener('mouseout', handleMouseOut);
             }
-            if (reply) {
-                reply.removeEventListener('click', popupOpen);
-                reply.removeEventListener('mouseover', handleMouseOver);
-                reply.removeEventListener('mouseout', handleMouseOut);
+            if (commentOpen) {
+                commentOpen.removeEventListener('click', popupOpen);
+                commentOpen.removeEventListener('mouseover', handleMouseOver);
+                commentOpen.removeEventListener('mouseout', handleMouseOut);
             }
             if (popupClose) {
                 popupClose.removeEventListener('click', popupCloseClick);

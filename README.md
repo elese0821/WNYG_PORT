@@ -23,6 +23,7 @@ npm install jquery
 npm install firebase
 npm install axios
 npm install moment
+npm install react-icons
 ```
 npm install react-redux   
 npm install @reduxjs/toolkit   

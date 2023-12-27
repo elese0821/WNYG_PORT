@@ -3,8 +3,8 @@ import useLoad from '../hook/useLoad'
 import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
 import useSet from '../hook/useSet';
-import CommentList from './comment/CommentList';
 import Comment from './comment/Comment';
+import CommentArea from './comment/CommentArea';
 
 const Blog = () => {
     useSplitType();
@@ -39,15 +39,16 @@ const Blog = () => {
                     </div>
                 </div>
 
-                <div className="item photo">
-                    <div className="item__bg pj01_img"></div>
+                <div className="item">
+                    <div className="item__bg"></div>
+                    <div className="pj01_img photo"></div>
                 </div>
 
                 <div className="item desc_01">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
-                    <p className="desc">
+                    <p className="item_desc">
                         YouTube API v3를 활용하여 음악 유튜브 사이트를 만들어보았습니다.
                         <li>
                             <span>Postman</span>: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 YouTube API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
@@ -60,9 +61,7 @@ const Blog = () => {
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">COMMENTS</p>
                     </div>
-                    <div className='commentdesc'>
-                        <CommentList />
-                    </div>
+                    <CommentArea />
                     <div className="item__bg"></div>
                 </div>
 

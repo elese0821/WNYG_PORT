@@ -4,7 +4,7 @@ import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
 import useSet from '../hook/useSet'
 import Comment from './comment/Comment';
-import CommentList from './comment/CommentList';
+import CommentArea from './comment/CommentArea';
 
 const Youtube = () => {
     useSplitType();
@@ -39,8 +39,9 @@ const Youtube = () => {
                     </div>
                 </div>
 
-                <div className="item photo">
-                    <div className="item__bg pj01_img"></div>
+                <div className="item">
+                    <div className="item__bg"></div>
+                    <div className="pj01_img photo"></div>
                 </div>
 
                 <div className="item desc_01">
@@ -66,9 +67,7 @@ const Youtube = () => {
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">COMMENTS</p>
                     </div>
-                    <div className='commentdesc'>
-                        <CommentList />
-                    </div>
+                    <CommentArea />
                     <div className="item__bg"></div>
                 </div>
 

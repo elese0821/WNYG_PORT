@@ -3,15 +3,15 @@ import useLoad from '../hook/useLoad'
 import useClose from '../hook/useClose'
 import useSplitType from '../hook/useSplitType'
 import useSet from '../hook/useSet'
-import Comment from '../components/comment/Comment'
-import CommentList from './comment/CommentList';
+import CommentArea from './comment/CommentArea';
+import Comment from './comment/Comment';
+import { FaCommentAlt } from "react-icons/fa";
 
 const About = () => {
     useSplitType();
     useSet();
     useLoad();
     useClose();
-
     return (
         <div id='section' className='about'>
             <Comment />
@@ -24,7 +24,6 @@ const About = () => {
             </div>
 
             <div className="main_grid">
-
                 <div className="item">
                     <div className="split_text_clip">
                         <div text-split="" className="text-reg">ABOUT ME</div>
@@ -39,15 +38,16 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="item photo">
-                    <div className="item__bg about_img"></div>
+                <div className="item">
+                    <div className="item__bg"></div>
+                    <div className="about_img photo"></div>
                 </div>
 
                 <div className="item desc_01">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
-                    <p className='desc'>
+                    <p className='item_desc'>
                         신입 개발자로서 저는 기술적인 깊이와 폭넓은 디자인 감각을 갖추고자 노력해왔습니다. HTML, CSS를 활용한 깔끔하고 사용자 친화적인 UI/UX 디자인부터, jQuery, Photoshop, Illustrator를 비롯한 다양한 도구를 사용하여 아이디어를 현실로 구현하는 데 필요한 기술적 소양을 쌓았습니다. 프로그래밍의 기본이 되는 JavaScript 및 여러 프레임워크에 대해서도 지속적으로 학습하고 실제 프로젝트에 적용해보며 문제 해결 능력을 키워왔습니다.
                         제가 추구하는 개발 방식은 단순한 코드 작성을 넘어서, 각 기능과 구조가 어떻게 최적으로 작동할 수 있는지에 대한 근본적인 이해를 바탕으로 합니다. 제가 가진 지식과 열정을 활용하여, 새로운 도전을 맞이하고자 합니다.
                         저는 항상 새로운 도전에 대한 열정과 긍정적인 자세를 가지고 있습니다.<br />
@@ -64,34 +64,13 @@ const About = () => {
                     <div className="item__bg"></div>
                 </div>
 
-                <div className="item desc_02">
-                    <div className="split_text_clip">
-                        <p text-split="" className="text-reg">STACKS</p>
-                    </div>
-                    <p className='desc'>
-
-                    </p>
-                    <div className="item__bg"></div>
-                </div>
-
-                <div className="item desc_03">
+                <div className="item desc_02 comment__item">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">COMMENTS</p>
                     </div>
-                    <div className='commentdesc'>
-                        <CommentList />
-                    </div>
-                    <div className="item__bg"></div>
-                </div>
-
-                <div className="reply item">
-                    <div className="split_text_clip">
-                        <span text-split="" className="text-reg">
-                            REPLY
-                        </span>
-                        <span text-split="" className="text-reg">
-                            REPLY
-                        </span>
+                    <CommentArea />
+                    <div className="comment_icon popup__open">
+                        <FaCommentAlt size={18} />
                     </div>
                     <div className="item__bg"></div>
                 </div>

@@ -3,13 +3,13 @@
     .main_grid {
         display: grid;
         grid-template-areas:
-            "grid1 grid2 grid2 grid2 grid2 grid2 grid7 grid8"
+            "grid1 grid2 grid2 grid2 grid2 grid2 grid6 grid6"
             "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
             "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
             "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid6 grid6"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid6 grid6"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid6 grid6"
+            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
+            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
+            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
         ;
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(7, 1fr);
@@ -17,30 +17,32 @@
 
         @media(max-width: 1400px) {
             grid-template-areas:
-                "grid1 grid2 grid2 grid7 grid8"
-                "grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid5 grid5 grid5"
-                "grid3 grid3 grid5 grid5 grid5"
-                "grid3 grid3 grid6 grid6 grid6"
-                "grid3 grid3 grid6 grid6 grid6"
+                "grid1 grid2 grid2 grid2 grid6 grid6"
+                "grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
             ;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(7, 1fr);
         }
 
-        @media(max-width: 1400px) {
+        @media(max-width: 700px) {
             grid-template-areas:
-                "grid1 grid2 grid2 grid7 grid8"
-                "grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid5 grid5 grid6"
-                "grid3 grid3 grid5 grid5 grid6"
-                "grid3 grid3 grid5 grid5 grid6"
-                "grid3 grid3 grid5 grid5 grid6"
+                "grid1 grid1 grid6 grid6 grid6 grid6"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid4 grid4 grid4 grid4 grid4 grid4"
+                "grid4 grid4 grid4 grid4 grid4 grid4"
+                "grid6 grid5 grid5 grid5 grid5 grid5"
+                "grid6 grid5 grid5 grid5 grid5 grid5"
             ;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(7, 1fr);
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(8, 1fr);
         }
 
         >div {
@@ -53,21 +55,42 @@
                 grid-area: grid2;
                 display: flex;
                 align-items: flex-end;
+
+                @media(max-width: 800px) {
+                    display: none;
+                }
             }
 
             &:nth-child(3) {
                 grid-area: grid3;
 
-                .item__bg {
+                .photo {
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    top: 0%;
+                    bottom: 0%;
+                    left: 0%;
+                    right: 0%;
+                    transform-origin: 50% 100%;
+                    border-radius: 0.5rem;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                    display: flex;
+                    position: absolute;
+                    overflow: hidden;
+                    backdrop-filter: blur(16px);
+                    transition: all 1s;
+                    background-color: rgba(255, 255, 255, 0.08);
+                }
+
+                .about_img {
+                    background-image: url(../img/profile07.jpg);
                     background-size: cover;
                     background-position: top center;
                     background-repeat: no-repeat;
-
-                    &.about_img {
-                        background-image: url(../img/profile07.jpg);
-                        filter: grayscale(0.8);
-                        opacity: 0.8;
-                    }
+                    filter: grayscale(0.8);
+                    opacity: 0.8;
                 }
             }
 
@@ -83,14 +106,6 @@
 
             &:nth-child(6) {
                 grid-area: grid6;
-            }
-
-            &:nth-child(7) {
-                grid-area: grid7;
-            }
-
-            &:nth-child(8) {
-                grid-area: grid8;
             }
         }
     }
