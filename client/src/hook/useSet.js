@@ -43,18 +43,24 @@ export const useSet = () => {
             });
         }
 
-        const desc = $(".desc");
+        const desc = $(".item_desc");
         if (desc.length) {
             gsap.set(desc, {
                 opacity: 0,
                 yPercent: 10
             });
         }
-        const commentList = $(".commentList");
-        if (commentList.length) {
-            gsap.set(commentList, {
+        const commentdesc = $(".commentdesc *");
+        if (commentdesc.length) {
+            gsap.set(commentdesc, {
                 opacity: 0,
                 yPercent: 10
+            });
+        }
+        const commentIcon = $(".comment_icon");
+        if (commentIcon.length) {
+            gsap.to(commentIcon, {
+                opacity: 0,
             });
         }
         const comment = $("#commentModal");

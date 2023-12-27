@@ -167,6 +167,11 @@
         top: 1rem;
         padding: 0.2rem;
         z-index: 7;
+        transition: color 0.2s;
+
+        &:hover {
+            color: #9c9c9c;
+        }
     }
 
     .item__bg {
@@ -354,6 +359,10 @@
 
                 &::-webkit-input-placeholder {
                     color: #dddddd;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
                 }
 
                 &:active,
