@@ -10,6 +10,9 @@ heroku logs -n 200
 로 보고 gpt 검색 
 몽고디비 호ㅓㅏ이트리스트
 
+배포된 히로쿠 앱 파일 받기
+heroku login
+heroku git:clone -a wnyg-portfolio
 # 시작하기
 1. npm create vite@latest
 
