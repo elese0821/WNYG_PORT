@@ -1,18 +1,8 @@
 import $ from 'jquery';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
-import useLoad from '../hook/useLoad'
-import useSet from '../hook/useSet'
-import useClose from '../hook/useClose'
-import useSplitType from '../hook/useSplitType'
-
 
 const Contact = () => {
-    useSplitType();
-    useSet()
-    useLoad();
-    useClose();
-
     useEffect(() => {
         // link hover
         $(".link div").on("mouseover", function () {

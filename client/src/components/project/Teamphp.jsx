@@ -1,24 +1,15 @@
 import React from 'react';
-import useLoad from '../hook/useLoad'
-import useClose from '../hook/useClose'
-import useSplitType from '../hook/useSplitType'
-import useSet from '../hook/useSet';
-import Comment from './comment/Comment';
-import CommentArea from './comment/CommentArea';
+import Comment from '../comment/Comment';
+import CommentArea from '../comment/CommentArea';
 
-const Teamreact = () => {
-    useSplitType();
-    useSet();
-    useLoad();
-    useClose();
-
+const Teamphp = () => {
     return (
         <div id='section' className='project'>
             <Comment />
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        PERPAR
+                        SEXYBRAIN
                     </h1>
                 </div>
             </div>
@@ -27,8 +18,8 @@ const Teamreact = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">PERPAR</div>
-                        <div text-split="" className="text-reg">PERPAR</div>
+                        <div text-split="" className="text-reg">SEXYBRAIN</div>
+                        <div text-split="" className="text-reg">SEXYBRAIN</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -41,7 +32,7 @@ const Teamreact = () => {
 
                 <div className="item">
                     <div className="item__bg"></div>
-                    <div className="pj05_img photo"></div>
+                    <div className="pj03_img photo"></div>
                 </div>
 
                 <div className="item desc_01">
@@ -72,7 +63,7 @@ const Teamreact = () => {
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <a href='https://github.com/chfhr22/petpar' target='_blank' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/php-project' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -80,7 +71,7 @@ const Teamreact = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='' target='_blank' className="item__bg hover_effect"></a>
+                    <a href='http://hoho.dothome.co.kr/project/php/home/main.php' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="reply item">
@@ -112,4 +103,4 @@ const Teamreact = () => {
     )
 }
 
-export default Teamreact
+export default Teamphp

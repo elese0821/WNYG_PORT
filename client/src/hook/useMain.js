@@ -2,9 +2,10 @@ import { gsap } from 'gsap';
 import $ from 'jquery';
 import { useEffect } from 'react';
 import SplitType from 'split-type';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const useMain = () => {
+    const location = useLocation();
     const navigate = useNavigate();
     const paths = [
         '/about',
@@ -226,7 +227,7 @@ const useMain = () => {
                 item.removeEventListener('click', handleClick);
             });
         };
-    }, []);
+    }, [location]);
 
 }
 

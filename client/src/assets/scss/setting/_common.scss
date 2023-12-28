@@ -6,9 +6,26 @@
     z-index: 100;
     padding: 1.5rem;
 
+    @media(max-width:950px) {
+        padding: 1rem;
+    }
+
+    @media(max-width:450px) {
+        padding: 0.7rem;
+    }
+
     .main_grid {
         height: 100%;
         overflow: hidden;
+        grid-gap: 1.5rem;
+
+        @media(max-width:950px) {
+            gap: 1rem;
+        }
+
+        @media(max-width:450px) {
+            gap: 0.7rem;
+        }
     }
 
     .close,
@@ -138,16 +155,24 @@
     overflow: hidden;
     letter-spacing: 0.05rem;
 
+    @media(max-width:450px) {
+        height: 0.9rem;
+    }
+
     .text-reg {
         font-family: var(--subfontEng);
         font-size: 1.1rem;
         line-height: 1;
         letter-spacing: .08rem;
+
+        @media(max-width:450px) {
+            font-size: 0.9rem;
+        }
+
     }
 }
 
 .item {
-    padding: 1.5rem;
     align-self: end;
     justify-self: auto;
     z-index: 1;

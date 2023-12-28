@@ -1,8 +1,10 @@
 import { gsap } from 'gsap';
 import $ from 'jquery';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const useSet = () => {
+    const location = useLocation();
     useEffect(() => {
         gsap.set("#section", {
             display: "none",
@@ -10,9 +12,7 @@ export const useSet = () => {
         gsap.set(".item", {
             scaleY: 0,
         });
-        gsap.set(".photo", {
-            opacity: 0,
-        });
+
         gsap.set($(".item").find(".char"), {
             yPercent: 100,
         });
@@ -42,7 +42,12 @@ export const useSet = () => {
                 yPercent: 120,
             });
         }
-
+        const photo = $(".photo")
+        if (photo.length) {
+            gsap.set(".photo", {
+                opacity: 0,
+            });
+        }
         const desc = $(".item_desc");
         if (desc.length) {
             gsap.set(desc, {
@@ -77,7 +82,7 @@ export const useSet = () => {
                 opacity: 0,
             });
         }
-    }, []);
+    }, [location]);
 }
 
 export default useSet;

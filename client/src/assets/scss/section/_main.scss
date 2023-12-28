@@ -1,26 +1,24 @@
-.three-container {
-    background: linear-gradient(to right, #00aeff, #0401b4, #5d00f1);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-}
-
 #mainbg {
     /* background: linear-gradient(to right, #fcb045, #fd1d73, #833ab4); */
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     overflow: hidden;
 
-    canvas {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
+    .three-container {
         height: 100%;
-        z-index: 100;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        canvas {
+            background: linear-gradient(to right, #00aeff, #0401b4, #5d00f1);
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            z-index: 10;
+        }
     }
 
     #mainSection {
@@ -50,15 +48,12 @@
             grid-gap: 1rem;
             position: relative;
 
-
-
             .i1,
             .i2,
             .i3,
             .i4 {
                 align-items: flex-start !important;
             }
-
 
             @media (max-width:1000px) {
                 padding: 0.5rem;
@@ -205,6 +200,23 @@
     }
 
     /* text position */
+    .i1 .split_text_clip,
+    .i2 .split_text_clip,
+    .i3 .split_text_clip,
+    .i4 .split_text_clip {
+        left: 1.5rem;
+        top: 1.5rem;
+
+        @media(max-width:950px) {
+            left: 1rem;
+            top: 1rem;
+        }
+
+        @media(max-width:450px) {
+            left: 0.7rem;
+            top: 0.7rem;
+        }
+    }
 
     .i5 .split_text_clip,
     .i6 .split_text_clip,
@@ -212,6 +224,17 @@
     .i8 .split_text_clip,
     .i9 .split_text_clip {
         position: absolute;
+        left: 1.5rem;
         bottom: 1.5rem;
+
+        @media(max-width:950px) {
+            left: 1rem;
+            bottom: 1rem;
+        }
+
+        @media(max-width:450px) {
+            left: 0.7rem;
+            bottom: 0.7rem;
+        }
     }
 }

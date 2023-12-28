@@ -1,17 +1,9 @@
 import React from 'react';
-import useLoad from '../hook/useLoad'
-import useClose from '../hook/useClose'
-import useSplitType from '../hook/useSplitType'
-import useSet from '../hook/useSet'
 import CommentArea from './comment/CommentArea';
 import Comment from './comment/Comment';
 import { FaCommentAlt } from "react-icons/fa";
 
 const About = () => {
-    useSplitType();
-    useSet();
-    useLoad();
-    useClose();
     return (
         <div id='section' className='about'>
             <Comment />

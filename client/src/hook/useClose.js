@@ -2,8 +2,10 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import $ from 'jquery';
+import { useLocation } from 'react-router-dom';
 
 const useClose = () => {
+    const location = useLocation();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -32,35 +34,22 @@ const useClose = () => {
 
                     outwardLinks.unshift(gridItem);
 
-                    gsap.to(".photo", {
-                        opacity: 0,
+                    gsap.timeline({
                         onComplete: () => {
+                            // 여기에는 항상 실행될 애니메이션 코드를 넣습니다.
                             gsap.to($(".textWrap-tit").find(".char"), {
                                 yPercent: 300,
                                 duration: 1.2,
                                 stagger: { amount: 0.3 },
-                            })
+                            });
                             gsap.fromTo(
                                 ".text-reg",
-                                {
-                                    opacity: 1,
-                                    yPercent: 0
-                                },
-                                {
-                                    opacity: 0,
-                                    yPercent: 50,
-                                    duration: 0.6,
-                                    ease: "power4.inOut",
-                                    onComplete: () => {
-                                        gsap.set(outwardLinks, { padding: 0 });
-                                    }
-                                }
+                                { opacity: 1, yPercent: 0 },
+                                { opacity: 0, yPercent: 50, duration: 0.6, ease: "power4.inOut" }
                             );
                             gsap.fromTo(
                                 outwardLinks,
-                                {
-                                    height: "100%"
-                                },
+                                { height: "100%" },
                                 {
                                     height: "0%",
                                     stagger: { amount: 0.2 },
@@ -73,7 +62,12 @@ const useClose = () => {
                             );
                         }
                     })
-
+                        .add(() => {
+                            // '.photo' 클래스가 있는 요소가 있을 때만 실행될 애니메이션
+                            if (document.querySelector('.photo')) {
+                                gsap.to(".photo", { opacity: 0, duration: 0.5 });
+                            }
+                        }, 0);
                 });
             });
         };
@@ -202,7 +196,7 @@ const useClose = () => {
                 popupClose.removeEventListener('click', popupCloseClick);
             }
         }
-    }, [])
+    }, [location])
 
 }
 

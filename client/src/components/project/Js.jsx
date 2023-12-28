@@ -1,24 +1,15 @@
 import React from 'react';
-import useLoad from '../hook/useLoad'
-import useClose from '../hook/useClose'
-import useSplitType from '../hook/useSplitType'
-import useSet from '../hook/useSet';
-import Comment from './comment/Comment';
-import CommentArea from './comment/CommentArea';
+import Comment from '../comment/Comment';
+import CommentArea from '../comment/CommentArea';
 
-const Teamphp = () => {
-    useSplitType();
-    useSet();
-    useLoad();
-    useClose();
-
+const Js = () => {
     return (
         <div id='section' className='project'>
             <Comment />
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        SEXYBRAIN
+                        JAVASCRIPT
                     </h1>
                 </div>
             </div>
@@ -27,8 +18,8 @@ const Teamphp = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">SEXYBRAIN</div>
-                        <div text-split="" className="text-reg">SEXYBRAIN</div>
+                        <div text-split="" className="text-reg">JAVASCRIPT</div>
+                        <div text-split="" className="text-reg">JAVASCRIPT</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -41,7 +32,7 @@ const Teamphp = () => {
 
                 <div className="item">
                     <div className="item__bg"></div>
-                    <div className="pj03_img photo"></div>
+                    <div className="pj06_img photo"></div>
                 </div>
 
                 <div className="item desc_01">
@@ -72,7 +63,7 @@ const Teamphp = () => {
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <a href='https://github.com/elese0821/php-project' target='_blank' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/javascript_css' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -80,7 +71,7 @@ const Teamphp = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='http://hoho.dothome.co.kr/project/php/home/main.php' target='_blank' className="item__bg hover_effect"></a>
+                    <a href='https://javascript-css.vercel.app/' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="reply item">
@@ -112,4 +103,4 @@ const Teamphp = () => {
     )
 }
 
-export default Teamphp
+export default Js

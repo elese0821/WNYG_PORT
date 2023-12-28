@@ -1,24 +1,15 @@
 import React from 'react';
-import useLoad from '../hook/useLoad'
-import useClose from '../hook/useClose'
-import useSplitType from '../hook/useSplitType'
-import useSet from '../hook/useSet';
-import Comment from './comment/Comment';
-import CommentArea from './comment/CommentArea';
+import Comment from '../comment/Comment';
+import CommentArea from '../comment/CommentArea';
 
-const Blog = () => {
-    useSplitType();
-    useSet();
-    useLoad();
-    useClose();
-
+const Movie = () => {
     return (
         <div id='section' className='project'>
             <Comment />
             <div className="textWrap-tit">
                 <div className="title-text">
                     <h1 text-split="" className="LoadingText">
-                        SiMPLE BLOG
+                        MOVIE
                     </h1>
                 </div>
             </div>
@@ -27,8 +18,8 @@ const Blog = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <div text-split="" className="text-reg">SiMPLE BLOG</div>
-                        <div text-split="" className="text-reg">SiMPLE BLOG</div>
+                        <div text-split="" className="text-reg">MOVIE PROJECT</div>
+                        <div text-split="" className="text-reg">MOVIE PROJECT</div>
                     </div>
                     <div className="item__bg"></div>
                 </div>
@@ -41,7 +32,7 @@ const Blog = () => {
 
                 <div className="item">
                     <div className="item__bg"></div>
-                    <div className="pj01_img photo"></div>
+                    <div className="pj04_img photo"></div>
                 </div>
 
                 <div className="item desc_01">
@@ -65,12 +56,13 @@ const Blog = () => {
                     <div className="item__bg"></div>
                 </div>
 
+
                 <div className="item">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">CODE</p>
                         <p text-split="" className="text-reg">CODE</p>
                     </div>
-                    <a href='' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/movie-project' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -78,7 +70,7 @@ const Blog = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='' className="item__bg hover_effect"></a>
+                    <a href='https://movie-project-ecru.vercel.app/' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="reply item">
@@ -110,4 +102,4 @@ const Blog = () => {
     )
 }
 
-export default Blog
+export default Movie

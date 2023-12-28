@@ -1,8 +1,11 @@
 import { gsap } from 'gsap';
 import $ from 'jquery';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Load = () => {
+    const location = useLocation();
+
     useEffect(() => {
         gsap.to($(".title-text").find(".char"), {
             yPercent: 1,
@@ -72,7 +75,7 @@ const Load = () => {
                 }
             }
         }
-    }, []);
+    }, [location]);
 }
 
 export default Load;

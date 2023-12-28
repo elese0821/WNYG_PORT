@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import SplitType from 'split-type';
+import { useLocation } from 'react-router-dom';
 
 const useSplitType = () => {
+    const location = useLocation();
+
     useEffect(() => {
         // SplitType 인스턴스 생성
         const textSplit = new SplitType('[text-split]', {
@@ -18,7 +21,7 @@ const useSplitType = () => {
             textSplit.revert();
             lineSplit.revert();
         };
-    }, []);
+    }, [location]);
 };
 
 export default useSplitType;
