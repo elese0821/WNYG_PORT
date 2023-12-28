@@ -5,7 +5,10 @@
 (https://movie-project-ecru.vercel.app/)
 (https://youtube-project-nine.vercel.app/)
 
-
+#히로쿠 배포 오류
+heroku logs -n 200
+로 보고 gpt 검색 
+몽고디비 호ㅓㅏ이트리스트
 
 # 시작하기
 1. npm create vite@latest
