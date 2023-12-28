@@ -1,3 +1,7 @@
-module.exports = {
-    mongoURI: "mongodb+srv://iwonyeong892:dlwm5656!@cluster0.jtgrebu.mongodb.net/?retryWrites=true&w=majority",
+if (process.env.NODE_ENV === "production") {
+    // 배포 상태
+    module.exports = require("./production.js");
+} else {
+    // 개발 상태
+    module.exports = require("./dev.js");
 }
