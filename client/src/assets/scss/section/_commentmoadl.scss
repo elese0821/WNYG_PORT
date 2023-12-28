@@ -20,6 +20,12 @@
         z-index: 9;
         background-color: rgba(218, 218, 218, 0.281);
 
+        @media(max-width:480px) {
+            height: 450px;
+            width: 88%;
+            padding: 0.8rem;
+        }
+
         h4 {
             font-size: 1.5rem;
             text-align: center;

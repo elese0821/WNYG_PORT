@@ -190,7 +190,7 @@ const Three = () => {
         };
     }, []);
 
-    return <div ref={containerRef} id="mainbg" className="three-container"></div>;
+    return <div ref={containerRef} className="three-container"></div>;
 };
 
 export default Three;

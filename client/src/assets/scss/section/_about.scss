@@ -3,7 +3,7 @@
     .main_grid {
         display: grid;
         grid-template-areas:
-            "grid1 grid2 grid2 grid2 grid2 grid2 . grid6"
+            "grid1 grid2 grid2 grid2 grid2 grid2 . grid7"
             "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
             "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
             "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
@@ -17,7 +17,7 @@
 
         @media(max-width: 1400px) {
             grid-template-areas:
-                "grid1 grid2 grid2 grid2 grid2 grid6"
+                "grid1 grid2 grid2 grid2 grid2 grid7"
                 "grid3 grid3 grid3 grid4 grid4 grid4"
                 "grid3 grid3 grid3 grid4 grid4 grid4"
                 "grid3 grid3 grid3 grid4 grid4 grid4"
@@ -32,17 +32,49 @@
 
         @media(max-width: 950px) {
             grid-template-areas:
-                "grid1 grid1 grid2 grid2 grid2 grid6 grid6"
-                "grid3 grid3 grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid1 grid1 grid2 grid2 grid2 grid7 grid7"
+                "grid3 grid3 grid3 grid4 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid4 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid4 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid4 grid4 grid4 grid4"
                 "grid5 grid5 grid5 grid5 grid5 grid5 grid5"
                 "grid5 grid5 grid5 grid5 grid5 grid5 grid5"
                 "grid5 grid5 grid5 grid5 grid5 grid5 grid5"
             ;
             grid-template-columns: repeat(7, 1fr);
             grid-template-rows: repeat(8, 1fr);
+        }
+
+        @media(max-width: 700px) {
+            grid-template-areas:
+                "grid1 grid1 grid1 grid7 grid7 grid7"
+                "grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid3 grid3 grid3 grid4 grid4 grid4"
+                "grid5 grid5 grid5 grid5 grid5 grid5"
+                "grid5 grid5 grid5 grid5 grid5 grid5"
+                "grid5 grid5 grid5 grid5 grid5 grid5"
+                "grid5 grid5 grid5 grid5 grid5 grid5"
+            ;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+        }
+
+        @media(max-width: 450px) {
+            grid-template-areas:
+                "grid1 grid1 grid7 grid7"
+                "grid3 grid3 grid3 grid3"
+                "grid3 grid3 grid3 grid3"
+                "grid3 grid3 grid3 grid3"
+                "grid3 grid3 grid3 grid3"
+                "grid4 grid4 grid4 grid4"
+                "grid4 grid4 grid4 grid4"
+                "grid4 grid4 grid4 grid4"
+                "grid6 grid6 grid6 grid6"
+                "grid6 grid6 grid6 grid6"
+            ;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(9, 1fr);
         }
 
         >div {
@@ -59,6 +91,7 @@
                 @media(max-width: 950px) {
                     display: none;
                 }
+
             }
 
             &:nth-child(3) {
@@ -96,16 +129,27 @@
 
             &:nth-child(4) {
                 grid-area: grid4;
-
             }
 
             &:nth-child(5) {
                 grid-area: grid5;
 
+                @media(max-width:450px) {
+                    display: none;
+                }
             }
 
             &:nth-child(6) {
                 grid-area: grid6;
+                display: none;
+
+                @media(max-width:450px) {
+                    display: block;
+                }
+            }
+
+            &:nth-child(7) {
+                grid-area: grid7;
             }
         }
     }

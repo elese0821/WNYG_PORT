@@ -75,6 +75,18 @@ const About = () => {
                     <div className="item__bg"></div>
                 </div>
 
+                <div className="reply item">
+                    <div className="split_text_clip">
+                        <span text-split="" className="text-reg">
+                            COMMENTS
+                        </span>
+                        <span text-split="" className="text-reg">
+                            COMMENTS
+                        </span>
+                    </div>
+                    <div className="item__bg"></div>
+                </div>
+
                 <div className='close item'>
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">

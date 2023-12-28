@@ -271,14 +271,6 @@
         overflow: auto;
         margin: 0.2rem 0;
 
-        textarea {
-            overflow: auto;
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
-        }
-
         .list {
             width: 100%;
 
@@ -289,6 +281,10 @@
                 padding: 0.8rem;
                 margin: 0.8rem 0;
                 display: inline-block;
+
+                @media(max-width:480px) {
+                    padding: 0.5rem;
+                }
             }
 
             &:nth-child(2n) {
@@ -303,6 +299,12 @@
                 font-size: 1rem;
                 margin-bottom: 0.2rem;
                 overflow: hidden;
+
+                @media(max-width:480px) {
+                    font-size: 0.85rem;
+                    line-height: 1;
+                }
+
             }
         }
 
@@ -356,9 +358,18 @@
                 border-radius: 7px;
                 padding: 0.5rem;
                 padding-right: 3.2rem;
+                overflow: auto;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
 
                 &::-webkit-input-placeholder {
-                    color: #dddddd;
+                    color: #ddddddc9;
+
+                    @media(max-width:480px) {
+                        font-size: 0.9rem;
+                    }
                 }
 
                 &::-webkit-scrollbar {

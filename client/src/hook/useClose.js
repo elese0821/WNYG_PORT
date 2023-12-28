@@ -9,6 +9,7 @@ const useClose = () => {
     useEffect(() => {
         const close = document.querySelector(".close");
         const commentOpen = document.querySelector(".popup__open");
+        const commentOpen2 = document.querySelector(".reply");
 
         const popupClose = document.querySelector(".popupClose")
 
@@ -170,6 +171,11 @@ const useClose = () => {
             commentOpen.addEventListener('mouseout', handleMouseOut);
             commentOpen.addEventListener('click', popupOpen);
         }
+        if (commentOpen2) {
+            commentOpen2.addEventListener('mouseover', handleMouseOver);
+            commentOpen2.addEventListener('mouseout', handleMouseOut);
+            commentOpen2.addEventListener('click', popupOpen);
+        }
 
         if (popupClose) {
             popupClose.addEventListener('click', popupCloseClick);
@@ -186,6 +192,11 @@ const useClose = () => {
                 commentOpen.removeEventListener('click', popupOpen);
                 commentOpen.removeEventListener('mouseover', handleMouseOver);
                 commentOpen.removeEventListener('mouseout', handleMouseOut);
+            }
+            if (commentOpen2) {
+                commentOpen2.removeEventListener('click', popupOpen);
+                commentOpen2.removeEventListener('mouseover', handleMouseOver);
+                commentOpen2.removeEventListener('mouseout', handleMouseOut);
             }
             if (popupClose) {
                 popupClose.removeEventListener('click', popupCloseClick);
