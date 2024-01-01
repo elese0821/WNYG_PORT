@@ -1,5 +1,5 @@
 # 미리보기
-(http://wnyg-port.kro.kr/)
+(wnyg-port.kro.kr/)
 
 심플블로그 배포
 
