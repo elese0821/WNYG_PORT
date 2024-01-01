@@ -3,75 +3,88 @@ import $ from 'jquery';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const Load = () => {
+const Load = (homepath) => {
     const location = useLocation();
 
     useEffect(() => {
-        gsap.to($(".title-text").find(".char"), {
-            yPercent: 1,
-            duration: 1,
-            stagger: { amount: 0.3 },
-            onComplete: function () {
-                document.querySelectorAll('.item').forEach(function (item) {
-                    gsap.to(item, {
+        if (homepath.pathname !== '/') {
+            const titleChars = $(".title-text").find(".char");
+            const items = $('.item');
+            const itemChars = items.find(".char");
+            const photos = $(".photo");
+            const expChars = $(".exp").find(".char");
+            const itemDescs = items.find(".item_desc");
+            const commentDescs = items.find(".commentdesc *");
+            const commentIcons = $(".comment_icon");
+
+            if (titleChars.length) {
+                gsap.to(titleChars, {
+                    yPercent: 1,
+                    duration: 1,
+                    stagger: { amount: 0.3 },
+                    onComplete: titNext
+                });
+            }
+
+            function titNext() {
+                if (items.length) {
+                    gsap.to(items, {
                         scaleY: 1,
                         duration: 1,
                         stagger: { amount: 0.2 }
                     });
-                    gsap.to($(".item").find(".char"), {
+                }
+
+                if (itemChars.length) {
+                    gsap.to(itemChars, {
                         yPercent: 0,
-                        delay: 0.3,
-                        stagger: { amount: 0.3, from: "start" },
+                        delay: 0.5,
+                        stagger: { amount: 0.3, from: "start" }
                     });
-                });
-                if ($(".photo").length) {
-                    gsap.to(".photo", {
-                        delay: 1,
+                }
+
+                if (photos.length) {
+                    gsap.fromTo(photos, {
+                        opacity: 0
+                    }, {
+                        delay: 1.5,
                         opacity: 1,
+                        duration: 0.5
                     });
                 }
 
-                // .exp 요소가 있는 경우에만 실행
-                if ($(".exp").length) {
-                    gsap.to($(".exp").find(".char"), {
+                if (expChars.length) {
+                    gsap.to(expChars, {
+                        delay: 0.5,
                         yPercent: 0,
-                        stagger: { amount: 0.4, from: "start" },
-                        onComplete: animatedesc
+                        stagger: { amount: 0.4, from: "start" }
                     });
-                } else {
-                    animatedesc();
                 }
-            },
-        });
 
-        function animatedesc() {
-            if ($(".item").find(".item_desc").length) {
-                gsap.to($(".item").find(".item_desc"), {
-                    opacity: 0.85,
-                    yPercent: 0
-                });
-            }
-            if ($(".item").find(".commentdesc").length) {
-
-                gsap.to($(".item").find(".commentdesc *"), {
-                    opacity: 1,
-                    yPercent: 0,
-                    onComplete: () => {
-                        const commentdesc = $(".commentdesc *");
-                        if (commentdesc.length) {
-                            gsap.set(commentdesc, {
-                                yPercent: 0,
-                                onComplete: animateIcon
-                            });
-                        }
-                    }
-                });
-                function animateIcon() {
-                    if ($(".comment_icon").length) {
-                        gsap.to(".comment_icon ", {
-                            opacity: 1,
+                function animatedesc() {
+                    if (itemDescs.length) {
+                        gsap.to(itemDescs, {
+                            delay: 1,
+                            opacity: 0.85
                         });
                     }
+                    if (commentDescs.length) {
+                        gsap.to(commentDescs, {
+                            delay: 1,
+                            opacity: 1
+                        });
+                    }
+                    if (commentIcons.length) {
+                        gsap.to(commentIcons, {
+                            delay: 1,
+                            opacity: 1,
+                            animation: 'ani1 2s linear infinite'
+                        });
+                    }
+                }
+
+                if (expChars.length) {
+                    animatedesc();
                 }
             }
         }

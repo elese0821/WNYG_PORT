@@ -21,10 +21,26 @@
 }
 
 // 두줄 이상
-@mixin line($line){
+@mixin line($line) {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: $line;
     -webkit-box-orient: vertical;
+}
+
+@mixin splitTextClip {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+}
+
+@mixin splitTextClipDesc {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+@mixin gridHover {
+    background-color: rgba(255, 255, 255, 0.418);
 }

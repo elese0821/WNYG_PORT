@@ -1,15 +1,14 @@
 .about {
-
     .main_grid {
         display: grid;
         grid-template-areas:
             "grid1 grid2 grid2 grid2 grid2 grid2 . grid7"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
-            "grid3 grid3 grid3 grid4 grid4 grid4 grid5 grid5"
+            "grid3 grid3 grid3 grid5 grid5 grid4 grid4 grid4"
+            "grid3 grid3 grid3 grid5 grid5 grid4 grid4 grid4"
+            "grid3 grid3 grid3 grid5 grid5 grid4 grid4 grid4"
+            "grid3 grid3 grid3 grid5 grid5 grid4 grid4 grid4"
+            "grid3 grid3 grid3 grid5 grid5 grid4 grid4 grid4"
+            "grid3 grid3 grid3 grid5 grid5 grid4 grid4 grid4"
         ;
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(7, 1fr);
@@ -29,7 +28,7 @@
             grid-template-rows: repeat(7, 1fr);
         }
 
-        @media(max-width: 950px) {
+        @media(max-width: 1000px) {
             grid-template-areas:
                 "grid1 grid1 grid2 grid2 grid2 grid7 grid7"
                 "grid3 grid3 grid3 grid4 grid4 grid4 grid4"
@@ -47,13 +46,13 @@
         @media(max-width: 700px) {
             grid-template-areas:
                 "grid1 grid1 grid1 grid7 grid7 grid7"
-                "grid3 grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid3 grid4 grid4 grid4"
-                "grid3 grid3 grid3 grid4 grid4 grid4"
-                "grid5 grid5 grid5 grid5 grid5 grid5"
-                "grid5 grid5 grid5 grid5 grid5 grid5"
-                "grid5 grid5 grid5 grid5 grid5 grid5"
-                "grid5 grid5 grid5 grid5 grid5 grid5"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid3 grid3 grid3 grid5 grid5 grid5"
+                "grid4 grid4 grid4 grid4 grid4 grid4"
+                "grid4 grid4 grid4 grid4 grid4 grid4"
+                "grid4 grid4 grid4 grid4 grid4 grid4"
+                "grid4 grid4 grid4 grid4 grid4 grid4"
             ;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(8, 1fr);
@@ -75,9 +74,14 @@
         }
 
         >div {
+
+
             &:nth-child(1) {
                 grid-area: grid1;
-                align-items: flex-end;
+
+                .split_text_clip {
+                    @include splitTextClip;
+                }
 
                 @media(max-width: 450px) {
                     min-height: 70px;
@@ -97,43 +101,43 @@
 
             &:nth-child(3) {
                 grid-area: grid3;
+                opacity: 0.8;
 
-                .photo {
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                    top: 0%;
-                    bottom: 0%;
-                    left: 0%;
-                    right: 0%;
-                    transform-origin: 50% 100%;
-                    border-radius: 0.5rem;
-                    justify-content: flex-start;
-                    align-items: flex-end;
-                    display: flex;
+                .split_text_clip {
                     position: absolute;
-                    overflow: hidden;
-                    backdrop-filter: blur(16px);
-                    transition: all 1s;
-                    background-color: rgba(255, 255, 255, 0.08);
+                    left: 1rem;
+                    bottom: 1rem;
                 }
 
                 .about_img {
-                    background-image: url(../img/profile07.jpg);
+                    background-image: url(../img/profile03.png);
                     background-size: cover;
                     background-position: top center;
                     background-repeat: no-repeat;
-                    filter: grayscale(0.8);
-                    opacity: 0.8;
                 }
             }
 
             &:nth-child(4) {
                 grid-area: grid4;
+
+                .split_text_clip {
+                    @include splitTextClipDesc;
+                }
             }
 
             &:nth-child(5) {
                 grid-area: grid5;
+
+                .commentdesc {
+                    top: 1rem;
+                    position: absolute;
+                    height: calc(100% - 0.5rem);
+                    padding: 1rem;
+                }
+
+                .split_text_clip {
+                    @include splitTextClipDesc;
+                }
 
                 @media(max-width:450px) {
                     display: none;
@@ -144,6 +148,10 @@
                 grid-area: grid6;
                 display: none;
 
+                .split_text_clip {
+                    @include splitTextClip;
+                }
+
                 @media(max-width:450px) {
                     display: flex;
                 }
@@ -151,6 +159,10 @@
 
             &:nth-child(7) {
                 grid-area: grid7;
+
+                .split_text_clip {
+                    @include splitTextClip;
+                }
             }
         }
     }

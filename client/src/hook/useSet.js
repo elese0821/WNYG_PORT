@@ -3,85 +3,48 @@ import $ from 'jquery';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export const useSet = () => {
+export const useSet = (homepath) => {
     const location = useLocation();
+
     useEffect(() => {
-        gsap.set("#section", {
-            display: "none",
-        });
-        gsap.set(".item", {
-            scaleY: 0,
-        });
+        if (homepath.pathname !== '/') {
+            // 요소 캐싱
+            const section = $("#section");
+            const items = $(".item");
+            const itemChars = items.find(".char");
+            const titleText = $(".title-text");
+            const titleChars = titleText.find(".char");
+            const closeChars = $(".close").find(".char");
+            const expChars = $(".exp").find(".char");
+            const photo = $(".photo");
+            const desc = $(".item_desc");
+            const commentdesc = $(".commentdesc *");
+            const commentIcon = $(".comment_icon");
+            const comment = $("#commentModal");
+            const commentModal = $(".commentModal");
+            const commentModalchild = commentModal.find("*");
 
-        gsap.set($(".item").find(".char"), {
-            yPercent: 100,
-        });
-        // line
-        gsap.set("#section", {
-            display: "grid",
-        });
-        gsap.defaults({
-            ease: "power3.inOut",
-            duration: 0.8,
-        });
-        gsap.set(".title-text", {
-            display: "grid",
-        });
+            // 상태 설정
+            gsap.set(section, { display: "none" });
+            gsap.set(items, { scaleY: 0 });
+            gsap.set(itemChars, { yPercent: 100 });
+            gsap.set(section, { display: "grid" });
+            gsap.defaults({ ease: "power3.inOut", duration: 0.8 });
+            gsap.set(titleText, { display: "grid" });
+            gsap.set(titleChars, { yPercent: 150 });
+            gsap.set(closeChars, { yPercent: 100 });
+            if (expChars.length) gsap.set(expChars, { yPercent: 120 });
+            if (photo.length) gsap.set(photo, { opacity: 0 });
+            if (desc.length) gsap.set(desc, { opacity: 0 });
+            if (commentdesc.length) gsap.set(commentdesc, { opacity: 0 });
+            if (commentIcon.length) gsap.set(commentIcon, { animation: "none", opacity: 0 });
+            if (comment.length) {
+                gsap.set(comment, { zIndex: -3 });
+                gsap.set(commentModal, { scaleY: 0 });
+                gsap.set(commentModalchild, { opacity: 0 });
+            }
+        }
 
-        gsap.set($(".title-text").find(".char"), {
-            yPercent: 150,
-        });
-
-        gsap.set($(".close").find(".char"), {
-            yPercent: 100,
-        });
-
-        const expChars = $(".exp").find(".char");
-        if (expChars.length) {
-            gsap.set(expChars, {
-                yPercent: 120,
-            });
-        }
-        const photo = $(".photo")
-        if (photo.length) {
-            gsap.set(".photo", {
-                opacity: 0,
-            });
-        }
-        const desc = $(".item_desc");
-        if (desc.length) {
-            gsap.set(desc, {
-                opacity: 0,
-                yPercent: 10
-            });
-        }
-        const commentdesc = $(".commentdesc *");
-        if (commentdesc.length) {
-            gsap.set(commentdesc, {
-                opacity: 0,
-                yPercent: 10
-            });
-        }
-        const commentIcon = $(".comment_icon");
-        if (commentIcon.length) {
-            gsap.to(commentIcon, {
-                opacity: 0,
-            });
-        }
-        const comment = $("#commentModal");
-        const commentModal = $(".commentModal");
-        const commentModalchild = $(".commentModal *");
-        if (comment.length) {
-            gsap.set(comment, {
-                zIndex: -3,
-            });
-            gsap.set(commentModal, {
-                scaleY: 0,
-            });
-            gsap.set(commentModalchild, {
-                opacity: 0,
-            });
-        }
     }, [location]);
 }
 

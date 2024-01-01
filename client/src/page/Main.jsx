@@ -5,19 +5,15 @@ import useLoad from '../hook/useLoad';
 import useSplitType from '../hook/useSplitType';
 import { useLocation } from 'react-router-dom';
 
-
 const Main = ({ children }) => {
-    const location = useLocation();
+    const homepath = useLocation();
+    useSplitType(homepath);
+    useSet(homepath);
+    useLoad(homepath);
+    useClose(homepath);
 
-    if (location.pathname !== '/') {
-        useSplitType();
-        useSet();
-        useClose();
-        useLoad();
-    }
     return (
-        <div id='mainbg'>{children}
-        </div>
+        <div id='mainbg'>{children}</div>
     )
 }
 

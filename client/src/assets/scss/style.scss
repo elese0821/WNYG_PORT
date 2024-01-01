@@ -2,10 +2,10 @@
 
 /* setting */
 @import "./setting/reset";
+@import "./setting/mixin";
 @import "./setting/common";
 @import "./setting/fonts";
 @import "./setting/var";
-@import "./setting/mixin";
 
 /* section */
 @import "./section/main";

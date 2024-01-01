@@ -1,9 +1,7 @@
 # 미리보기
 (https://wnyg-port.vercel.app/)
 
-
-(https://movie-project-ecru.vercel.app/)
-(https://youtube-project-nine.vercel.app/)
+심플블로그 배포
 
 #히로쿠 배포 오류
 heroku logs -n 200

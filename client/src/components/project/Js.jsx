@@ -1,8 +1,11 @@
 import React from 'react';
-import Comment from '../comment/Comment';
 import CommentArea from '../comment/CommentArea';
+import Comment from '../comment/Comment';
+import { FaCommentAlt } from "react-icons/fa";
+import useNolink from '../../hook/useNolink';
 
 const Js = () => {
+    const noLink = useNolink();
     return (
         <div id='section' className='project'>
             <Comment />
@@ -26,7 +29,7 @@ const Js = () => {
 
                 <div className="exp">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">저의 포트폴리오에 오신 것을 환영합니다.</p>
+                        <p text-split="" className="text-reg exp_txt">CSS 속성을 검색할 수 있는 사이트입니다.</p>
                     </div>
                 </div>
 
@@ -37,25 +40,24 @@ const Js = () => {
 
                 <div className="item desc_01">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">INTRODUCE</p>
+                        <p text-split="" className="text-reg">explanation</p>
                     </div>
                     <p className="item_desc">
-                        YouTube API v3를 활용하여 음악 유튜브 사이트를 만들어보았습니다.
-                        <li>
-                            <span>Postman</span>: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 YouTube API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
-                        </li>
+                        JAVASCRIPT로 CSS속성을 검색할 수 있도록 만든 사이트입니다.
                     </p>
                     <div className="item__bg"></div>
                 </div>
 
-                <div className="item desc_02">
+                <div className="item desc_02 comment__item">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">COMMENTS</p>
                     </div>
                     <CommentArea />
+                    <a href='' onClick={noLink} className="comment_icon popup__open">
+                        <FaCommentAlt size={16} />
+                    </a>
                     <div className="item__bg"></div>
                 </div>
-
 
 
                 <div className="item">
@@ -83,7 +85,7 @@ const Js = () => {
                             REPLY
                         </span>
                     </div>
-                    <div className="item__bg"></div>
+                    <a href='' className="item__bg" onClick={noLink}></a>
                 </div>
 
                 <div className='close item'>
@@ -95,7 +97,7 @@ const Js = () => {
                             CLOSE
                         </span>
                     </div>
-                    <div className="item__bg"></div>
+                    <a href='' className="item__bg" onClick={noLink}></a>
                 </div>
 
             </div>
