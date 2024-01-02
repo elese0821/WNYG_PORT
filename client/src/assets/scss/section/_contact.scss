@@ -42,7 +42,7 @@
                 "grid5 grid5 grid10 grid11"
             ;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: repeat(8, 1fr);
         }
 
         @media(max-width: 450px) {
@@ -50,11 +50,15 @@
                 "grid1 grid1 grid13 grid13"
                 "grid3 grid3 grid3 grid3"
                 "grid3 grid3 grid3 grid3"
+                "grid3 grid3 grid3 grid3"
+                "grid3 grid3 grid3 grid3"
+                "grid7 grid7 grid7 grid7"
+                "grid7 grid7 grid7 grid7"
                 "grid7 grid7 grid7 grid7"
                 "grid7 grid7 grid7 grid7"
                 "grid12 grid12 grid11 grid11"
             ;
-            grid-template-rows: auto 1fr 1fr 1fr 1fr auto;
+            grid-template-rows: repeat(10, 1fr);
         }
 
         >div {
@@ -99,7 +103,6 @@
             &:nth-child(1) {
                 grid-area: grid1;
                 align-items: flex-end;
-                min-height: 80px;
 
                 .split_text_clip {
                     @include splitTextClip;
@@ -202,10 +205,6 @@
 
                 .split_text_clip {
                     @include splitTextClip;
-                }
-
-                @media(max-width: 450px) {
-                    min-height: 80px;
                 }
             }
 
