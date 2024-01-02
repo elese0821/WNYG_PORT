@@ -7,16 +7,18 @@
 
     .three-container {
         height: 100%;
+        width: 100%;
         position: absolute;
         top: 0;
         bottom: 0;
 
         canvas {
+            height: 100%;
+            width: 100%;
             background: linear-gradient(to right, #00aeff, #0401b4, #5d00f1);
             position: absolute;
             left: 0;
             top: 0;
-            height: 100%;
             z-index: 10;
         }
     }

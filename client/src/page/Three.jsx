@@ -3,9 +3,22 @@ import * as THREE from 'three';
 
 const Three = () => {
     const containerRef = useRef();
+    const rendererRef = useRef();
+    const cameraRef = useRef();
 
     useEffect(() => {
+        // 창의 너비와 높이 설정
+        const width = window.innerWidth;
+        const height = window.innerHeight;
 
+        // Renderer와 Camera 초기화
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(width, height);
+        containerRef.current.appendChild(renderer.domElement);
+        rendererRef.current = renderer;
+
+        const camera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, 0, 100);
+        cameraRef.current = camera;
         // 셰이더 코드
         let Noise3D = `
     vec3 mod289(vec3 x) {
@@ -143,18 +156,6 @@ const Three = () => {
         }
     `
         }
-
-        // 컨테이너의 크기를 가져옵니다.
-        const width = 1920;
-        const height = 1080;
-
-        // Three.js 씬 설정
-        const scene = new THREE.Scene();
-        const camera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, 0, 100);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(width, height);
-        containerRef.current.appendChild(renderer.domElement);
-
         // Uniforms 정의
         const uniforms = {
             resolution: { value: new THREE.Vector2(width, height) },
@@ -169,24 +170,49 @@ const Three = () => {
         });
         const geometry = new THREE.PlaneGeometry(width, height);
         const plane = new THREE.Mesh(geometry, shaderMaterial);
-        scene.add(plane);
 
+        // 씬 생성 및 plane 추가
+        const scene = new THREE.Scene();
+        scene.add(plane);
 
         // 렌더링 함수
         const render = () => {
-            uniforms.time.value += 0.01; // 시간에 따라 업데이트
+            uniforms.time.value += 0.01;
             requestAnimationFrame(render);
-            renderer.render(scene, camera);
+            rendererRef.current.render(scene, cameraRef.current);
         };
+
         render();
 
-        // 컴포넌트가 언마운트될 때 정리 작업을 수행합니다.
+        // 창 크기 변경에 대한 리사이즈 핸들러
+        const onWindowResize = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            // 카메라 비율 업데이트
+            cameraRef.current.aspect = width / height;
+            cameraRef.current.updateProjectionMatrix();
+
+            // 렌더러 크기 업데이트
+            rendererRef.current.setSize(width, height);
+
+            // 셰이더의 해상도 uniforms 업데이트
+            uniforms.resolution.value.set(width, height);
+
+            // 필요한 경우 지오메트리의 크기도 업데이트
+            // geometry.scale.set(width, height, 1);
+        };
+        // 이벤트 리스너 추가
+        window.addEventListener('resize', onWindowResize);
+
+        // 컴포넌트가 언마운트될 때 정리 작업
         return () => {
-            containerRef.current.removeChild(renderer.domElement);
+            window.removeEventListener('resize', onWindowResize);
+            containerRef.current.removeChild(rendererRef.current.domElement);
             scene.remove(plane);
             geometry.dispose();
             shaderMaterial.dispose();
-            renderer.dispose();
+            rendererRef.current.dispose();
         };
     }, []);
 
