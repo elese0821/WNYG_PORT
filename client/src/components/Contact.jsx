@@ -76,20 +76,20 @@ const Contact = () => {
                     <div className="item__bg"></div>
                 </div>
 
-                <div className="item">
+                <div className="item contact_link">
                     <div className="split_text_clip">
                         <div text-split="" className="text-reg">EMAIL</div>
                         <div text-split="" className="text-reg">EMAIL</div>
                     </div>
-                    <a href='' className="item__bg hover_effect" onClick={noLink}></a>
+                    <a href='mailto:elese0821@naver.com' className="item__bg hover_effect"></a>
                 </div>
 
-                <div className="item">
+                <div className="item contact_link">
                     <div className="split_text_clip">
                         <div text-split="" className="text-reg">GITHUB</div>
                         <div text-split="" className="text-reg">GITHUB</div>
                     </div>
-                    <a href='' className="item__bg hover_effect" onClick={noLink}></a>
+                    <a href='https://github.com/elese0821' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="reply item">

@@ -13,6 +13,7 @@ const useClose = (homepath) => {
             const close = document.querySelector(".close");
             const commentOpen = document.querySelector(".popup__open");
             const commentOpen2 = document.querySelector(".reply");
+            const contactLink = document.querySelectorAll(".contact_link");
 
             const popupClose = document.querySelector(".popupClose")
 
@@ -181,6 +182,9 @@ const useClose = (homepath) => {
             if (popupClose) {
                 popupClose.addEventListener('click', popupCloseClick);
             }
+            contactLink.forEach(contactLink => {
+                contactLink.addEventListener('mouseover', handleMouseOver);
+            });
 
             return () => {
                 if (close) {
@@ -201,6 +205,9 @@ const useClose = (homepath) => {
                 if (popupClose) {
                     popupClose.removeEventListener('click', popupCloseClick);
                 }
+                contactLink.forEach(contactLink => {
+                    contactLink.removeEventListener('mouseover', handleMouseOver);
+                });
             }
         }
     }, [location])
