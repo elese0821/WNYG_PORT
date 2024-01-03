@@ -169,11 +169,13 @@
             top: 50%;
             transform: translate(-50%, -50%);
             overflow: hidden;
+            pointer-events: none;
 
             .title_clip {
                 white-space: nowrap;
                 flex: none;
                 overflow: hidden;
+
 
                 .mainText {
                     width: 100%;

@@ -90,9 +90,11 @@ const useClose = (homepath) => {
                         yPercent: 0,
                     }, {
                         yPercent: -100,
-                        stagger: { amount: 0.4 },
-                        delay: i * 0.05,
+                        stagger: { amount: 0.05 },
+                        delay: i * 0.02,
                         overwrite: true,
+                        duration: 0.5,
+                        ease: "power4.inOut",
                     });
                 });
             };
@@ -102,7 +104,7 @@ const useClose = (homepath) => {
                     gsap.set(this, {
                         yPercent: 0,
                         duration: 0.1,
-                        overwrite: true
+                        overwrite: true,
                     });
                 });
             };

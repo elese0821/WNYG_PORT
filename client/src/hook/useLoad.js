@@ -47,7 +47,7 @@ const Load = (homepath) => {
                     gsap.fromTo(photos, {
                         opacity: 0
                     }, {
-                        delay: 1.5,
+                        delay: 1,
                         opacity: 1,
                         duration: 0.5
                     });

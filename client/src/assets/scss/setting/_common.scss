@@ -304,18 +304,24 @@
         .list {
             width: 100%;
             padding: 0.2rem;
+            margin: 0.8rem 0;
+
 
             .comment_inner {
                 background-color: rgb(255 255 255 / 9%);
                 border-radius: 10px 10px 10px 0;
                 font-size: 0.75rem;
                 padding: 0.8rem;
-                margin: 0.8rem 0;
                 display: inline-block;
 
                 @media(max-width:480px) {
                     padding: 0.5rem;
                 }
+            }
+
+            .date {
+                font-size: 0.8rem;
+                margin-top: 0.2rem;
             }
 
             &:nth-child(2n) {

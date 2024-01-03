@@ -34,17 +34,17 @@ const Home = () => {
             yPercent: 0,
         }, {
             yPercent: -100,
-            stagger: { amount: 0.4 },
-            delay: 0,
-            overwrite: true
+            stagger: { amount: 0.2 },
+            overwrite: true,
+            ease: "power4.inOut",
         });
         gsap.fromTo(linkTextBtm, {
             yPercent: 0,
         }, {
             yPercent: -100,
-            stagger: { amount: 0.4 },
-            delay: 0.1,
-            overwrite: true
+            stagger: { amount: 0.3 },
+            overwrite: true,
+            ease: "power4.inOut",
         });
     };
 

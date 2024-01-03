@@ -6,9 +6,9 @@ const CommentList = ({ postList = [], scroll }) => {
 
     const SetTime = (createdAt, updatedAt) => {
         if (createdAt !== updatedAt) {
-            return moment(updatedAt).format("MM Do, hh:mm") + " (수정됨)";
+            return moment(updatedAt).format("yy.MM.DD hh:mm") + " (수정됨)";
         } else {
-            return moment(createdAt).format("MM Do, hh:mm");
+            return moment(createdAt).format("yy.MM.DD hh:mm");
         }
     }
 
@@ -25,8 +25,8 @@ const CommentList = ({ postList = [], scroll }) => {
                     <div className='list' key={key}>
                         <div className="comment_inner">
                             <div className='desc'>{post.content}</div>
-                            <div>{SetTime(post.createdAt, post.updatedAt)}</div>
                         </div>
+                        <div className='date'>{SetTime(post.createdAt, post.updatedAt)}</div>
                     </div>
                 ))
             ) : (

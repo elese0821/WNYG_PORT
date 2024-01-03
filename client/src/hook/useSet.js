@@ -25,14 +25,14 @@ export const useSet = (homepath) => {
             const commentModalchild = commentModal.find("*");
 
             // 상태 설정
-            gsap.set(section, { display: "none" });
-            gsap.set(items, { scaleY: 0 });
-            gsap.set(itemChars, { yPercent: 100 });
-            gsap.set(section, { display: "grid" });
+            if (section.length) gsap.set(section, { display: "none" });
+            if (items.length) gsap.set(items, { scaleY: 0 });
+            if (itemChars.length) gsap.set(itemChars, { yPercent: 100 });
+            if (section.length) gsap.set(section, { display: "grid" });
             gsap.defaults({ ease: "power3.inOut", duration: 0.8 });
-            gsap.set(titleText, { display: "grid" });
-            gsap.set(titleChars, { yPercent: 150 });
-            gsap.set(closeChars, { yPercent: 100 });
+            if (titleText.length) gsap.set(titleText, { display: "grid" });
+            if (titleChars.length) gsap.set(titleChars, { yPercent: 150 });
+            if (closeChars.length) gsap.set(closeChars, { yPercent: 100 });
             if (expChars.length) gsap.set(expChars, { yPercent: 120 });
             if (photo.length) gsap.set(photo, { opacity: 0 });
             if (desc.length) gsap.set(desc, { opacity: 0 });
