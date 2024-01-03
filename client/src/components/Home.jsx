@@ -8,7 +8,6 @@ import useNolink from '../hook/useNolink';
 
 const Home = () => {
     const noLink = useNolink();
-
     const location = useLocation();
     const navigate = useNavigate();
     const paths = [
@@ -72,12 +71,9 @@ const Home = () => {
 
     const handleClick = (index) => {
         let gridItems = Array.from(document.querySelectorAll(".item"));
-        let isAnimating = false;
 
         gridItems.forEach((gridItem, index) => {
             gridItem.addEventListener("click", function () {
-                if (isAnimating) return;
-                isAnimating = true;
                 let before = gridItems.slice(0, index).reverse();
                 let after = gridItems.slice(index + 1); ``
                 let outwardLinks = [];
@@ -121,7 +117,6 @@ const Home = () => {
                         ease: "power4.inOut",
                         onComplete: () => {
                             navigate(paths[index]);
-                            isAnimating = false;
                         }
                     }
                 );
@@ -171,7 +166,7 @@ const Home = () => {
             }, "-=0.3")
             .set(".item", { pointerEvents: "auto" });
 
-        const gridItems = document.querySelectorAll(".item");
+        const gridItems = document.querySelectorAll(".item__bg");
 
         gridItems.forEach((item, index) => {
             item.addEventListener('mouseover', () => handleMouseOver(index));

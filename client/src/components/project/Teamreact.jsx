@@ -77,7 +77,7 @@ const Teamreact = () => {
                     <a href='' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
-                <div className="reply item">
+                <div className="item">
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
                             REPLY
@@ -86,10 +86,10 @@ const Teamreact = () => {
                             REPLY
                         </span>
                     </div>
-                    <a href='' className="item__bg" onClick={noLink}></a>
+                    <a href='' className="item__bg reply" onClick={noLink}></a>
                 </div>
 
-                <div className='close item'>
+                <div className='item'>
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
                             CLOSE
@@ -98,7 +98,7 @@ const Teamreact = () => {
                             CLOSE
                         </span>
                     </div>
-                    <a href='' className="item__bg" onClick={noLink}></a>
+                    <a href='' className="item__bg close" onClick={noLink}></a>
                 </div>
 
             </div>

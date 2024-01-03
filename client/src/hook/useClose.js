@@ -9,22 +9,17 @@ const useClose = (homepath) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (homepath.pathname !== '/') {
+        if (location.pathname !== homepath) {
             const close = document.querySelector(".close");
             const commentOpen = document.querySelector(".popup__open");
             const commentOpen2 = document.querySelector(".reply");
-            const contactLink = document.querySelectorAll(".contact_link");
-
-            const popupClose = document.querySelector(".popupClose")
+            const popupClose = document.querySelector(".popupClose");
 
             const handleClick = function () {
                 let gridItems = Array.from(document.querySelectorAll(".item"));
-                let isAnimating = false;
 
                 gridItems.forEach((gridItem, index) => {
                     gridItem.addEventListener("click", function () {
-                        if (isAnimating) return;
-                        isAnimating = true;
                         let before = gridItems.slice(0, index).reverse();
                         let after = gridItems.slice(index + 1);
                         let outwardLinks = [];
@@ -73,7 +68,6 @@ const useClose = (homepath) => {
                                         duration: 1,
                                         stagger: { amount: 0.3 },
                                         onComplete: () => {
-                                            isAnimating = false;
                                             navigate('/');
                                         }
                                     });
@@ -90,9 +84,8 @@ const useClose = (homepath) => {
                 });
             };
 
-
             const handleMouseOver = function () {
-                $(this).find(".text-reg .char").each(function (i) {
+                $(this).siblings(".split_text_clip").find(".text-reg .char").each(function (i) {
                     gsap.fromTo(this, {
                         yPercent: 0,
                     }, {
@@ -105,14 +98,15 @@ const useClose = (homepath) => {
             };
 
             const handleMouseOut = function () {
-                $(this).find(".text-reg .char").each(function (i) {
-                    gsap.to(this, {
+                $(this).siblings(".split_text_clip").find(".text-reg .char").each(function (i) {
+                    gsap.set(this, {
                         yPercent: 0,
                         duration: 0.1,
                         overwrite: true
                     });
                 });
             };
+
 
             const popupOpen = function () {
                 const tl = gsap.timeline();
@@ -162,29 +156,25 @@ const useClose = (homepath) => {
                     });
             };
 
+
+
+
             if (close) {
+                close.addEventListener('click', handleClick);
                 close.addEventListener('mouseover', handleMouseOver);
                 close.addEventListener('mouseout', handleMouseOut);
-                close.addEventListener('click', handleClick);
             }
-
             if (commentOpen) {
-                commentOpen.addEventListener('mouseover', handleMouseOver);
-                commentOpen.addEventListener('mouseout', handleMouseOut);
                 commentOpen.addEventListener('click', popupOpen);
             }
             if (commentOpen2) {
+                commentOpen2.addEventListener('click', popupOpen);
                 commentOpen2.addEventListener('mouseover', handleMouseOver);
                 commentOpen2.addEventListener('mouseout', handleMouseOut);
-                commentOpen2.addEventListener('click', popupOpen);
             }
-
             if (popupClose) {
                 popupClose.addEventListener('click', popupCloseClick);
             }
-            contactLink.forEach(contactLink => {
-                contactLink.addEventListener('mouseover', handleMouseOver);
-            });
 
             return () => {
                 if (close) {
@@ -194,8 +184,6 @@ const useClose = (homepath) => {
                 }
                 if (commentOpen) {
                     commentOpen.removeEventListener('click', popupOpen);
-                    commentOpen.removeEventListener('mouseover', handleMouseOver);
-                    commentOpen.removeEventListener('mouseout', handleMouseOut);
                 }
                 if (commentOpen2) {
                     commentOpen2.removeEventListener('click', popupOpen);
@@ -205,12 +193,9 @@ const useClose = (homepath) => {
                 if (popupClose) {
                     popupClose.removeEventListener('click', popupCloseClick);
                 }
-                contactLink.forEach(contactLink => {
-                    contactLink.removeEventListener('mouseover', handleMouseOver);
-                });
             }
         }
-    }, [location])
+    }, [location.pathname, homepath])
 
 }
 

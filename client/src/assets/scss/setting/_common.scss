@@ -35,11 +35,8 @@
         cursor: pointer;
         align-items: flex-end;
 
-        .item__bg {
-
-            &:hover {
-                @include gridHover
-            }
+        &:hover {
+            @include gridHover
         }
     }
 
@@ -131,6 +128,8 @@
     position: relative;
     overflow: hidden;
     letter-spacing: 0.05rem;
+    pointer-events: none;
+    user-select: none;
 
     @media(max-width:450px) {
         height: 0.9rem;

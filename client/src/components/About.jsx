@@ -68,7 +68,7 @@ const About = () => {
                     <div className="item__bg"></div>
                 </div>
 
-                <div className="reply item">
+                <div className="item">
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
                             COMMENTS
@@ -77,10 +77,10 @@ const About = () => {
                             COMMENTS
                         </span>
                     </div>
-                    <div className="item__bg"></div>
+                    <div className="item__bg reply"></div>
                 </div>
 
-                <div className='close item'>
+                <div className='item'>
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
                             CLOSE
@@ -89,7 +89,7 @@ const About = () => {
                             CLOSE
                         </span>
                     </div>
-                    <a href='' className="item__bg" onClick={noLink}></a>
+                    <a href='' className="item__bg close" onClick={noLink}></a>
                 </div>
             </div>
         </div>

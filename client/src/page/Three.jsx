@@ -199,8 +199,6 @@ const Three = () => {
             // 셰이더의 해상도 uniforms 업데이트
             uniforms.resolution.value.set(width, height);
 
-            // 필요한 경우 지오메트리의 크기도 업데이트
-            // geometry.scale.set(width, height, 1);
         };
         // 이벤트 리스너 추가
         window.addEventListener('resize', onWindowResize);

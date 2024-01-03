@@ -92,7 +92,7 @@ const Contact = () => {
                     <a href='https://github.com/elese0821' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
-                <div className="reply item">
+                <div className="item">
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
                             COMMENTS
@@ -101,10 +101,10 @@ const Contact = () => {
                             COMMENTS
                         </span>
                     </div>
-                    <div className="item__bg"></div>
+                    <div className="item__bg reply"></div>
                 </div>
 
-                <div className='close item'>
+                <div className='item'>
                     <div className="split_text_clip">
                         <span text-split="" className="text-reg">
                             CLOSE
@@ -113,7 +113,7 @@ const Contact = () => {
                             CLOSE
                         </span>
                     </div>
-                    <a href='' className="item__bg" onClick={noLink}></a>
+                    <a href='' className="item__bg close" onClick={noLink}></a>
                 </div>
             </div>
         </div >
