@@ -11,6 +11,7 @@ router.post("/write", (req, res) => {
     let temp = {
         content: req.body.content,
         cate: req.body.cate,
+        password: req.body.password,
     };
 
     Counter.findOne({ name: "counter" })

@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 const CommentWrite = ({ loadPosts }) => {
     const [content, setContent] = useState("");
+    const [password, setPassword] = useState("");
     const location = useLocation();
 
     const handleContentChange = (event) => {
@@ -13,7 +14,9 @@ const CommentWrite = ({ loadPosts }) => {
             alert("100자를 초과할 수 없습니다.")
         }
     };
-
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value)
+    }
     const onSubmit = (e) => {
         e.preventDefault();
 
@@ -22,6 +25,7 @@ const CommentWrite = ({ loadPosts }) => {
         }
 
         let body = {
+            password: password,
             content: content,
             cate: location.pathname.slice(1),
         }
@@ -30,6 +34,7 @@ const CommentWrite = ({ loadPosts }) => {
             .then((res) => {
                 if (res.data.success) {
                     alert("글 작성이 완료되었습니다.");
+                    setPassword("")
                     setContent("");
                     loadPosts();
                 } else {
@@ -54,6 +59,11 @@ const CommentWrite = ({ loadPosts }) => {
                         value={content}
                         onChange={handleContentChange}
                     />
+                </div>
+                <div>
+                    <label htmlFor="password" className="required blind">비밀번호</label>
+                    <input type="password" id='password' placeholder='password' value={password}
+                        onChange={handlePasswordChange} />
                 </div>
                 <button
                     type="submit"

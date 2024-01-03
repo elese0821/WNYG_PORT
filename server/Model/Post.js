@@ -4,6 +4,7 @@ const postSchema = new mongoose.Schema(
     {
         content: String,
         postNum: Number,
+        password: Number,
         cate: String,
         // author: {
         //     type: mongoose.Schema.Types.ObjectId,
