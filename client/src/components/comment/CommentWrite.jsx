@@ -23,6 +23,12 @@ const CommentWrite = ({ loadPosts }) => {
         if (content === "") {
             return alert("내용을 채워주세요!");
         }
+        if (password === "") {
+            return alert("비밀번호를 수정하거나 삭제할 수 있는 비밀번호를 입력해주세요!(비밀번호는 6자 이상)");
+        }
+        if (password.length < 6) {
+            return alert("비밀번호를 확인해주세요!");
+        }
 
         let body = {
             password: password,

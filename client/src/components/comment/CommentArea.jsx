@@ -34,7 +34,7 @@ const CommentArea = () => {
 
     return (
         <div className='commentdesc'>
-            <CommentList postList={postList} scroll={scroll} />
+            <CommentList postList={postList} scroll={scroll} loadPosts={loadPosts} />
             <CommentWrite loadPosts={loadPosts} />
         </div>
     )

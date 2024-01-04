@@ -11,6 +11,9 @@ heroku logs -n 200
 배포된 히로쿠 앱 파일 받기
 heroku login
 heroku git:clone -a wnyg-portfolio
+
+
+defaultValue 수정가능value수정불가
 # 시작하기
 1. npm create vite@latest
 

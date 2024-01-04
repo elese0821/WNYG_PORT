@@ -4,12 +4,8 @@ const postSchema = new mongoose.Schema(
     {
         content: String,
         postNum: Number,
-        password: Number,
+        password: String,
         cate: String,
-        // author: {
-        //     type: mongoose.Schema.Types.ObjectId,
-        //     ref: "User",
-        // },
     },
     { collection: "posts", timestamps: true }
 );

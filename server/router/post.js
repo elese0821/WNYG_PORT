@@ -50,5 +50,36 @@ router.post("/list", (req, res) => {
         });
 });
 
+router.post("/delete", (req, res) => {
+    Post
+        .deleteOne({ postNum: req.body.postNum })
+        .exec()
+        .then(() => {
+            res.status(200).json({ success: true })
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(400).json({ success: false })
+        })
+
+})
+
+router.post("/modify", (req, res) => {
+    console.log(req.body)
+    let temp = {
+        content: req.body.content,
+    }
+    Post
+        .updateOne({ postNum: req.body.postNum }, { $set: temp })
+        .exec()
+        .then(() => {
+            res.status(200).json({ success: true })
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(400).json({ success: false })
+        })
+
+})
 
 module.exports = router;
