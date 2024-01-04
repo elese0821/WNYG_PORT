@@ -1,5 +1,5 @@
 # 미리보기
-((https://wonyoung-portfolio-4c189fd6f075.herokuapp.com/))
+(https://wonyoung-portfolio-4c189fd6f075.herokuapp.com/)
 
 심플블로그 배포
 
@@ -14,6 +14,15 @@ heroku git:clone -a wnyg-portfolio
 
 
 defaultValue 수정가능value수정불가
+## 문제 해결
+배포 후 오류.
+package.json 
+nodemon index.js -> node index.js
+
+const port = process.env.PORT || 5050;
+heroku logs --tail
+heroku restart
+
 # 시작하기
 1. npm create vite@latest
 
