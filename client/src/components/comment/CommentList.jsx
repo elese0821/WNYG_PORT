@@ -64,6 +64,7 @@ const CommentList = ({ postList = [], scroll, loadPosts }) => {
                     if (res.data.success) {
                         alert("댓글이 수정되었습니다.");
                         loadPosts();
+                        console.log("수정")
                         setMPassword('');
                         setContent('');
                     } else {
@@ -103,7 +104,7 @@ const CommentList = ({ postList = [], scroll, loadPosts }) => {
     };
 
     const handleMouseLeave = (postNum) => {
-        setMPassword('');
+        setMPassword("");
         setHoverStates(current => ({ ...current, [postNum]: false }));
         setPassState(current => ({ ...current, [postNum]: false }));
     };
@@ -128,7 +129,6 @@ const CommentList = ({ postList = [], scroll, loadPosts }) => {
                                         className='desc'
                                         defaultValue={post.content}
                                         onChange={(e) => setContent(e.target.value)}
-                                        autocomplete="off"
                                     />
                                 ) : (
                                     <div className='desc'>{post.content}</div>
@@ -143,19 +143,23 @@ const CommentList = ({ postList = [], scroll, loadPosts }) => {
                             animate={hoverStates[post.postNum] ? "visible" : "hidden"}
                             transition={{ duration: 0.5 }}
                         >
-                            <motion.input
-                                initial="hidden"
-                                animate={passState[post.postNum] ? "visible" : "hidden"}
-                                variants={passwordInputVariants}
-                                transition={{ duration: 0.3 }}
-                                type='password'
-                                className='Modifypassword'
-                                onChange={(e) => {
-                                    setMPassword(e.target.value)
-                                }}
-                                placeholder='password'
-                                autocomplete="off"
-                            />
+                            <form>
+                                <input type="text" className='blind' autoComplete='off' />
+                                <label htmlFor='password' className='blind'>댓글 비밀번호</label>
+                                <motion.input
+                                    autoComplete="new-password"
+                                    initial="hidden"
+                                    animate={passState[post.postNum] ? "visible" : "hidden"}
+                                    variants={passwordInputVariants}
+                                    transition={{ duration: 0.3 }}
+                                    type='password'
+                                    className='Modifypassword'
+                                    placeholder='password'
+                                    onChange={(e) => {
+                                        setMPassword(e.target.value)
+                                    }}
+                                />
+                            </form>
                             {passState[post.postNum] ? (
                                 <div className='btn__wrap'>
                                     <button className='modify'

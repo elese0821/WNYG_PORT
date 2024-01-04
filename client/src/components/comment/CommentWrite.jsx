@@ -21,20 +21,25 @@ const CommentWrite = ({ loadPosts }) => {
     }
 
     const modalVariants = {
-        hidden: { opacity: 0, y: 100 },
-        visible: { opacity: 1, y: 0 }
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 }
     };
 
     const ShowPass = () => {
+        if (content === "") {
+            return alert("댓글을 작성해주세요!")
+        }
         setIsSubmitting(true);
-        console.log("dd")
+    }
+    const closePass = () => {
+        setIsSubmitting(false);
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
 
         if (content === "") {
-            return alert("내용을 채워주세요!");
+            return alert("댓글을 작성해주세요!");
         }
 
         if (password === "") {
@@ -91,12 +96,19 @@ const CommentWrite = ({ loadPosts }) => {
                             className='passwordModal'>
                             <label htmlFor="password" className="required blind">비밀번호</label>
                             <input type="password" className='password' placeholder='password' value={password}
-                                onChange={handlePasswordChange} />
+                                onChange={handlePasswordChange}
+                                autoComplete='off'
+                            />
                             <button
                                 type="submit"
                                 onClick={(e) => onSubmit(e)}
                                 className='btnStyle3'
                             >확인</button>
+                            <button
+                                type="button"
+                                onClick={(e) => closePass(e)}
+                                className='btnStyle3'
+                            >취소</button>
                         </motion.div>
                     )}
                 </AnimatePresence>

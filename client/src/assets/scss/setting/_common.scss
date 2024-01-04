@@ -300,7 +300,8 @@
 
     .commentList {
         height: calc(100% - 65px);
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         margin: 0.2rem 0;
 
         .listModal {
@@ -409,6 +410,10 @@
                         &::placeholder {
                             color: #fff;
                         }
+
+                        &:focus {
+                            outline: none;
+                        }
                     }
                 }
 
@@ -491,6 +496,38 @@
             padding: 0;
             position: relative;
 
+            .passwordModal {
+                position: absolute;
+                top: -2rem;
+                display: flex;
+                gap: 0.3rem;
+
+                input {
+                    background-color: rgba(255, 255, 255, 0.295);
+                    padding: 0.35rem;
+                    border-radius: 10px;
+                    height: auto;
+                    color: #fff;
+                    backdrop-filter: blur(5px);
+
+                    &::placeholder {
+                        color: #fff;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                button {
+                    background-color: #ffffff2c;
+                    font-size: 0.8rem;
+                    color: #fff;
+                    padding: 0.4rem;
+                    border-radius: 10px;
+                }
+            }
+
             textarea {
                 background-color: transparent;
                 resize: none;
@@ -509,7 +546,7 @@
                 }
 
                 &::-webkit-input-placeholder {
-                    color: #ddddddc9;
+                    color: #ddddddee;
                     font-size: 0.85rem;
 
                     @media(max-width:480px) {
