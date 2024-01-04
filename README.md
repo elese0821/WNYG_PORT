@@ -1,5 +1,5 @@
 # 미리보기
-(wnyg-port.kro.kr/)
+((https://wonyoung-portfolio-4c189fd6f075.herokuapp.com/))
 
 심플블로그 배포
 
