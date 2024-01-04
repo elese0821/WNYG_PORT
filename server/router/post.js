@@ -65,7 +65,6 @@ router.post("/delete", (req, res) => {
 })
 
 router.post("/modify", (req, res) => {
-    console.log(req.body)
     let temp = {
         content: req.body.content,
     }

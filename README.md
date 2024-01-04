@@ -31,6 +31,7 @@ npm install firebase
 npm install axios
 npm install moment
 npm install react-icons
+npm install framer-motion
 ```
 npm install react-redux   
 npm install @reduxjs/toolkit   

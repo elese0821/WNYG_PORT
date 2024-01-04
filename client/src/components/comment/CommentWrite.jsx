@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CommentWrite = ({ loadPosts }) => {
     const [content, setContent] = useState("");
     const [password, setPassword] = useState("");
     const location = useLocation();
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleContentChange = (event) => {
         if (content.length <= 100) {
@@ -17,12 +19,24 @@ const CommentWrite = ({ loadPosts }) => {
     const handlePasswordChange = (event) => {
         setPassword(event.target.value)
     }
+
+    const modalVariants = {
+        hidden: { opacity: 0, y: 100 },
+        visible: { opacity: 1, y: 0 }
+    };
+
+    const ShowPass = () => {
+        setIsSubmitting(true);
+        console.log("dd")
+    }
+
     const onSubmit = (e) => {
         e.preventDefault();
 
         if (content === "") {
             return alert("내용을 채워주세요!");
         }
+
         if (password === "") {
             return alert("비밀번호를 수정하거나 삭제할 수 있는 비밀번호를 입력해주세요!(비밀번호는 6자 이상)");
         }
@@ -51,6 +65,7 @@ const CommentWrite = ({ loadPosts }) => {
                 console.error("글 작성 에러:", error);
                 alert("글 작성 중 에러가 발생했습니다.");
             });
+        setIsSubmitting(false);
     }
     return (
         <form>
@@ -60,20 +75,34 @@ const CommentWrite = ({ loadPosts }) => {
                     <label htmlFor="content" className="required blind">글 내용</label>
                     <textarea
                         type="text"
-                        id="content"
+                        className="content"
                         placeholder='댓글을 작성해주세요😊'
                         value={content}
                         onChange={handleContentChange}
                     />
                 </div>
-                <div>
-                    <label htmlFor="password" className="required blind">비밀번호</label>
-                    <input type="password" id='password' placeholder='password' value={password}
-                        onChange={handlePasswordChange} />
-                </div>
+                <AnimatePresence>
+                    {isSubmitting && (
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={modalVariants}
+                            transition={{ duration: 0.5 }}
+                            className='passwordModal'>
+                            <label htmlFor="password" className="required blind">비밀번호</label>
+                            <input type="password" className='password' placeholder='password' value={password}
+                                onChange={handlePasswordChange} />
+                            <button
+                                type="submit"
+                                onClick={(e) => onSubmit(e)}
+                                className='btnStyle3'
+                            >확인</button>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
                 <button
-                    type="submit"
-                    onClick={(e) => onSubmit(e)}
+                    type='button'
+                    onClick={(e) => ShowPass(e)}
                     className='btnStyle'
                 >WRITE</button>
             </fieldset>

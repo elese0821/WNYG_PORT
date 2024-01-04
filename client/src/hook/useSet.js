@@ -25,7 +25,6 @@ export const useSet = (homepath) => {
             const commentModalchild = commentModal.find("*");
 
             // 상태 설정
-            if (section.length) gsap.set(section, { display: "none" });
             if (items.length) gsap.set(items, { scaleY: 0 });
             if (itemChars.length) gsap.set(itemChars, { yPercent: 100 });
             if (section.length) gsap.set(section, { display: "grid" });
