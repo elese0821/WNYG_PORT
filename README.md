@@ -10,7 +10,7 @@ heroku logs -n 200
 
 배포된 히로쿠 앱 파일 받기
 heroku login
-heroku git:clone -a wnyg-portfolio
+heroku git:clone -a wonyoung-portfolio
 
 
 defaultValue 수정가능value수정불가
