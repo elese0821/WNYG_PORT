@@ -62,8 +62,8 @@ const Movie = () => {
 
                 <div className="item">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">CODE</p>
-                        <p text-split="" className="text-reg">CODE</p>
+                        <p text-split="" className="text-reg">GITHUB</p>
+                        <p text-split="" className="text-reg">GITHUB</p>
                     </div>
                     <a href='https://github.com/elese0821/movie-project' target='_blank' className="item__bg hover_effect"></a>
                 </div>

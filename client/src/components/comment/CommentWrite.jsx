@@ -10,10 +10,10 @@ const CommentWrite = ({ loadPosts }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleContentChange = (event) => {
-        if (content.length <= 100) {
+        if (content.length <= 50) {
             setContent(event.target.value);
         } else {
-            alert("100자를 초과할 수 없습니다.")
+            alert("50자를 초과할 수 없습니다.")
         }
     };
     const handlePasswordChange = (event) => {
@@ -43,10 +43,10 @@ const CommentWrite = ({ loadPosts }) => {
         }
 
         if (password === "") {
-            return alert("비밀번호를 수정하거나 삭제할 수 있는 비밀번호를 입력해주세요!(비밀번호는 6자 이상)");
+            return alert("비밀번호를 입력해주세요!(6자 이상)");
         }
         if (password.length < 6) {
-            return alert("비밀번호를 확인해주세요!");
+            return alert("비밀번호를 확인해주세요!(6자 이상)");
         }
 
         let body = {

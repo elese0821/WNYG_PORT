@@ -14,6 +14,7 @@ const useClose = (homepath) => {
             const commentOpen = document.querySelector(".popup__open");
             const commentOpen2 = document.querySelector(".reply");
             const popupClose = document.querySelector(".popupClose");
+            const hoverEffect = document.querySelectorAll(".hover_effect");
 
             const handleClick = function () {
                 let gridItems = Array.from(document.querySelectorAll(".item"));
@@ -157,10 +158,12 @@ const useClose = (homepath) => {
                         zIndex: -3,
                     });
             };
-
-
-
-
+            if (hoverEffect) {
+                hoverEffect.forEach((e) => {
+                    e.addEventListener('mouseover', handleMouseOver);
+                    e.addEventListener('mouseout', handleMouseOut);
+                })
+            }
             if (close) {
                 close.addEventListener('click', handleClick);
                 close.addEventListener('mouseover', handleMouseOver);
@@ -179,6 +182,12 @@ const useClose = (homepath) => {
             }
 
             return () => {
+                if (hoverEffect) {
+                    hoverEffect.forEach((e) => {
+                        e.removeEventListener('mouseover', handleMouseOver);
+                        e.removeEventListener('mouseout', handleMouseOut);
+                    })
+                }
                 if (close) {
                     close.removeEventListener('click', handleClick);
                     close.removeEventListener('mouseover', handleMouseOver);
