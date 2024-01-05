@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import moment from "moment";
 import axios from 'axios';
 import { motion } from 'framer-motion'
-import { CiCircleMore } from "react-icons/ci";
+import { RiMoreFill } from "react-icons/ri";
 
 const CommentList = ({ postList = [], scroll, loadPosts }) => {
     const [content, setContent] = useState('');
@@ -134,6 +134,7 @@ const CommentList = ({ postList = [], scroll, loadPosts }) => {
                                     <div className='desc'>{post.content}</div>
                                 )}
                             </div>
+                            <div className='name'>{post.name}</div>
                             <div className='date'>{SetTime(post.createdAt, post.updatedAt)}</div>
                         </div>
                         <motion.div
@@ -171,7 +172,7 @@ const CommentList = ({ postList = [], scroll, loadPosts }) => {
                                 <button className='more'
                                     onClick={() => handleEditClick(post.postNum)}
                                 >
-                                    <CiCircleMore size={20} />
+                                    <RiMoreFill size={20} />
                                 </button>
                             )}
                         </motion.div>

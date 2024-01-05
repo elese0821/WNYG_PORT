@@ -6,6 +6,7 @@ const postSchema = new mongoose.Schema(
         postNum: Number,
         password: String,
         cate: String,
+        name: String,
     },
     { collection: "posts", timestamps: true }
 );

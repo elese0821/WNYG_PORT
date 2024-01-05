@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const CommentWrite = ({ loadPosts }) => {
     const [content, setContent] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
     const location = useLocation();
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -16,8 +17,11 @@ const CommentWrite = ({ loadPosts }) => {
             alert("50자를 초과할 수 없습니다.")
         }
     };
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value)
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value)
+    }
+    const handleNameChange = (e) => {
+        setName(e.target.value)
     }
 
     const modalVariants = {
@@ -38,18 +42,23 @@ const CommentWrite = ({ loadPosts }) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
+        let validationMessage = "";
+
         if (content === "") {
-            return alert("댓글을 작성해주세요!");
+            validationMessage = "댓글을 작성해주세요!";
+        } else if (name.length > 10) {
+            validationMessage = "이름은 10글자 이내로 작성해주세요!";
+        } else if (password === "" || password.length < 6) {
+            validationMessage = "비밀번호를 확인해주세요!(6자 이상)";
         }
 
-        if (password === "") {
-            return alert("비밀번호를 입력해주세요!(6자 이상)");
-        }
-        if (password.length < 6) {
-            return alert("비밀번호를 확인해주세요!(6자 이상)");
+        if (validationMessage !== "") {
+            alert(validationMessage);
+            return;
         }
 
         let body = {
+            name: name,
             password: password,
             content: content,
             cate: location.pathname.slice(1),
@@ -59,7 +68,8 @@ const CommentWrite = ({ loadPosts }) => {
             .then((res) => {
                 if (res.data.success) {
                     alert("글 작성이 완료되었습니다.");
-                    setPassword("")
+                    setName('');
+                    setPassword("");
                     setContent("");
                     loadPosts();
                 } else {
@@ -72,6 +82,7 @@ const CommentWrite = ({ loadPosts }) => {
             });
         setIsSubmitting(false);
     }
+
     return (
         <form>
             <fieldset>
@@ -94,21 +105,28 @@ const CommentWrite = ({ loadPosts }) => {
                             variants={modalVariants}
                             transition={{ duration: 0.5 }}
                             className='passwordModal'>
+                            <label htmlFor="name" className="required blind">닉네임</label>
+                            <input type="text" className='youName' placeholder='name' value={name}
+                                onChange={handleNameChange}
+                                autoComplete='off'
+                            />
                             <label htmlFor="password" className="required blind">비밀번호</label>
                             <input type="password" className='password' placeholder='password' value={password}
                                 onChange={handlePasswordChange}
                                 autoComplete='off'
                             />
-                            <button
-                                type="submit"
-                                onClick={(e) => onSubmit(e)}
-                                className='btnStyle3'
-                            >확인</button>
-                            <button
-                                type="button"
-                                onClick={(e) => closePass(e)}
-                                className='btnStyle3'
-                            >취소</button>
+                            <div className='btn__wrap'>
+                                <button
+                                    type="submit"
+                                    onClick={(e) => onSubmit(e)}
+                                    className='btnStyle3'
+                                >확인</button>
+                                <button
+                                    type="button"
+                                    onClick={(e) => closePass(e)}
+                                    className='btnStyle3'
+                                >취소</button>
+                            </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
