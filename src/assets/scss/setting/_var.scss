@@ -1,0 +1,46 @@
+:root {
+    --mainfontEng: "Abel";
+    --mainfontEng: "Bebas Neue";
+    --mainfontEng2: "NacelleRg";
+    --mainfontEng3: "NacelleLg";
+    --subfontEng: "Bebas Neue";
+    --fontKor: "Chosunilbo_myungjo";
+
+
+    --black: #000;
+    --black100: #161616;
+    --black200: #3a3a3a;
+    --black300: #6b6b6b;
+    --black400: #9c9c9c;
+    --black500: #cbcbcb;
+    --black600: #e5e5e5;
+
+    --mainColor: #3c4f8f;
+    --bgColor: #1d1e1f;
+    --white: #ecdbda;
+
+    --white100: #e7e7e7;
+    --white200: #cacaca;
+    --white300: #b8b8b8;
+    --white400: #8e8e8e;
+    --white500: #767676;
+
+    --red: #e73a3a;
+    // 폰트 셋팅
+    font-family: var(--mainfontEng), var(--subfontEng), var(--fontKor);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+
+    // 폰트 최적화
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    @media (max-width: 800px) {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}

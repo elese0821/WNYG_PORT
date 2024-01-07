@@ -104,26 +104,110 @@
 
                     &.pj01_img {
                         background-image: url(../img/youtube.jpg);
+
+                        @media (-webkit-min-device-pixel-ratio: 2),
+                        (min-resolution: 192dpi) {
+                            .element {
+                                background-image: url('youtube@2x.jpg');
+                            }
+                        }
+
+                        @media (-webkit-min-device-pixel-ratio: 3),
+                        (min-resolution: 288dpi) {
+                            .element {
+                                background-image: url('youtube@3x.jpg');
+                            }
+                        }
                     }
 
                     &.pj03_img {
                         background-image: url(../img/php.jpg);
+
+                        @media (-webkit-min-device-pixel-ratio: 2),
+                        (min-resolution: 192dpi) {
+                            .element {
+                                background-image: url('php@2x.jpg');
+                            }
+                        }
+
+                        @media (-webkit-min-device-pixel-ratio: 3),
+                        (min-resolution: 288dpi) {
+                            .element {
+                                background-image: url('php@3x.jpg');
+                            }
+                        }
                     }
 
                     &.pj04_img {
                         background-image: url(../img/movie.jpg);
+
+                        @media (-webkit-min-device-pixel-ratio: 2),
+                        (min-resolution: 192dpi) {
+                            .element {
+                                background-image: url('movie@2x.jpg');
+                            }
+                        }
+
+                        @media (-webkit-min-device-pixel-ratio: 3),
+                        (min-resolution: 288dpi) {
+                            .element {
+                                background-image: url('movie@3x.jpg');
+                            }
+                        }
                     }
 
                     &.pj05_img {
                         background-image: url(../img/petpar.jpg);
+
+                        @media (-webkit-min-device-pixel-ratio: 2),
+                        (min-resolution: 192dpi) {
+                            .element {
+                                background-image: url('petpar@2x.jpg');
+                            }
+                        }
+
+                        @media (-webkit-min-device-pixel-ratio: 3),
+                        (min-resolution: 288dpi) {
+                            .element {
+                                background-image: url('petpar@3x.jpg');
+                            }
+                        }
                     }
 
                     &.pj06_img {
                         background-image: url(../img/javascript.jpg);
+
+                        @media (-webkit-min-device-pixel-ratio: 2),
+                        (min-resolution: 192dpi) {
+                            .element {
+                                background-image: url('javascript@2x.jpg');
+                            }
+                        }
+
+                        @media (-webkit-min-device-pixel-ratio: 3),
+                        (min-resolution: 288dpi) {
+                            .element {
+                                background-image: url('javascript@3x.jpg');
+                            }
+                        }
                     }
 
                     &.pj07_img {
                         background-image: url(../img/quiz.jpg);
+
+                        @media (-webkit-min-device-pixel-ratio: 2),
+                        (min-resolution: 192dpi) {
+                            .element {
+                                background-image: url('quiz@2x.jpg');
+                            }
+                        }
+
+                        @media (-webkit-min-device-pixel-ratio: 3),
+                        (min-resolution: 288dpi) {
+                            .element {
+                                background-image: url('quiz@3x.jpg');
+                            }
+                        }
                     }
 
                     background-size: cover;

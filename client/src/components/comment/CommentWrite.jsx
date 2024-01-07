@@ -46,8 +46,8 @@ const CommentWrite = ({ loadPosts }) => {
 
         if (content === "") {
             validationMessage = "댓글을 작성해주세요!";
-        } else if (name.length > 10) {
-            validationMessage = "이름은 10글자 이내로 작성해주세요!";
+        } else if (name === "" || name.length > 10) {
+            validationMessage = "이름을 작성해주세요!(10글자 이내)";
         } else if (password === "" || password.length < 6) {
             validationMessage = "비밀번호를 확인해주세요!(6자 이상)";
         }
@@ -105,16 +105,18 @@ const CommentWrite = ({ loadPosts }) => {
                             variants={modalVariants}
                             transition={{ duration: 0.5 }}
                             className='passwordModal'>
-                            <label htmlFor="name" className="required blind">닉네임</label>
-                            <input type="text" className='youName' placeholder='name' value={name}
-                                onChange={handleNameChange}
-                                autoComplete='off'
-                            />
-                            <label htmlFor="password" className="required blind">비밀번호</label>
-                            <input type="password" className='password' placeholder='password' value={password}
-                                onChange={handlePasswordChange}
-                                autoComplete='off'
-                            />
+                            <div className='namePass'>
+                                <label htmlFor="name" className="required blind">닉네임</label>
+                                <input type="text" className='youName' placeholder='name' value={name}
+                                    onChange={handleNameChange}
+                                    autoComplete='off'
+                                />
+                                <label htmlFor="password" className="required blind">비밀번호</label>
+                                <input type="password" className='password' placeholder='password' value={password}
+                                    onChange={handlePasswordChange}
+                                    autoComplete='off'
+                                />
+                            </div>
                             <div className='btn__wrap'>
                                 <button
                                     type="submit"

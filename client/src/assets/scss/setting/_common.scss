@@ -530,35 +530,40 @@
                 top: -2.1rem;
                 display: flex;
                 gap: 0.3rem;
-                background-color: #ffffff1f;
+                background-color: rgba(255, 255, 255, 0.137);
                 padding: 0.3rem;
                 border-radius: 10px;
-                backdrop-filter: blur(4px);
                 justify-content: center;
 
-                input {
-                    background-color: transparent;
-                    border: 1px solid #ffffff4f;
-                    padding: 0.1rem 0.35rem;
-                    border-radius: 10px;
-                    color: #fff;
-                    font-size: 0.9rem;
-                    width: 50%;
+                .namePass {
+                    width: calc(100% - 70px);
+                    display: flex;
+                    gap: 1%;
 
-                    &.youName {
-                        width: 30%;
-                    }
+                    input {
+                        background-color: transparent;
+                        border: 1px solid #ffffff4f;
+                        padding: 0.1rem 0.35rem;
+                        border-radius: 10px;
+                        color: #fff;
+                        font-size: 0.9rem;
+                        width: 69%;
 
-                    @media(max-width:450px) {
-                        font-size: 0.85rem;
-                    }
+                        &.youName {
+                            width: 30%;
+                        }
 
-                    &::placeholder {
-                        color: #ffffffb4;
-                    }
+                        @media(max-width:450px) {
+                            font-size: 0.85rem;
+                        }
 
-                    &:focus {
-                        outline: none;
+                        &::placeholder {
+                            color: #ffffffb4;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
                     }
                 }
 
@@ -569,7 +574,7 @@
                     width: 70px;
 
                     button {
-                        background-color: #ffffff2c;
+                        background-color: #ffffff1f;
                         font-size: 0.75rem;
                         color: #ffffffad;
                         padding: 0.4rem;
@@ -578,7 +583,7 @@
                         min-width: 35px;
 
                         &:hover {
-                            background-color: #ffffff4b;
+                            background-color: #ffffff2f;
                             cursor: pointer;
                         }
                     }
