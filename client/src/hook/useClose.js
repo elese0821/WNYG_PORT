@@ -37,22 +37,29 @@ const useClose = (homepath) => {
                                 if ($(".text-reg").length) {
                                     gsap.fromTo(
                                         ".text-reg",
-                                        { opacity: 1, yPercent: 0 },
-                                        { opacity: 0, yPercent: 50, duration: 1, ease: "power4.inOut" }
+                                        {
+                                            opacity: 1,
+                                            yPercent: 0
+                                        },
+                                        {
+                                            opacity: 0,
+                                            duration: 1,
+                                            ease: "power4.inOut"
+                                        }
                                     );
                                 }
                                 if ($(".item_desc").length) {
                                     gsap.fromTo(
                                         ".item_desc",
                                         { opacity: 1, yPercent: 0 },
-                                        { opacity: 0, yPercent: 1, duration: 1, ease: "power4.inOut" }
+                                        { opacity: 0, yPercent: 50, duration: 1, ease: "power4.inOut" }
                                     );
                                 }
                                 if ($(".comment__item").length) {
                                     gsap.fromTo(
                                         ".comment__item *",
                                         { opacity: 1, yPercent: 0 },
-                                        { opacity: 0, yPercent: 1, duration: 1, ease: "power4.inOut" }
+                                        { opacity: 0, yPercent: 50, duration: 1, ease: "power4.inOut" }
                                     );
                                 }
                                 if (outwardLinks.length) {
