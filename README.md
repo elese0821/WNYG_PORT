@@ -10,16 +10,6 @@
 - `Three.js`를 이용한 3D 렌더링
 - `GSAP와 jQuery`를 사용한 애니메이션 효과
 
-#히로쿠 배포 오류  
-heroku logs -n 200  
-로 보고 gpt 검색   
-몽고디비 화이트리스트  
-
-- 배포된 히로쿠 앱 파일 받기  
-heroku login  
-heroku git:clone -a wonyoung-portfolio  
-defaultValue 수정가능value수정불가
-
 ## 특징
 React Router: 사용자 경험을 향상시키기 위해 SPA(Single Page Application) 구조를 채택.
 GSAP & jQuery: 동적인 웹사이트를 위한 복잡한 애니메이션 및 상호작용 구현.
@@ -76,6 +66,18 @@ export default defineConfig({
   },
 });
 ```
+
+#히로쿠 배포 오류  
+heroku logs -n 200  
+로 보고 gpt 검색   
+몽고디비 화이트리스트  
+
+- 배포된 히로쿠 앱 파일 받기  
+heroku login  
+heroku git:clone -a wonyoung-portfolio  
+defaultValue 수정가능value수정불가
+----------------
+
 
 1. 모듈 임포트:
 - express: Express 웹 프레임워크를 임포트합니다.
