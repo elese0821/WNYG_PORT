@@ -15,10 +15,7 @@
 - `GSAP & jQuery`: 동적인 웹사이트를 위한 복잡한 애니메이션 및 상호작용 구현.
 - `Three.js`: 3D 요소를 활용하여 독특한 사용자 인터페이스 제공.
 - `Express & Mongoose`: RESTful API를 통해 데이터를 관리하고 서버와 클라이언트 간의 통신을 처리.
-
-## 시작하기
-1. npm create vite@latest
-
+  
 ## 설치
 ### client
 ```
