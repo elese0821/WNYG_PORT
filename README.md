@@ -45,11 +45,10 @@ npm install path --save;
 npm install mongoose --save;   
 ```
 <details>
-  <summary>
-   <h3>문제해결</h3>
-  </summary>
+  <summary>문제해결</summary>
+  
 - http-proxy-middleware  vite 환경에서는 사용하지않음
-vite config파일 변경
+vite config파일 수정
 ```
 // vite.config.js
 import { defineConfig } from 'vite';
@@ -68,22 +67,28 @@ export default defineConfig({
   },
 });
 ```
-
-### 히로쿠 배포 오류  
-
+- 히로쿠 배포 오류  
 heroku logs -n 200  
-로 보고 gpt 검색   
-몽고디비 화이트리스트  
+몽고디비 화이트리스트  0.0.0.0
 
-- 배포된 히로쿠 앱 파일 받기  
+- 배포된 히로쿠 앱 파일 받기
+```
 heroku login  
 heroku git:clone -a wonyoung-portfolio  
 defaultValue 수정가능value수정불가
+```
+- 배포 후 오류.
+```
+package.json 
+nodemon index.js -> node index.js
+
+const port = process.env.PORT || 5050;
+heroku logs --tail
+heroku restart
+```
 </details>
-</ details>
-----------------
 
-
+### note
 1. 모듈 임포트:
 - express: Express 웹 프레임워크를 임포트합니다.
 - path: 파일 경로를 다루는 유틸리티 모듈입니다.
@@ -153,12 +158,3 @@ npm install react-avatar 명령은 React 애플리케이션에서 사용할 수 
 "react-avatar" 라이브러리를 사용하면 개발자들은 사용자 프로필 이미지, 그룹 아바타, 댓글 작성자의 이미지 등과 같은 아바타 이미지를 생성하고 표시하는 데 도움을 받을 수 있습니다. 이 라이브러리를 사용하면 이미지 크기, 모양, 색상 등을 설정할 수 있는 많은 옵션이 제공됩니다.
 
 예를 들어, 다음과 같이 "react-avatar"를 사용하여 프로필 이미지를 생성할 수 있습니다:
-
-## 문제 해결
-배포 후 오류.
-package.json 
-nodemon index.js -> node index.js
-
-const port = process.env.PORT || 5050;
-heroku logs --tail
-heroku restart
