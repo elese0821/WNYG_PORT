@@ -1,6 +1,7 @@
 # 미리보기
-<a href="https://wonyoung-portfolio-4c189fd6f075.herokuapp.com/"><img src='/client/src/assets/img/cover.png' alt="pf"></a>
-
+<div align="center">
+<a href="https://wonyoung-portfolio-4c189fd6f075.herokuapp.com/"><img src='/client/src/assets/img/cover.png' alt="pf" width="80%"></a>
+</div>
 - `Express`와 `Mongoose`를 사용한 서버 사이드 구성
 - `React Router`를 이용한 클라이언트 사이드 라우팅
 - `React Hooks`를 활용한 상태 관리
