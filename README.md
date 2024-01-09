@@ -11,16 +11,16 @@
 - `GSAP와 jQuery`를 사용한 애니메이션 효과
 
 ## 특징
-React Router: 사용자 경험을 향상시키기 위해 SPA(Single Page Application) 구조를 채택.
-GSAP & jQuery: 동적인 웹사이트를 위한 복잡한 애니메이션 및 상호작용 구현.
-Three.js: 3D 요소를 활용하여 독특한 사용자 인터페이스 제공.
-Express & Mongoose: RESTful API를 통해 데이터를 관리하고 서버와 클라이언트 간의 통신을 처리.
+- `React Router`: 사용자 경험을 향상시키기 위해 SPA(Single Page Application) 구조를 채택.
+- `GSAP & jQuery`: 동적인 웹사이트를 위한 복잡한 애니메이션 및 상호작용 구현.
+- `Three.js`: 3D 요소를 활용하여 독특한 사용자 인터페이스 제공.
+- `Express & Mongoose`: RESTful API를 통해 데이터를 관리하고 서버와 클라이언트 간의 통신을 처리.
 
 ## 시작하기
 1. npm create vite@latest
 
 ## 설치
-- client
+### client
 ```
 npm install gsap 
 npm install split-type
@@ -35,7 +35,8 @@ npm install framer-motion
 npm install react-redux   
 npm install @reduxjs/toolkit   
 ```
-## server
+
+### server
 ```
 npm init -y;   
 npm install express --save;   
@@ -43,9 +44,10 @@ npm install nodemon --save;
 npm install path --save;   
 npm install mongoose --save;   
 ```
-# 문제해결
-- git config --global core.autocrlf true
-
+<details>
+  <summary>
+   <h3>문제해결</h3>
+  </summary>
 - http-proxy-middleware  vite 환경에서는 사용하지않음
 vite config파일 변경
 ```
@@ -67,7 +69,8 @@ export default defineConfig({
 });
 ```
 
-#히로쿠 배포 오류  
+### 히로쿠 배포 오류  
+
 heroku logs -n 200  
 로 보고 gpt 검색   
 몽고디비 화이트리스트  
@@ -76,6 +79,8 @@ heroku logs -n 200
 heroku login  
 heroku git:clone -a wonyoung-portfolio  
 defaultValue 수정가능value수정불가
+</details>
+</ details>
 ----------------
 
 
