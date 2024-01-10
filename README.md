@@ -12,10 +12,13 @@
 
 ## 특징
 - `React Router`: 사용자 경험을 향상시키기 위해 SPA(Single Page Application) 구조를 채택.
-- `GSAP & jQuery`: 동적인 웹사이트를 위한 복잡한 애니메이션 및 상호작용 구현.
+- `GSAP & jQuery,framer-motion`: 동적인 웹사이트를 위한 복잡한 애니메이션 및 상호작용 구현.
 - `Three.js`: 3D 요소를 활용하여 독특한 사용자 인터페이스 제공.
-- `Express & Mongoose`: RESTful API를 통해 데이터를 관리하고 서버와 클라이언트 간의 통신을 처리.
-  
+- `Express & Mongoose`: RESTful API를 통해 데이터를 관리하고 서버와 클라이언트 간의 통신을 처리.(db 목록 불러오기, db데이터 생성과 수정,삭제)
+
+## 세부사항
+- path 기반 게시물 저장 및 검색 기능: 사용자가 글을 작성할 때, 해당 글은 현재 path의 'cate' 카테고리에 자동으로 저장됩니다. 이를 통해 데이터베이스에서 게시물을 효율적으로 검색, 불러오고, 분류할 수 있는 체계를 구축하였습니다.
+
 ## 설치
 ### client
 ```
@@ -42,7 +45,8 @@ npm install path --save;
 npm install mongoose --save;   
 ```
 
-
+## 세부사항
+댓글
 
 ## 문제해결
 <details>
