@@ -62,9 +62,6 @@ npm install path --save;
 npm install mongoose --save;   
 ```
 
-## 세부사항
-댓글
-
 ## 문제해결
 <details>
   <summary></summary>
