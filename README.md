@@ -18,6 +18,39 @@
 
 ## 세부사항
 - path 기반 게시물 저장 및 검색 기능: 사용자가 글을 작성할 때, 해당 글은 현재 path의 'cate' 카테고리에 자동으로 저장됩니다. 이를 통해 데이터베이스에서 게시물을 효율적으로 검색, 불러오고, 분류할 수 있는 체계를 구축하였습니다.
+ ```
+const mongoose = require("mongoose");
+
+const postSchema = new mongoose.Schema(
+    {
+        content: String,
+        postNum: Number,
+        password: String,
+        cate: String,
+        name: String,
+    },
+    { collection: "posts", timestamps: true }
+);
+
+const Post = mongoose.model("Post", postSchema);
+
+module.exports = { Post };
+
+const [postList, setPostList] = useState([]);
+    const location = useLocation();
+
+    const loadPosts = () => {
+        const path = location.pathname.slice(1);
+        axios.post("/api/post/list", { path: path })
+            .then((response) => {
+                if (response.data.success) {
+                    setPostList(response.data.postList.reverse());
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+```
 
 ## 설치
 ### client
