@@ -41,8 +41,12 @@ npm install nodemon --save;
 npm install path --save;   
 npm install mongoose --save;   
 ```
+
+
+
+## 문제해결
 <details>
-  <summary>문제해결</summary>
+  <summary></summary>
   
 - http-proxy-middleware  vite 환경에서는 사용하지않음
 vite config파일 수정
