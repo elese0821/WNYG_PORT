@@ -10,11 +10,9 @@
 - `Three.js`를 이용한 3D 렌더링
 - `GSAP와 jQuery`를 사용한 애니메이션 효과
 
-<<<<<<< HEAD
-배포된 히로쿠 앱 파일 받기
 heroku login
 heroku git:clone -a wnyg-portfolio
-=======
+
 ## 특징
 - `React Router`: 사용자 경험을 향상시키기 위해 SPA(Single Page Application) 구조를 채택.
 - `GSAP & jQuery,framer-motion`: 동적인 웹사이트를 위한 복잡한 애니메이션 및 상호작용 구현.
