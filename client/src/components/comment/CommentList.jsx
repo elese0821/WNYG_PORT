@@ -47,7 +47,6 @@ const CommentList = ({ postList = [], scroll, loadPosts }) => {
         } else {
             alert("비밀번호를 확인해주세요.")
         }
-
     }
 
     const modifyEvent = (postNum, password) => {

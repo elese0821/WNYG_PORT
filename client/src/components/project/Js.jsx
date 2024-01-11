@@ -29,7 +29,7 @@ const Js = () => {
 
                 <div className="exp">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg exp_txt">CSS 속성을 검색할 수 있는 사이트입니다.</p>
+                        <p text-split="" className="text-reg exp_txt">JavaScript와 CSS를 활용해 만든 사이트입니다.</p>
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@ const Js = () => {
                         <p text-split="" className="text-reg">explanation</p>
                     </div>
                     <p className="item_desc">
-                        JAVASCRIPT로 CSS속성을 검색할 수 있도록 만든 사이트입니다.
+                        이 프로젝트는 CSS 속성을 검색하고 정렬할 수 있는 웹사이트입니다. 사용자는 CSS 속성에 대한 설명을 볼 수 있으며, 다양한 기준에 따라 속성을 정렬할 수 있습니다.
                     </p>
                     <div className="item__bg"></div>
                 </div>

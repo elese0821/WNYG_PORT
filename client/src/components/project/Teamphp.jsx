@@ -29,7 +29,7 @@ const Teamphp = () => {
 
                 <div className="exp">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg">저의 포트폴리오에 오신 것을 환영합니다.</p>
+                        <p text-split="" className="text-reg exp_txt">PHP를 활용해 사이트를 만들었습니다.</p>
                     </div>
                 </div>
 
@@ -43,11 +43,8 @@ const Teamphp = () => {
                         <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
                     <p className="item_desc">
-                        Movie API v3를 활용하여 음악 유튜브 사이트를 만들어보았습니다.
-                        <li>
-                            <span>Postman</span>: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 Movie API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
-                        </li>
-
+                        뇌섹남녀는 TV 프로그램 '문제적 남자'에 등장하는 다양한 문제들을 풀어볼 수 있는 웹 사이트입니다.<br />
+                        이 사이트에서 사용자들은 재미있는 퀴즈를 즐기며 지적 호기심을 충족시킬 수 있습니다.
                     </p>
                     <div className="item__bg"></div>
                 </div>

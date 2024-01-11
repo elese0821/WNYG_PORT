@@ -67,34 +67,34 @@
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
-                filter: grayscale(1);
+                filter:opacity(0.6);
 
                 &.contact_img01 {
-                    background-image: url(../img/contact04.jpg);
+                    background-image: url(../img/contact01.jpg);
                 }
 
                 &.contact_img02 {
-                    background-image: url(../img/contact03.jpg);
+                    background-image: url(../img/contact02.jpg);
 
                 }
 
                 &.contact_img03 {
-                    background-image: url(../img/contact06.jpg);
+                    background-image: url(../img/contact03.jpg);
 
                 }
 
                 &.contact_img04 {
-                    background-image: url(../img/contact02.jpg);
+                    background-image: url(../img/contact04.jpg);
 
                 }
 
                 &.contact_img05 {
-                    background-image: url(../img/contact02.jpg);
+                    background-image: url(../img/contact06.jpg);
 
                 }
 
                 &.contact_img06 {
-                    background-image: url(../img/contact02.jpg);
+                    background-image: url(../img/contact07.jpg);
 
                 }
             }

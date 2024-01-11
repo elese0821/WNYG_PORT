@@ -28,8 +28,8 @@ const Blog = () => {
                 </div>
 
                 <div className="exp">
-                    <div className="split_text_clip">
-                        <p text-split="" className="text-reg">저의 포트폴리오에 오신 것을 환영합니다.</p>
+                    <div className="split_text_clip exp_text">
+                        <p text-split="" className="text-reg">NEXT.JS를 활용한 BLOG 프로젝트입니다.</p>
                     </div>
                 </div>
 
@@ -43,16 +43,7 @@ const Blog = () => {
                         <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
                     <p className="item_desc">
-                        Blog API v3를 활용하여 음악 유튜브 사이트를 만들어보았습니다.
-                        <li>
-                            <span>Postman</span>: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 Blog API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
-                        </li>
-                        <li>
-                            <span>Postman</span>: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 Blog API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
-                        </li>
-                        <li>
-                            <span>Postman</span>: API 요청을 테스트하고 디버깅하는 데 사용되었습니다. Postman을 통해 Blog API와의 통신을 검증하고, 요청 구조를 최적화했습니다.
-                        </li>
+                        준비중입니다.
                     </p>
                     <div className="item__bg"></div>
                 </div>
@@ -74,7 +65,7 @@ const Blog = () => {
                         <p text-split="" className="text-reg">GITHUB</p>
                         <p text-split="" className="text-reg">GITHUB</p>
                     </div>
-                    <a href='https://github.com/elese0821/REACT-BLOG' target='_blank' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/next-blog' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">
@@ -82,7 +73,7 @@ const Blog = () => {
                         <p text-split="" className="text-reg">VIEW</p>
                         <p text-split="" className="text-reg">VIEW</p>
                     </div>
-                    <a href='' target='_blank' className="item__bg hover_effect"></a>
+                    <a href='https://github.com/elese0821/next-blog' target='_blank' className="item__bg hover_effect"></a>
                 </div>
 
                 <div className="item">

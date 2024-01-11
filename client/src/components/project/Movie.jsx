@@ -29,7 +29,7 @@ const Movie = () => {
 
                 <div className="exp">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg exp_txt">VUE를 이용한 영화 사이트입니다.</p>
+                        <p text-split="" className="text-reg exp_txt">VUE를 이용한 영화정보 사이트입니다.</p>
                     </div>
                 </div>
 
@@ -43,7 +43,8 @@ const Movie = () => {
                         <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
                     <p className="item_desc">
-                        Vue Api Site는 VUE프레임워크를 이용해 여러 API소스를 활용하여 만든 프로젝트입니다. Vue 프레임워크의 장점을 활용해 페이지간 이동이 빠르고, API를 이용해 다채로운 컨텐츠를 만들었습니다.
+                        Vue Api Site는 VUE프레임워크를 이용해 여러 API소스를 활용하여 만든 프로젝트입니다. <br />
+                        Vue 프레임워크의 장점을 활용해 페이지간 이동이 빠르고, API를 이용해 다채로운 컨텐츠를 만들었습니다.<br />
                     </p>
                     <div className="item__bg"></div>
                 </div>

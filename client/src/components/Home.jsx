@@ -242,8 +242,8 @@ const Home = () => {
                 <div className="item i5 text-btm">
                     <div>
                         <div className="split_text_clip">
-                            <div text-split="" className="text-reg">PERRAR</div>
-                            <div text-split="" className="text-reg">PERRAR</div>
+                            <div text-split="" className="text-reg">PETRAR</div>
+                            <div text-split="" className="text-reg">PETRAR</div>
                         </div>
                         <a href='#' className="item__bg" onClick={noLink}></a>
                     </div>

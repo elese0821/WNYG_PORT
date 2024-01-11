@@ -38,13 +38,13 @@ const Teamquiz = () => {
                     <div className="pj07_img photo"></div>
                 </div>
 
-                <div className="item desc_01">
+                <div className="item desc_01 comment__item">
                     <div className="split_text_clip">
                         <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
                     <p className="item_desc">
-                        JAVASCRIPT로 퀴즈게임을 만들어보았습니다.
-                        JSON을 만들어서
+                        웹 기반의 이미지 퀴즈 게임으로, 사용자는 다양한 문제에 맞는 사진을 선택해야 합니다.<br />
+                        다양한 카테고리의 문제들로 구성되어 있으며, 각 문제에는 네 개의 이미지 보기가 제공됩니다.
                     </p>
                     <div className="item__bg"></div>
                 </div>

@@ -29,7 +29,7 @@ const Teamreact = () => {
 
                 <div className="exp">
                     <div className="split_text_clip">
-                        <p text-split="" className="text-reg exp_txt">REACT와 NODE.JS를 이용해 만든 사이트입니다.</p>
+                        <p text-split="" className="text-reg exp_txt">REACT와 NODE.JS를 이용해 만든 사이트입니다.(작업중)</p>
                     </div>
                 </div>
 
@@ -43,8 +43,7 @@ const Teamreact = () => {
                         <p text-split="" className="text-reg">INTRODUCE</p>
                     </div>
                     <p className="item_desc">
-                        Movie API v3를 활용하여 음악 유튜브 사이트를 만들어보았습니다.
-
+                       풀스택 팀 프로젝트입니다.
                     </p>
                     <div className="item__bg"></div>
                 </div>
